@@ -1,0 +1,83 @@
+header {
+    display: flex;
+    padding: 60px 100px 30px 100px;
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex; 
+    font-size: 40px;
+    font-weight: bold;
+    align-items: center;
+    color: #ffc979;
+    letter-spacing: 1px;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+#menu li {
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    display: inline; 
+}
+
+#menu a {
+    color: #bdc2d1;
+    text-decoration: none;
+    position: relative;
+}
+
+#menu a:hover {
+    transition: 0.3s;
+    color: #ffc979;
+    
+}
+
+#menu li a:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -10px;
+    height: 1px;
+    width: 0px;
+    opacity: 0;
+    background-color: #ffc979;
+    transition: 0.3s;
+}
+
+#menu li a:hover:after {
+    width: 100%;
+    opacity: 1;
+}
+
+#social-header {
+    /*min-width: 190px;*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#social-header svg {
+    fill: #bdc2d1;
+    width: 26px;
+}
+
+#social-header a:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+#social-header svg:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    fill: #ffc979;
+}
