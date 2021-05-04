@@ -32,6 +32,7 @@ header {
 }
 
 #menu a {
+    padding: 5px 0;
     color: #bdc2d1;
     text-decoration: none;
     position: relative;
@@ -40,7 +41,6 @@ header {
 #menu a:hover {
     transition: 0.3s;
     color: #ffc979;
-    
 }
 
 #menu li a:after {
@@ -62,22 +62,26 @@ header {
 
 #social-header {
     /*min-width: 190px;*/
+    position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
 #social-header svg {
+    background-color: #151922;
     fill: #bdc2d1;
-    width: 26px;
+    width: 38px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 6px;
+    transition: 0.3s;
 }
 
 #social-header a:not(:last-of-type) {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
-#social-header svg:hover {
-    cursor: pointer;
-    transition: 0.3s;
+#social-header a:hover svg {
+    border: 1px solid rgba(255, 201, 121, 1);
     fill: #ffc979;
 }
