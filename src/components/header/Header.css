@@ -1,5 +1,4 @@
 header {
-    position: relative;
     display: flex;
     padding: 60px 100px 30px 100px;
     justify-content: space-between;
@@ -20,6 +19,20 @@ header {
     letter-spacing: 1px;
 }
 
+@media (max-width: 800px) {
+    #logo {
+        font-size: 34px;
+    }
+}
+
+#menu-curtain {
+    display: none;
+}
+
+#menuH {
+    display: none;
+}
+
 #menu {
     display: flex;
     justify-content: center;
@@ -36,6 +49,12 @@ header {
     font-size: 11px;
     letter-spacing: 1.2px;
     display: inline; 
+}
+
+@media (max-width: 800px) {
+    #menu li {
+        margin: 0 15px;
+    }
 }
 
 #menu li:first-of-type {
@@ -89,7 +108,7 @@ header {
 }
 
 #social-header svg {
-    background-color: #151922;
+    background-color: #191d27;
     fill: #bdc2d1;
     width: 38px;
     border: 1px solid rgba(0, 0, 0, 0);
@@ -109,8 +128,8 @@ header {
 @media (max-width: 900px) {
     #social-header {
         position: absolute;
-        right: 15px;
-        top: 15px;
+        right: 20px;
+        top: 20px;
     }
     #social-header svg {
         width: 32px;
@@ -118,5 +137,95 @@ header {
     }
     #social-header a:not(:last-of-type) {
         margin-right: 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    #menuH {
+        position: relative;
+        cursor: pointer;
+        width: 26px;
+        height: 18px;
+        align-self: center;
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    #menuH span,
+    #menuH span::after,
+    #menuH span::before {
+        content:"";
+        width: 26px;
+        height: 2px;
+        background-color: #bdc2d1;
+        display:block;  
+    }
+    #menuH span::after,
+    #menuH span::before{
+        position:absolute;
+        transition: transform 0.3s; 
+    }
+    #menuH span::after {
+        bottom: 0px;  
+    }
+    #menuH span::before {
+        top: 0px;
+    }
+    #menuH.is-active span{
+        width: 100%; /* error model ? adjust */
+        background-color:transparent;
+    }
+    #menuH.is-active span:after {
+        transform:rotate(-45deg) translateY(-7px) translateX(4px);
+    }
+    #menuH.is-active span:before {
+        transform:rotate(45deg) translateY(7px) translateX(4px);
+    }
+
+    #menu {
+        position: absolute;
+        z-index: 1000;
+        top: 130px;
+        bottom:0;
+        right:0;
+        width: 0;
+        height: 235px;
+        transition: all 0.3s;
+    }
+
+    #menu.is-open {
+        width: 100%;
+    }
+
+    #menu-curtain {
+        position: absolute;
+        display: initial;
+        z-index: 999;
+        top: 131px;
+        bottom:0;
+        right:0;
+        width: 0;
+        transition: all 0.3s;
+    }
+
+    #menu-curtain.is-open {
+        width: 100%;
+        background-color: rgba(22, 25, 34, 0.5);
+    }
+
+    #menu ul {
+        font-size: 18px;
+        height: 235px;
+        background-color: #161922;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0px 46px 0px;
+    }
+    #menu ul li {
+        margin: 0px;
     }
 }

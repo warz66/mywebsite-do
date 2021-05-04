@@ -1,7 +1,26 @@
 import './Header.css';
-import React from "react";
+import React, { useState, useEffect } from 'react';
+/*import { useLocation, Link } from "react-router-dom";*/
 
 const Header = () => {
+    const [openMenu, setOpenMenu] = useState(false);
+    /*const location = useLocation();*/
+
+    function handleMenu() {
+        setOpenMenu(!openMenu);
+    }
+
+    useEffect(() => {
+        function closeMenuHandleResize() {
+            if(window.innerWidth > 800) {
+                setOpenMenu(false);
+            }
+        }
+        window.addEventListener('resize', closeMenuHandleResize);
+        return () => {
+            window.removeEventListener('resize', closeMenuHandleResize);
+        }
+    });
     
     return (
         <header>
@@ -10,7 +29,11 @@ const Header = () => {
                 David.O
             </div>
 
-            <div id="menu">
+            <div id="menuH" onClick={handleMenu} className={openMenu ? 'is-active' : ''}>
+                <span></span>
+            </div>
+
+            <div id="menu" className={openMenu ? 'is-open' : ''}>
                 <ul>
                     <li><a href="#">ACCUEIL</a></li>
                     <li><a href="#">SERVICES</a></li>
@@ -34,6 +57,8 @@ const Header = () => {
                 </a>
 
             </div>
+
+            <span id="menu-curtain" onClick={handleMenu} className={openMenu ? 'is-open' : ''}></span>
 
         </header>
     );
