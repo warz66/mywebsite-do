@@ -26,7 +26,7 @@ const Header = () => {
         <header>
             <div id="wrapper-header">
                 <div id="logo">
-                    David.O
+                    Keanu.R
                 </div>
 
                 <div id="menuH" onClick={handleMenu} className={openMenu ? 'is-active' : ''}>
