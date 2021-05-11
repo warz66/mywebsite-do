@@ -1,4 +1,7 @@
 header {
+    z-index: 99;
+    width: 100%;
+    position: fixed;
     background: repeating-linear-gradient(90deg, #181e28, #181e28 calc(20vw - 1px), rgba(255, 201, 121, 0.1) calc(20vw + 1px));
 }
 
