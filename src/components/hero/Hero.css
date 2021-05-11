@@ -1,16 +1,16 @@
 #hero {
-    background: repeating-linear-gradient(90deg, #161922, #161922 calc(20vw - 1px), rgba(255, 201, 121, 0.05) calc(20vw + 1px));
+    background: repeating-linear-gradient(90deg, #181e28, #181e28 calc(20vw - 1px), rgba(255, 201, 121, 0.05) calc(20vw + 1px));
 }
 
 @media (max-width: 1100px) {
     #hero {
-        background: repeating-linear-gradient(90deg, #161922, #161922 calc(25vw - 1px), rgba(255, 201, 121, 0.05) calc(25vw + 1px));
+        background: repeating-linear-gradient(90deg, #181e28, #181e28 calc(25vw - 1px), rgba(255, 201, 121, 0.05) calc(25vw + 1px));
     }    
 }
 
 @media (max-width: 750px) {
     #hero {
-        background: repeating-linear-gradient(90deg, #161922, #161922 calc(33.3vw - 1px), rgba(255, 201, 121, 0.05) calc(33.3vw + 1px));
+        background: repeating-linear-gradient(90deg, #181e28, #181e28 calc(33.3vw - 1px), rgba(255, 201, 121, 0.05) calc(33.3vw + 1px));
     }    
 }
 
