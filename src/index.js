@@ -6,24 +6,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-/*class MySection extends React.Component {
-  render() {
-    return (
-      <div className="section">
-        <h3>{this.props.content}</h3>
-      </div>
-    );
-  }
-}*/
-
-const anchors = ["firstPage", "secondPage", "thirdPage"];
+const anchors = ["Accueil", "A Propos", "Services"];
 
 const FullpageWrapper = () => (
   <ReactFullpage
-    anchors={anchors}
+    licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
+    /*anchors={anchors}*/
     navigation
-    licenseKey={null}
     navigationTooltips={anchors}
+    responsiveWidth= "900"
     sectionsColor={["#282c34", "#ff5f45", "#0798ec"]}
     onLeave={(origin, destination, direction) => {
       console.log("onLeave event", { origin, destination, direction });

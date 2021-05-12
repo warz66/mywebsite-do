@@ -6,3 +6,17 @@ body {
   background-color: #191d27;
   /*height: 10000px;*/
 }
+
+/* fullpage */
+
+.fp-sr-only {
+  font-family: 'Spartan', sans-serif;
+}
+
+#fp-nav.fp-right {
+  right: 90px;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background: #ffc979;
+}

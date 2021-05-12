@@ -1,20 +1,20 @@
 import './Home.css';
-import React, { useEffect, useRef } from "react";
+//import React, { useEffect, useRef } from "react";
 import Hero from 'components/hero/Hero';
 import About from 'components/about/About';
 import Services from 'components/services/Services';
 
 const Home = () => {
     
-    const sections = useRef();
+    /*const sections = useRef();
     let lastScrollTop = 0;
     //let sections = "";
     let stopScroll = false;
 
     function stopWheel(e) {
-        /*if(!e){ e = window.event; }*/ /* IE7, IE8, Chrome, Safari */
-        if(e.preventDefault) { e.preventDefault(); } /* Chrome, Safari, Firefox */
-        /*e.returnValue = false;*/ /* IE7, IE8 */
+        if(!e){ e = window.event; } // IE7, IE8, Chrome, Safari 
+        if(e.preventDefault) { e.preventDefault(); } // Chrome, Safari, Firefox 
+        //e.returnValue = false; // IE7, IE8 
     }
 
     function whereSection (element, scrollTop, index) {
@@ -33,9 +33,6 @@ const Home = () => {
                 left:0,
                 behavior: 'smooth'
             });
-            /*document.getElementById(sections.current[index+1].id).scrollIntoView({ 
-                behavior: 'smooth' 
-            });*/
             setTimeout(function() {
                 stopScroll = false;
                 //document.removeEventListener('wheel', stopWheel);
@@ -72,7 +69,7 @@ const Home = () => {
           //document.removeEventListener('scroll', stopWheel);
           window.removeEventListener('wheel', handleScroll)
         }
-    })
+    })*/
     
     return (
         

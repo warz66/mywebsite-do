@@ -18,7 +18,8 @@
     margin: 0 auto;
     max-width: 1980px;
     width: 100%;
-    min-height: calc(100vh - 137px);
+    height: 100vh;
+    /*min-height: calc(100vh - 137px);*/
     position: relative;
     overflow: hidden;
 }
@@ -106,8 +107,8 @@
     position: absolute;
     z-index: 0;
     right: 15%;
-    width: 650px;
-    top: 5%;
+    width: 600px;
+    top: 20%;
     filter:brightness(0.9);
 }
 
@@ -134,7 +135,7 @@
 
 @media(max-width: 470px) {
     #hero-img img {
-        right: -50%;
+        right: -40%;
         opacity: 0.2;
     }
 }
