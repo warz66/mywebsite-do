@@ -14,13 +14,12 @@ const FullpageWrapper = () => (
     /*anchors={anchors}*/
     navigation
     navigationTooltips={anchors}
-    responsiveWidth= "900"
-    sectionsColor={["#282c34", "#ff5f45", "#0798ec"]}
+    responsiveWidth= "901"
     onLeave={(origin, destination, direction) => {
       console.log("onLeave event", { origin, destination, direction });
     }}
     render={({ state, fullpageApi }) => {
-      console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
+      //console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
 
       return (
         <div>
