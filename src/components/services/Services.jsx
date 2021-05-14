@@ -4,9 +4,8 @@ const Services = () => {
 
     return (
 
-        <section id="services" className="section">
+        <section id="services" className="section bg-vr">
             
-
         </section>
 
     );

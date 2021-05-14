@@ -7,7 +7,7 @@ const Hero = () => {
 
     return (
 
-        <section id="hero" className="section">
+        <section id="hero" className="section bg-vr">
             <div id="wrapper-hero">
                 <div id="hero-text">
                     <span>BONJOUR</span>

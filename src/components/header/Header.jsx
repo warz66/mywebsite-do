@@ -23,7 +23,7 @@ const Header = () => {
     });
     
     return (
-        <header>
+        <header className="bg-vr">
             <div id="wrapper-header">
                 <div id="logo">
                     Keanu.R
@@ -36,9 +36,10 @@ const Header = () => {
                 <div id="menu" className={openMenu ? 'is-open' : ''}>
                     <ul>
                         <li><a href="#">ACCUEIL</a></li>
+                        <li><a href="#">A PROPOS</a></li>
                         <li><a href="#">SERVICES</a></li>
                         <li><a href="#">REALISATIONS</a></li>
-                        <li><a href="#">ME CONTACTER</a></li>
+                        <li><a href="#">CONTACT</a></li>
                     </ul>
                 </div>
 

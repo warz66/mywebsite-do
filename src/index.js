@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const anchors = ["Accueil", "A Propos", "Services"];
+const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
 
 const FullpageWrapper = () => (
   <ReactFullpage
