@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "fullpage.js/vendors/scrolloverflow"; // Optional. When using scrollOverflow:true
 import ReactFullpage from "@fullpage/react-fullpage";
 import './index.css';
 import App from './App';
@@ -15,6 +14,7 @@ const FullpageWrapper = () => (
     navigation
     navigationTooltips={anchors}
     responsiveWidth= "901"
+    //verticalCentered= {false}
     onLeave={(origin, destination, direction) => {
       console.log("onLeave event", { origin, destination, direction });
     }}
