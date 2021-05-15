@@ -1,5 +1,6 @@
 import './About.css'
-import homer from 'assets/images/homer.png'
+//import homer from 'assets/images/homer.png'
+import krPortrait from 'assets/images/kr-portrait.png'
 import signature from 'assets/images/signature.svg'
 
 const About = () => {
@@ -10,9 +11,9 @@ const About = () => {
             
             <div id="wrapper-about">
 
-                <div id="about-text">
+                <div id="text-about">
                     <div>
-                        <img src={homer} alt="" />
+                        <img src={krPortrait} alt="" />
                     </div>
                     <div>
                         <h2>A propos de moi</h2>
@@ -24,6 +25,12 @@ const About = () => {
                             En 2014, il fait un retour remarqué en imposant un nouveau héros du cinéma d'action avec le film John Wick.<br/><br/>*/}
                         </p>
                         <span><img src={signature} alt="" /></span>
+                    </div>
+                </div>
+
+                <div id="skill-about">
+                    <div id="skill-title-v">
+                        Mes Compétances
                     </div>
                 </div>
 

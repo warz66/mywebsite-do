@@ -1,28 +1,30 @@
 #wrapper-about {
     width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
-#about-text {
+#text-about {
     display: flex;
+    margin-bottom: 30px;
 }
 
-#about-text > div:first-of-type img {
+#text-about > div:first-of-type img {
     height: 400px;
 }
 
-#about-text > div:last-of-type {
+#text-about > div:last-of-type {
     margin-left: 50px;
 }
 
-#about-text > div:last-of-type h2 {
+#text-about > div:last-of-type h2 {
     display: flex;
     color: #ffc979;
     font-size: 36px;
     margin-bottom: 40px;
 }
 
-#about-text > div:last-of-type h2:before {
+#text-about > div:last-of-type h2:before {
     align-self: center;
     content: "";
     display: inline-block;
@@ -33,13 +35,29 @@
     margin-bottom: 2px; 
 }
 
-#about-text > div:last-of-type p {
+#text-about > div:last-of-type p {
     line-height: 25px;
     color: #bdc2d1;
     font-size: 15px;
     margin-bottom: 10px;
 }
 
-#about-text > div:last-of-type > span img {
+#text-about > div:last-of-type > span img {
     width: 150px;
+}
+
+#skill-about {
+    height: 250px;
+}
+
+#skill-about #skill-title-v {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    color: #ffc979;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
 }
