@@ -14,6 +14,7 @@ const FullpageWrapper = () => (
     navigation
     navigationTooltips={anchors}
     responsiveWidth= "901"
+    responsiveHeight="937"
     //verticalCentered= {false}
     onLeave={(origin, destination, direction) => {
       console.log("onLeave event", { origin, destination, direction });

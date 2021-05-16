@@ -1,5 +1,5 @@
 #wrapper-about {
-    width: 1000px;
+    width: 950px;
     margin: 0 auto;
     position: relative;
 }
@@ -38,7 +38,7 @@
 #text-about > div:last-of-type p {
     line-height: 25px;
     color: #bdc2d1;
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
@@ -52,6 +52,7 @@
 
 #skill-about #skill-title-v {
     position: absolute;
+    display: flex;
     left: 0;
     bottom: 30px;
     color: #ffc979;
@@ -60,4 +61,14 @@
     font-weight: 600;
     transform: rotate(180deg);
     writing-mode: vertical-rl;
+}
+
+#skill-about #skill-title-v:before {
+    align-self: center;
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 35px;
+    margin-bottom: 15px;
+    background-color: #ffc979;
 }
