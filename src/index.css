@@ -60,6 +60,12 @@ section {
   right: 90px;
 }
 
+@media (min-width: 1980px) {
+  #fp-nav.fp-right {
+    right: calc((100vw - (1980px - 180px)) / 2);
+  }
+}
+
 @media (max-width: 1300px) {
   #fp-nav.fp-right {
     right: 40px;
