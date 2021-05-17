@@ -13,7 +13,7 @@ const FullpageWrapper = () => (
     /*anchors={anchors}*/
     navigation
     navigationTooltips={anchors}
-    responsiveWidth= "901"
+    responsiveWidth= "1200"
     responsiveHeight="937"
     //verticalCentered= {false}
     onLeave={(origin, destination, direction) => {

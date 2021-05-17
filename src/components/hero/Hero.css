@@ -67,28 +67,6 @@
     margin-bottom: 90px;
 }
 
-#hero-text #btn-dl-cv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 45px;
-    width: 190px;
-    background-color: #ffc979;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    color: #333;
-    padding-top: 3px;
-    transition: 0.3s;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    #hero-text #btn-dl-cv:hover {
-        background-color: #d4af37;
-        filter: brightness(1.1);
-    }
-}
-
 #hero-img img {
     position: absolute;
     z-index: 0;
@@ -102,6 +80,9 @@
     #hero-img img {
         right: 5%;
     }
+}
+
+@media(max-width: 1100px) {
     #hero-text {
         max-width: 500px;
     }
@@ -142,7 +123,7 @@
     margin-top: 12px;
 }
 
-@media(max-width: 1100px) {
+@media(max-width: 1300px) {
     #scroll-down {
         right: 50px;
     }

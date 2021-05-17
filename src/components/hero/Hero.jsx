@@ -13,7 +13,7 @@ const Hero = () => {
                     <span>BONJOUR</span>
                     <h1>Je suis <span>Keanu</span> Reeves</h1>
                     <p>Développeur Web Junior Front-end / Symfony</p>
-                    <a href={cv} download="CVOeslickDavid.pdf" id="btn-dl-cv">
+                    <a href={cv} download="CVOeslickDavid.pdf" className="btn">
                         DOWNLOAD CV
                     </a>
                 </div>
