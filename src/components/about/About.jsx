@@ -1,5 +1,4 @@
 import './About.css'
-//import homer from 'assets/images/homer.png'
 import krPortrait from 'assets/images/kr-portrait.png'
 import signature from 'assets/images/signature.svg'
 
