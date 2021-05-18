@@ -39,9 +39,9 @@ body {
   background-color: var(--very-dark-blue);
 }
 
-section {
+/*section {
   min-height: 937px;
-}
+}*/
 
 .btn {
   display: inline-flex;

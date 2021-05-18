@@ -15,6 +15,18 @@
     overflow: hidden;
 }
 
+@media (max-height: 740px) {
+    #wrapper-hero {
+        height: 740px;
+    }
+}
+
+@media (max-height: 650px) {
+    #wrapper-hero {
+        height: 700px;
+    }
+}
+
 #hero-text {
     position: absolute;
     z-index: 1;
@@ -108,9 +120,6 @@
 }
 
 @media(max-width: 470px) {
-    #hero-text {
-        top: 50%;
-    }
     #hero-text h1 {
         font-size: 36px;
     }
