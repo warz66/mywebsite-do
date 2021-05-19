@@ -33,7 +33,7 @@
     top: 55%;
     left: 0;
     transform: translateY(-55%);
-    color: white;
+    color: var(--very-light-grey);
     margin-left: 50px;
     margin-right: 20px;
 }
