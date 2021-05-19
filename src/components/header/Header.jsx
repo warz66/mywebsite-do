@@ -23,7 +23,7 @@ const Header = () => {
     });
     
     return (
-        <header className="bg-vr">
+        <header>
             <div id="wrapper-header">
                 <div id="logo">
                     Keanu.R

@@ -1,0 +1,105 @@
+#realisations {
+    overflow: hidden !important;
+}
+
+#wrapper-realisations {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 25px;
+}
+
+#wrapper-realisations > h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--gold);
+    font-size: 36px;
+}
+
+#wrapper-realisations > p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+    line-height: 25px;
+    color: var(--light-grey);
+    font-size: 14px; 
+}
+
+.flickity-viewport {
+    overflow: visible !important;
+    width: 100%;
+}
+
+.carousel:after {
+    content: 'flickity';
+    display: none; /* hide :after */
+  }
+
+@media screen and ( max-width: 600px ) {
+    .carousel:after {
+        content: '';
+    }
+}
+
+.card-realisation {
+    width: 320px;
+    height: 500px;
+    margin: 0 20px;
+    background-color: var(--dark-blue);
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    /*border-bottom: 1px solid var(--gold);*/
+    transition: 0.3s ease-in-out;
+    /*border-radius: 2px;*/
+}
+
+@media(max-width: 600px) {
+    .card-realisation {
+        margin: 0 auto;
+        max-width: 320px;
+        width: auto;
+        min-height: 480px;
+        height: auto;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .card-realisation:hover {
+        box-shadow: 20px 10px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.25);
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 3px solid var(--gold);
+        transform: translate(10px, -10px);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-realisation {
+        margin-bottom: 30px;
+    }
+}
+
+.card-realisation-tag {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.card-realisation img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-realisation-text {
+    padding: 20px;
+}
+
+.card-realisation-text h4 {
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.card-realisation-text p {
+    font-size: 14px;
+    color: var(--light-grey);
+}
