@@ -6,11 +6,19 @@ const Header = () => {
     const [openMenu, setOpenMenu] = useState(false);
     /*const location = useLocation();*/
 
+    var body = document.body,
+        html = document.documentElement;
+        var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                     html.clientHeight, html.scrollHeight, html.offsetHeight );
+
     function handleMenu() {
         setOpenMenu(!openMenu);
     }
 
     useEffect(() => {
+        
+        console.log(height);
+        
         function closeMenuHandleResize() {
             if(window.innerWidth > 800) {
                 setOpenMenu(false);
@@ -59,7 +67,7 @@ const Header = () => {
 
                 </div>
 
-                <span id="menu-curtain" onClick={handleMenu} className={openMenu ? 'is-open' : ''}></span>
+                <span id="menu-curtain" onClick={handleMenu} className={openMenu ? 'is-open' : ''} style={{'height' : height}}></span>
             </div>
         </header>
     );
