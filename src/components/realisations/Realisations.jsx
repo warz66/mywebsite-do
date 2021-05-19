@@ -4,6 +4,8 @@ import archRealisation from 'assets/images/arch-realisation.jpg'
 import photosnapRealisation from 'assets/images/photosnap-realisation.jpg'
 import countriesRealisation from 'assets/images/countries-realisation.jpg'
 import mairieRealisation from 'assets/images/mairie-realisation.jpg'
+import clipboardRealisation from 'assets/images/clipboard-realisation.jpg'
+import roomRealisation from 'assets/images/room-realisation.jpg'
 import 'flickity/dist/flickity.min.css'
 
 const Realisations = () => {
@@ -71,17 +73,17 @@ const Realisations = () => {
                         </div>
                     </div>
                     <div className="card-realisation">
-                       <img className="" src={archRealisation} alt="" />
+                       <img className="" src={clipboardRealisation} alt="" />
                        <div className="card-realisation-text">
-                            <div className="card-realisation-tag">React</div>
+                            <div className="card-realisation-tag">HTML / CSS</div>
                             <h4>Arch Studio multi-page website</h4>
                             <p>In this challenge, you'll be building a 4-page site that will look great in any portfolio. You'll even get the chance to play with mapping APIs if you choose the bonus.</p>
                         </div>
                     </div>
                     <div className="card-realisation">
-                       <img className="" src={archRealisation} alt="" />
+                       <img className="" src={roomRealisation} alt="" />
                        <div className="card-realisation-text">
-                            <div className="card-realisation-tag">React</div>
+                            <div className="card-realisation-tag">HTML / CSS / JS</div>
                             <h4>Arch Studio multi-page website</h4>
                             <p>In this challenge, you'll be building a 4-page site that will look great in any portfolio. You'll even get the chance to play with mapping APIs if you choose the bonus.</p>
                         </div>
