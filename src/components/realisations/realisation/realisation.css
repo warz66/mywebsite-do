@@ -1,0 +1,98 @@
+.card-realisation {
+    width: 320px;
+    height: 500px;
+    margin: 0 20px;
+    background-color: var(--dark-blue);
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    position: relative;
+    /*border-bottom: 1px solid var(--gold);*/
+    transition: 0.3s ease-in-out;
+    /*overflow: hidden;
+    border-radius: 5px;*/
+}
+
+@media(max-width: 600px) {
+    .card-realisation {
+        margin: 0 auto;
+        max-width: 320px;
+        width: auto;
+        min-height: 480px;
+        height: auto;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .card-realisation:hover {
+        box-shadow: 20px 10px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.25);
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 3px solid var(--gold);
+        transform: translate(10px, -10px);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-realisation {
+        margin-bottom: 30px;
+    }
+}
+
+.card-realisation-tag {
+    display: flex;
+    align-items: center;
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.card-realisation-tag:before {
+    align-self: center;
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    background-color: var(--gold);
+    margin-right: 10px;
+}
+
+.card-realisation img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-realisation-text {
+    padding: 20px;
+}
+
+.card-realisation-text h4 {
+    color: var(--very-light-grey);
+    margin-bottom: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.card-realisation-text p {
+    font-size: 14px;
+    color: var(--light-grey);
+}
+
+.card-realisation-more {
+    font-size: 14px;
+    color: var(--gold);
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .card-realisation-more:hover {
+        text-shadow: 0 -0.3px 0 var(--gold), 0.3px 0 var(--gold);
+    }
+    .card-realisation:hover h4 {
+        color: var(--gold);
+    }
+}
