@@ -33,7 +33,7 @@
     top: 55%;
     left: 0;
     transform: translateY(-55%);
-    color: var(--very-light-grey);
+    color: var(--very-tertiary);
     margin-left: 50px;
     margin-right: 20px;
 }
@@ -46,7 +46,7 @@
 
 #hero-text > span {
     display: flex;
-    color: var(--gold);
+    color: var(--secondary);
     font-weight: 400;
     font-size: 12px;
     letter-spacing: 1.2px;
@@ -59,7 +59,7 @@
     display: inline-block;
     width: 30px;
     height: 1px;
-    background-color: var(--gold);
+    background-color: var(--secondary);
     margin-right: 15px;
     margin-bottom: 2px; 
 }
@@ -70,7 +70,7 @@
 }
 
 #hero-text h1 span {
-    color: var(--gold);
+    color: var(--secondary);
 }
 
 #hero-text p {
@@ -136,7 +136,7 @@
     position: absolute;
     right: 100px;
     bottom: 30px;
-    color: var(--gold);
+    color: var(--secondary);
     font-size: 10.5px;
     letter-spacing: 1.2px;
     font-weight: 600;

@@ -11,7 +11,7 @@
 #wrapper-realisations > h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: var(--gold);
+    color: var(--secondary);
     font-size: 36px;
 }
 
@@ -20,7 +20,7 @@
     max-width: 700px;
     margin: 0 auto 60px auto;
     line-height: 25px;
-    color: var(--light-grey);
+    color: var(--tertiary);
     font-size: 14px; 
 }
 
@@ -40,7 +40,7 @@
     height: 4px;
     width: 25px;
     border-radius: 0;
-    background: var(--gold);
+    background: var(--secondary);
 }
 
 .carousel {

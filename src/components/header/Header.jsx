@@ -2,7 +2,7 @@ import './Header.css';
 import React, { useState, useEffect } from 'react';
 /*import { useLocation, Link } from "react-router-dom";*/
 
-const Header = () => {
+const Header = (props) => {
     const [openMenu, setOpenMenu] = useState(false);
     /*const location = useLocation();*/
 
@@ -33,7 +33,7 @@ const Header = () => {
     return (
         <header>
             <div id="wrapper-header">
-                <div id="logo">
+                <div onClick={props.changeMode} id="logo">
                     Keanu.R
                 </div>
 

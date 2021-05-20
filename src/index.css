@@ -4,40 +4,71 @@
 /* variables */
 
 :root {
+
+  /* dark mode */
+  --dark-blue: #181e28;
+  --very-dark-blue: #151922;
   --gold: #ffc979;
   --gold-rgb: 255, 201, 121; 
   --very-gold: #d4af37;
   --light-grey: #bdc2d1;
   --very-light-grey: #ececec;
-  --dark-blue: #181e28;
-  --very-dark-blue: #151922;
+
+  /* light mode */
+  --selago: #ecf2fc;
+  --white: #fff;
+  --bright-grey: #3c4151;
+  --bright-grey-rgb: 60, 65, 81; 
+  --shark: #25272C;
+  --cadet-blue: #b1b9ca;
+
+}
+
+.dark-mode {
+  --primary: var(--dark-blue);
+  --very-primary: var(--very-dark-blue);
+  --secondary: var(--gold);
+  --secondary-rgb: 255, 201, 121;
+  --very-secondary: var(--very-gold);
+  --tertiary: var(--light-grey);
+  --very-tertiary: var(--very-light-grey);
+}
+
+.light-mode {
+  --primary: var(--selago);
+  --very-primary: var(--white);
+  --secondary: var(--bright-grey);
+  --secondary-rgb: 60, 65, 81;
+  --very-secondary: var(--shark);
+  --tertiary: var(--shark);
+  --very-tertiary: var(--cadet-blue);  
 }
 
 /* regles globales */
 
-body {
+.App {
   font-family: 'Spartan', sans-serif;
-  background-color: var(--dark-blue);
+  background-color: var(--primary);
 }
 
 .bg-vr {
-  background: repeating-linear-gradient(90deg, var(--dark-blue), var(--dark-blue) calc(20vw - 1px), rgba(var(--gold-rgb), 0.05) calc(20vw + 1px));
+  background: repeating-linear-gradient(90deg, var(--primary), var(--primary) calc(20vw - 1px), rgba(var(--secondary-rgb), 0.05) calc(20vw + 1px));
 }
 
 @media (max-width: 1100px) {
   .bg-vr {
-      background: repeating-linear-gradient(90deg, var(--dark-blue), var(--dark-blue) calc(25vw - 1px), rgba(var(--gold-rgb), 0.05) calc(25vw + 1px));
+      background: repeating-linear-gradient(90deg, var(--primary), var(--primary) calc(25vw - 1px), rgba(var(--secondary-rgb), 0.05) calc(25vw + 1px));
   }    
 }
 
 @media (max-width: 750px) {
   .bg-vr {
-      background: repeating-linear-gradient(90deg, var(--dark-blue), var(--dark-blue) calc(33.3vw - 1px), rgba(var(--gold-rgb), 0.05) calc(33.3vw + 1px));
+      background: repeating-linear-gradient(90deg, var(--primary), var(--primary) calc(33.3vw - 1px), rgba(var(--secondary-rgb), 0.05) calc(33.3vw + 1px));
   }    
 }
 
 .bg-dark {
-  background-color: var(--very-dark-blue);
+  background-color: var(--very-primary);
 }
 
 /*section {
@@ -50,7 +81,7 @@ body {
   align-items: center;
   height: 45px;
   padding: 0 40px;
-  background-color: var(--gold);
+  background-color: var(--secondary);
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
@@ -61,7 +92,7 @@ body {
 
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
-      background-color: var(--very-gold);
+      background-color: var(--very-secondary);
       filter: brightness(1.1);
   }
 }
@@ -85,13 +116,13 @@ body {
 }
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
-  background: var(--gold);
+  background: var(--secondary);
 }
 
 .fp-tooltip {
   top: 1px !important;
   font-family: 'Spartan', sans-serif !important;
-  color: var(--light-grey) !important;
+  color: var(--tertiary) !important;
   letter-spacing: 1.2px !important;
   font-size: 11px !important;
   font-weight: 600 !important;

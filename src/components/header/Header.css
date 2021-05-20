@@ -24,7 +24,7 @@ header {
     font-size: 36px;
     font-weight: bold;
     align-items: center;
-    color: var(--gold);
+    color: var(--secondary);
     letter-spacing: 1px;
 }
 
@@ -76,7 +76,7 @@ header {
 
 #menu a {
     padding: 5px 0;
-    color: var(--light-grey);
+    color: var(--tertiary);
     text-decoration: none;
     position: relative;
 }
@@ -84,7 +84,7 @@ header {
 @media (hover: hover) and (pointer: fine) {
     #menu a:hover {
         transition: 0.3s;
-        color: var(--gold);
+        color: var(--secondary);
     }
 }
 
@@ -96,7 +96,7 @@ header {
     height: 1px;
     width: 0px;
     opacity: 0;
-    background-color: var(--gold);
+    background-color: var(--secondary);
     transition: 0.3s;
 }
 
@@ -121,8 +121,8 @@ header {
 }
 
 #social-header svg {
-    background-color: var(--dark-blue);
-    fill: var(--light-grey);
+    background-color: var(--primary);
+    fill: var(--tertiary);
     width: 38px;
     border: 1px solid rgba(0, 0, 0, 0);
     padding: 6px;
@@ -135,8 +135,8 @@ header {
 
 @media (hover: hover) and (pointer: fine) {
     #social-header a:hover svg {
-        border: 1px solid var(--gold);
-        fill: var(--gold);
+        border: 1px solid var(--secondary);
+        fill: var(--secondary);
     }
 }
 
@@ -172,7 +172,7 @@ header {
         content:"";
         width: 26px;
         height: 2px;
-        background-color: var(--light-grey);
+        background-color: var(--tertiary);
         display:block;  
     }
     #menuH span::after,
@@ -232,7 +232,7 @@ header {
     #menu ul {
         font-size: 18px;
         height: 235px;
-        background-color: var(--dark-blue);
+        background-color: var(--primary);
         width: 100%;
         overflow: hidden;
         display: flex;
