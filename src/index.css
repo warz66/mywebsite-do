@@ -15,13 +15,13 @@
   --very-light-grey: #ececec;
 
   /* light mode */
-  --selago: #ecf2fc;
-  --white: #fff;
+  --selago: #ecf2fc; /* ok */
+  --white: #fff; /* ok */
   --bright-grey: #3c4151;
   --bright-grey-rgb: 60, 65, 81; 
-  --shark: #25272C;
+  --shark: #25272c;
   --cadet-blue: #b1b9ca;
-
+  --test : #6e7a94;
 }
 
 .dark-mode {
@@ -32,16 +32,20 @@
   --very-secondary: var(--very-gold);
   --tertiary: var(--light-grey);
   --very-tertiary: var(--very-light-grey);
+  --btn-color: #333;
+  --btn-bg-color: var(--gold);
 }
 
 .light-mode {
   --primary: var(--selago);
   --very-primary: var(--white);
-  --secondary: var(--bright-grey);
-  --secondary-rgb: 60, 65, 81;
+  --secondary: var(--shark);
+  --secondary-rgb: 37, 39, 44;
   --very-secondary: var(--shark);
-  --tertiary: var(--shark);
-  --very-tertiary: var(--cadet-blue);  
+  --tertiary: var(--bright-grey);
+  --very-tertiary: var(--test);
+  --btn-color: #ccc;
+  --btn-bg-color: var(--bright-grey);  
 }
 
 /* regles globales */
@@ -81,11 +85,11 @@
   align-items: center;
   height: 45px;
   padding: 0 40px;
-  background-color: var(--secondary);
+  background-color: var(--btn-bg-color);
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
-  color: #333;
+  color: var(--btn-color);
   padding-top: 3px;
   transition: 0.3s;
 }
@@ -116,13 +120,13 @@
 }
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
-  background: var(--secondary);
+  /*background: var(--gold) !important;*/
 }
 
 .fp-tooltip {
   top: 1px !important;
   font-family: 'Spartan', sans-serif !important;
-  color: var(--tertiary) !important;
+  /*color: var(--tertiary) !important;*/
   letter-spacing: 1.2px !important;
   font-size: 11px !important;
   font-weight: 600 !important;

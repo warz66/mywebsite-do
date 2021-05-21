@@ -10,7 +10,7 @@ const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
 const FullpageWrapper = () => (
   <ReactFullpage
     licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
-    /*anchors={anchors}*/
+    //anchors={anchors}
     navigation
     navigationTooltips={anchors}
     responsiveWidth= "1200"
