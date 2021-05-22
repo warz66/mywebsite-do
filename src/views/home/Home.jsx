@@ -6,7 +6,7 @@ import Services from 'components/services/Services';
 import Realisations from 'components/realisations/Realisations';
 import Contact from 'components/contact/Contact';
 
-const Home = () => {
+const Home = (props) => {
     
     /*const sections = useRef();
     let lastScrollTop = 0;
@@ -79,9 +79,9 @@ const Home = () => {
 
                 <Hero/>
 
-                <About/>
+                <About mode={props.mode}/>
 
-                <Services/>
+                <Services mode={props.mode}/>
 
                 <Realisations/>
 

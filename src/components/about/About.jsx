@@ -1,8 +1,9 @@
 import './About.css'
 import krPortrait from 'assets/images/kr-portrait.png'
-import signature from 'assets/images/signature.svg'
+import signatureDark from 'assets/images/signature-dark.svg'
+import signatureLight from 'assets/images/signature-light.svg'
 
-const About = () => {
+const About = (props) => {
 
     return (
 
@@ -27,7 +28,7 @@ const About = () => {
                             <a href="" className="btn">
                                 ENGAGEZ MOI
                             </a>
-                            <span><img src={signature} alt="" /></span>
+                            <span><img src={props.mode ? signatureLight : signatureDark} alt="" /></span>
                         </div>
                     </div>
                 </div>

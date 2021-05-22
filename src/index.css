@@ -21,7 +21,7 @@
   --bright-grey-rgb: 60, 65, 81; 
   --shark: #25272c;
   --cadet-blue: #b1b9ca;
-  --test : #6e7a94;
+  --slate-gray : #6e7a94;
 }
 
 .dark-mode {
@@ -34,6 +34,7 @@
   --very-tertiary: var(--very-light-grey);
   --btn-color: #333;
   --btn-bg-color: var(--gold);
+  transition: 0.3s;
 }
 
 .light-mode {
@@ -43,9 +44,10 @@
   --secondary-rgb: 37, 39, 44;
   --very-secondary: var(--shark);
   --tertiary: var(--bright-grey);
-  --very-tertiary: var(--test);
+  --very-tertiary: var(--slate-gray);
   --btn-color: #ccc;
-  --btn-bg-color: var(--bright-grey);  
+  --btn-bg-color: var(--bright-grey); 
+  transition: 0.3s; 
 }
 
 /* regles globales */
@@ -56,22 +58,23 @@
 }
 
 .bg-vr {
-  background: repeating-linear-gradient(90deg, var(--primary), var(--primary) calc(20vw - 1px), rgba(var(--secondary-rgb), 0.05) calc(20vw + 1px));
+  background-color: repeating-linear-gradient(90deg, var(--primary), var(--primary) calc(20vw - 1px), rgba(var(--secondary-rgb), 0.05) calc(20vw + 1px));
 }
 
 @media (max-width: 1100px) {
   .bg-vr {
-      background: repeating-linear-gradient(90deg, var(--primary), var(--primary) calc(25vw - 1px), rgba(var(--secondary-rgb), 0.05) calc(25vw + 1px));
+      background-color: repeating-linear-gradient(90deg, var(--primary), var(--primary) calc(25vw - 1px), rgba(var(--secondary-rgb), 0.05) calc(25vw + 1px));
   }    
 }
 
 @media (max-width: 750px) {
   .bg-vr {
-      background: repeating-linear-gradient(90deg, var(--primary), var(--primary) calc(33.3vw - 1px), rgba(var(--secondary-rgb), 0.05) calc(33.3vw + 1px));
+      background-color: repeating-linear-gradient(90deg, var(--primary), var(--primary) calc(33.3vw - 1px), rgba(var(--secondary-rgb), 0.05) calc(33.3vw + 1px));
   }    
 }
 
 .bg-dark {
+  transition: 0.3s; 
   background-color: var(--very-primary);
 }
 
