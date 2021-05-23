@@ -8,6 +8,8 @@ import Contact from 'components/contact/Contact';
 
 const Home = (props) => {
     
+    console.log(props);
+
     /*const sections = useRef();
     let lastScrollTop = 0;
     //let sections = "";
@@ -77,7 +79,7 @@ const Home = (props) => {
         
         <main id="main">
 
-                <Hero/>
+                <Hero changeMode={props.changeMode}/>
 
                 <About mode={props.mode}/>
 

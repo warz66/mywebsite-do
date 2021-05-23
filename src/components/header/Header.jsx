@@ -17,8 +17,6 @@ const Header = (props) => {
 
     useEffect(() => {
         
-        console.log(height);
-        
         function closeMenuHandleResize() {
             if(window.innerWidth > 800) {
                 setOpenMenu(false);

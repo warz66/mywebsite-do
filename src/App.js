@@ -42,7 +42,7 @@ function App() {
 
       <Header mode={mode} changeMode={changeMode}/>
 
-      <Home mode={mode}/>
+      <Home mode={mode} changeMode={changeMode}/>
 
     </div>
   );
