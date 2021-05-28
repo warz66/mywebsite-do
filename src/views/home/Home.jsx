@@ -7,8 +7,6 @@ import Realisations from 'components/realisations/Realisations';
 import Contact from 'components/contact/Contact';
 
 const Home = (props) => {
-    
-    console.log(props);
 
     /*const sections = useRef();
     let lastScrollTop = 0;
@@ -79,7 +77,7 @@ const Home = (props) => {
         
         <main id="main">
 
-                <Hero changeMode={props.changeMode}/>
+                <Hero mode={props.mode} changeMode={props.changeMode}/>
 
                 <About mode={props.mode}/>
 

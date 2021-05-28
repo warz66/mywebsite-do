@@ -31,7 +31,7 @@ const Header = (props) => {
     return (
         <header>
             <div id="wrapper-header">
-                <div onClick={props.changeMode} id="logo">
+                <div id="logo">
                     Keanu.R
                 </div>
 

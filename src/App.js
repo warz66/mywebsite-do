@@ -29,8 +29,8 @@ function App() {
   }
   handleStyleFpNav();
 
-  function changeMode() {
-    setMode(!mode);
+  function changeMode(e) {
+    setMode(e.target.checked);
   }
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function App() {
   return (
     <div className={mode ? 'App light-mode' : 'App dark-mode'}>
 
-      <Header mode={mode} changeMode={changeMode}/>
+      <Header mode={mode}/>
 
       <Home mode={mode} changeMode={changeMode}/>
 
