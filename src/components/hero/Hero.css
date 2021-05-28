@@ -76,7 +76,7 @@
 #hero-text p {
     font-size: 20px;
     font-weight: 400;
-    margin-bottom: 90px;
+    margin-bottom: 70px;
 }
 
 #hero-img img {
@@ -203,8 +203,8 @@ label {
 .switch {
 	position:relative;
 	left:0;top:0;
-	width:28px;
-	height:28px;
+	width:26px;
+	height:26px;
 }
 
 @media(max-width: 900px) {
@@ -220,8 +220,8 @@ label {
     .switch {
         position:relative;
         left:0;top:0;
-        width:24px;
-        height:24px;
+        width:22px;
+        height:22px;
     }
 }
 
@@ -311,6 +311,12 @@ input:not(:checked) ~ .switch span {
     height:100%; /*height change*/
     background: var(--secondary); /*color change*/
     /*we get a full moon*/
+}
+
+@media(max-width: 900px) {
+    input:not(:checked) ~ .switch span {
+        background: var(--btn-icon-mode);
+    }
 }
 
 input:not(:checked) ~ .switch div::before,

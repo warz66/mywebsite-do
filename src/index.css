@@ -34,6 +34,7 @@
   --very-tertiary: var(--very-light-grey);
   --btn-color: #333;
   --btn-bg-color: var(--gold);
+  --btn-icon-mode: var(--light-grey);
   transition: 0.3s;
 }
 
@@ -46,7 +47,8 @@
   --tertiary: var(--bright-grey);
   --very-tertiary: var(--slate-gray);
   --btn-color: #ccc;
-  --btn-bg-color: var(--bright-grey); 
+  --btn-bg-color: var(--bright-grey);
+  --btn-icon-mode: var(--shark); 
   transition: 0.3s; 
 }
 
