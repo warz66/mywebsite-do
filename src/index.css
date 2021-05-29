@@ -114,13 +114,13 @@
 
 @media (min-width: 1980px) {
   #fp-nav.fp-right {
-    right: calc((100vw - (1980px - 180px)) / 2);
+    right: calc((100vw - (1980px - 180px)) / 2) !important;
   }
 }
 
 @media (max-width: 1300px) {
   #fp-nav.fp-right {
-    right: 40px;
+    right: 40px !important;
   }  
 }
 
