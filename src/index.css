@@ -109,7 +109,7 @@
 /* fullpage */
 
 #fp-nav.fp-right {
-  right: 90px;
+  right: 90px !important;
 }
 
 @media (min-width: 1980px) {
