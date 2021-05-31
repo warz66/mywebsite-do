@@ -244,7 +244,7 @@ label > input {
 	height:70%;
 	background:var(--secondary);
 	border:3px solid var(--primary);
-	transition:all ease 0.3s;
+	/*transition:all ease 0.3s;*/
 }
 
 .switch div {
@@ -265,7 +265,7 @@ label > input {
 	width:12%;
 	height:130%;
 	border-radius:10px;
-	transition:all ease 0.3s;
+	/*transition:all ease 0.3s;*/
 }
 
 .switch div:nth-child(1)::before {
@@ -292,7 +292,7 @@ label > input {
 	transform:var(--c);
 	border-radius:50%;
 	background:var(--primary);
-	transition:all ease 0.3s;
+	/*transition:all ease 0.3s;*/
 }
 
 .switch::before {
