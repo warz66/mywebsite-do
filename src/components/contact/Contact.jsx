@@ -9,20 +9,22 @@ const Contact = () => {
                 <div id="form-contact">
 
                 </div>
-                <div id="lol">
+                <div id="wrapper-msg-info-contact">
                     <div id="msg-contact">
-                        Let's make something new, different and more meanningful or make thing more visual or Conceptual ? Just Say Hello !
+                        <p>
+                            Let's make something new, different and more meanningful or make thing more visual or Conceptual ? <span>Just Say Hello !</span>
+                        </p>
                     </div>
                     <div id="info-contact">
-                        - sdf sdf sdfsdf sdf s <br />
-                        - sdf sdf sdfsdf sdf s <br />
-                        - sdf sdf sdfsdf sdf s <br />
+                        <p>0655894578</p>
+                        <p>myMail@mail.com</p>
+                        <p>Cap Luberon</p>
                     </div>
                 </div>
             </div>
             <footer>
-                <p>Copyright © 2021 xxxxxx, All rights Reserved.</p>
-                <p>Created by xxxxxx</p>
+                <p>Copyright © 2021 Freelance_Theme, All rights Reserved.</p>
+                <p>Created by DavidO_Design</p>
             </footer>
         </section>
 

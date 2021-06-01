@@ -13,6 +13,7 @@
   --very-gold: #d4af37;
   --light-grey: #bdc2d1;
   --very-light-grey: #ececec;
+  --lynch: #697E9A;
 
   /* light mode */
   --selago: #ecf2fc; /* ok */
@@ -35,6 +36,8 @@
   --btn-color: #333;
   --btn-bg-color: var(--gold);
   --btn-icon-mode: var(--light-grey);
+  --footer-color-typo: var(--lynch);
+  --hyphen: var(--gold);
   /*transition: 0.3s;*/
 }
 
@@ -49,6 +52,8 @@
   --btn-color: #ccc;
   --btn-bg-color: var(--bright-grey);
   --btn-icon-mode: var(--shark); 
+  --footer-color-typo: var(--bright-grey);
+  --hyphen: var(--slate-gray);
   /*transition: 0.3s; */
 }
 
