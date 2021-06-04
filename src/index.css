@@ -113,6 +113,16 @@
 
 /* fullpage */
 
+@media(max-width: 1200px) {
+  .section {
+    height: initial !important;
+  }
+  .fp-tableCell {
+    height: initial !important;
+    vertical-align: initial !important;
+  }
+}
+
 #fp-nav.fp-right {
   right: 90px !important;
 }
