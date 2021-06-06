@@ -8,6 +8,12 @@
     padding: 120px 25px 186px 25px;
 }
 
+@media(max-width: 600px) {
+    #wrapper-realisations {
+        padding: 120px 25px 120px 25px;
+    }
+}
+
 #wrapper-realisations > h2 {
     text-align: center;
     margin-bottom: 30px;

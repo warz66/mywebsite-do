@@ -98,7 +98,7 @@
         padding-top: 80px;
     }   
 }
-#info-contact p {
+#info-contact p:not(:last-of-type) {
     margin-bottom: 30px;
     display: flex;
     align-items: center;
@@ -115,10 +115,12 @@
 }
 footer {
     width: 100%;
+    /*padding: 45px;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-height: 133px;
     height: 133px;
     font-size: 16px;
     font-weight: 500;
