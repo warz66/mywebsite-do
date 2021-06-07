@@ -68,6 +68,10 @@
     width: 100%;
     height: 550px;
     margin: 0px 40px;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
     top: 50%;
     right: 0;
@@ -134,4 +138,120 @@ footer {
 }
 footer p {
     text-align: center;
+}
+
+
+/**********************/
+
+/*#form-contact {
+    width: 730px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}*/
+
+#form-contact input {
+    margin-bottom: 60px;
+    padding-bottom: 19px;
+    background-color: transparent;
+}
+
+#form-contact textarea {
+    height: 90px;
+    background-color: transparent;
+}
+
+#form-contact input,#form-contact textarea {
+    font-family: 'Spartan', sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--light-grey);
+    font-size: 18px;
+    /*letter-spacing: -0.312px;*/
+    width: 100%;
+    border: none;
+    box-shadow: 0px -1px 0px var(--light-grey) inset;
+    transition: 0.3s;
+}
+
+#form-contact .active-input-error {
+    box-shadow: 0px -1px 0px var(--form-red-error) inset;
+}
+
+#form-contact .active-input-error::placeholder {
+    color: var(--form-red-error);
+    opacity: 0.5;
+}
+
+#form-contact textarea {
+    resize: none;
+}
+
+#form-contact input::placeholder, #form-contact textarea::placeholder {
+    color: var(--light-grey);
+}
+
+#form-contact input:focus::placeholder, #form-contact textarea:focus::placeholder {
+    color: var(--secondary);
+}
+
+#form-contact textarea:focus, #form-contact input:focus {
+    outline: none;
+    color: var(--secondary);
+    box-shadow: 0px -3px 0px var(--secondary) inset !important;
+}
+
+#form-contact #msg-send-sucess {
+    position: absolute;
+    left: 34.5px;
+    bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #6B8E23;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#form-contact button {
+    margin-top: -8px; /* hack ? */ 
+    align-self: flex-end;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background-color: var(--very-dark-blue);
+    width: 80px;
+    height: 80px;
+    transition: 0.3s;
+} 
+
+#form-contact button:focus {
+    outline: none;    
+} 
+
+#form-contact button:hover {
+    background-color: var(--dark-grey);
+}
+
+#form-contact > div  {
+    position: relative;
+}
+
+#form-contact > div .msg-error {
+    /*display: none;*/
+    position: absolute;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.234px;
+    right: 16px;
+    top: 10px;
+    color: var(--form-red-error);
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+#form-contact > div .active-msg-error {
+    /*display: initial;*/
+    opacity: 1;
 }

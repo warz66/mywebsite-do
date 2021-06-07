@@ -5,6 +5,8 @@
 
 :root {
 
+  --form-red-error: #df5656;
+
   /* dark mode */
   --dark-blue: #181e28;
   --very-dark-blue: #151922;
