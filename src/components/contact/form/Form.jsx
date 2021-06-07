@@ -39,17 +39,17 @@ const Form = () => {
         <form id="form-contact" onSubmit={handleSubmit} method="post" action="">
             <div>
                 <input className={activeErrorName ? "active-input-error" : ""} type="text" aria-label="name" name="name" placeholder="Nom" onClick={() => {setActiveErrorName(false);setActiveMsgSucess(false)}}/>
-                <span className={`msg-error ${activeErrorName ? "active-msg-error" : ""}`}>Can't be empty</span>
+                <span className={`msg-error ${activeErrorName ? "active-msg-error" : ""}`}>Ne peut-être vide</span>
             </div>
             <div>
                 <input className={activeErrorEmail ? "active-input-error" : ""} type="email" aria-label="email" name="email" placeholder="Email" onClick={() => {setActiveErrorEmail(false);setActiveMsgSucess(false)}}/>
-                <span className={`msg-error ${activeErrorEmail ? "active-msg-error" : ""}`}>Can't be empty</span>
+                <span className={`msg-error ${activeErrorEmail ? "active-msg-error" : ""}`}>Ne peut-être vide</span>
             </div>
             <div>
                 <textarea className={activeErrorMessage ? "active-input-error" : ""} aria-label="message" name="message" placeholder="Message" rows="3" onClick={() => {setActiveErrorMessage(false);setActiveMsgSucess(false)}}/>
-                <span className={`msg-error ${activeErrorMessage ? "active-msg-error" : ""}`}>Can't be empty</span>
+                <span className={`msg-error ${activeErrorMessage ? "active-msg-error" : ""}`}>Ne peut-être vide</span>
             </div>
-            <span id="msg-send-sucess" style={activeMsgSucess ? {opacity: 1} : {opacity: 0}}>Message sent !</span>
+            <span id="msg-send-sucess" style={activeMsgSucess ? {opacity: 1} : {opacity: 0}}>Message envoyer !</span>
             <button type="submit" aria-label="submit form" form="form-contact">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20"><path fill="none" fillRule="evenodd" stroke="#fff" strokeWidth="2" d="M15 1l9 9-9 9M0 10h24"></path></svg>
             </button>    

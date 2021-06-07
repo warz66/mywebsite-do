@@ -43,6 +43,11 @@
         text-align: center;
     } 
 }
+@media(max-width: 575px) {
+    #msg-contact {
+        padding-bottom: 0px;
+    }  
+}
 #msg-contact p span {
     color: var(--secondary);
 }
@@ -78,6 +83,11 @@
     #info-contact  {
         width: auto;
         padding-top: 80px;
+    }   
+}
+@media(max-width: 575px) {
+    #info-contact  {
+        padding-top: 0;
     }   
 }
 #info-contact p:not(:last-of-type) {
