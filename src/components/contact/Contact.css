@@ -9,7 +9,7 @@
 }
 @media(max-width: 600px) {
     #wrapper-contact {
-        padding: 80px 25px;
+        padding: 80px 0;
     }
 }
 #wrapper-contact > div:first-of-type, #wrapper-contact > div:last-of-type {
