@@ -5,9 +5,9 @@
     padding: 120px 40px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 600px) {
     #wrapper-about {
-        padding: 100px 25px;
+        padding: 80px 25px;
     }
 }
 

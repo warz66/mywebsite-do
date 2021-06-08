@@ -22,6 +22,11 @@
     padding: 120px 25px;
     position: relative;
 }
+@media(max-width: 600px) {
+    #wrapper-contact {
+        padding: 80px 25px;
+    }
+}
 #form-contact {
     width: 475px;
     height: 550px;

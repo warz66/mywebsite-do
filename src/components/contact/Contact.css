@@ -7,6 +7,11 @@
         padding: 120px 0;
     }
 }
+@media(max-width: 600px) {
+    #wrapper-contact {
+        padding: 80px 25px;
+    }
+}
 #wrapper-contact > div:first-of-type, #wrapper-contact > div:last-of-type {
     height: calc((100vh - 133px) / 2);
     display: flex;

@@ -4,9 +4,9 @@
     padding: 120px 25px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 600px) {
     #wrapper-services {
-        padding: 100px 10px;
+        padding: 80px 10px;
     }
 }
 

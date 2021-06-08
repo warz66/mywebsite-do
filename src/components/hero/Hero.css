@@ -109,7 +109,7 @@
 
 @media(max-width: 750px) {
     #hero-img img {
-        opacity: 0.4;
+        filter: brightness(0.4);
     }
 }
 
@@ -128,7 +128,7 @@
     }
     #hero-img img {
         right: -55%;
-        opacity: 0.2;
+        filter: brightness(0.3);
     }
 }
 
