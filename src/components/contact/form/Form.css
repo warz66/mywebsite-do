@@ -103,7 +103,7 @@
 
 #form-contact button {
     z-index: 100;
-    margin-top: -5.5px; /* hack ? */ 
+    margin-top: -6px; /* hack ? */ 
     align-self: flex-end;
     border: none;
     padding: 0;
