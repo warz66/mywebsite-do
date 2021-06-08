@@ -49,9 +49,9 @@ const Form = () => {
                 <textarea className={activeErrorMessage ? "active-input-error" : ""} aria-label="message" name="message" placeholder="Message" rows="3" onClick={() => {setActiveErrorMessage(false);setActiveMsgSucess(false)}}/>
                 <span className={`msg-error ${activeErrorMessage ? "active-msg-error" : ""}`}>Ne peut-être vide</span>
             </div>
-            <span id="msg-send-sucess" style={activeMsgSucess ? {opacity: 1} : {opacity: 0}}>Message envoyer !</span>
+            <span id="msg-send-sucess" style={activeMsgSucess ? {opacity: 1} : {opacity: 0}}>Message envoyé</span>
             <button type="submit" aria-label="submit form" form="form-contact">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20"><path fill="none" fillRule="evenodd" stroke="#fff" strokeWidth="2" d="M15 1l9 9-9 9M0 10h24"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20"><path fill="none" fillRule="evenodd" strokeWidth="2" d="M15 1l9 9-9 9M0 10h24"></path></svg>
             </button>    
         </form>
 

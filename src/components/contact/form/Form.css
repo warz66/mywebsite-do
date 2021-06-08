@@ -44,8 +44,8 @@
     font-family: 'Spartan', sans-serif;
     cursor: pointer;
     font-weight: bold;
-    color: var(--light-grey);
-    font-size: 18px;
+    color: var(--secondary);
+    font-size: 16px;
     width: 100%;
     border: none;
     background-color: transparent;
@@ -84,38 +84,43 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 30px;
-    font-size: 18px;
+    bottom: 35px;
+    font-size: 16px;
     font-weight: bold;
     color: #6B8E23;
     opacity: 0;
     transition: 0.3s;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 @media(max-width: 575px) {
-    /*#form-contact #msg-send-sucess {
-        bottom: -50px;
-    }    */
+    #form-contact #msg-send-sucess {
+        transform: none;
+        left: 10px;
+        bottom: 100px;
+    }
 }
 
 #form-contact button {
-    margin-top: -8px; /* hack ? */ 
+    margin-top: -5px; /* hack ? */ 
     align-self: flex-end;
     border: none;
     padding: 0;
     cursor: pointer;
-    background-color: var(--very-dark-blue);
+    background-color: var(--btn-bg-color);
     width: 80px;
     height: 80px;
     transition: 0.3s;
 } 
+#form-contact button {
+    stroke: var(--btn-color);
+}
 
 #form-contact button:focus {
     outline: none;    
 } 
 
 #form-contact button:hover {
-    background-color: var(--dark-grey);
+    background-color: var(--very-secondary);
 }
 
 #form-contact > div  {
@@ -125,7 +130,7 @@
 #form-contact > div .msg-error {
     position: absolute;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 18px;
     right: 0px;
     top: 3px;
@@ -149,7 +154,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
     border-bottom: 1px solid var(--light-grey) !important;
-    -webkit-text-fill-color: var(--light-grey) !important;
+    -webkit-text-fill-color: var(--secondary) !important;
     box-shadow: 0 0 0px 1000px var(--primary) inset !important;
     transition: background-color 5000s ease-in-out 0s !important;
 }
