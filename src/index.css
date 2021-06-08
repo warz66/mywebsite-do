@@ -14,8 +14,10 @@
   --gold-rgb: 255, 201, 121; 
   --very-gold: #d4af37;
   --light-grey: #bdc2d1;
+  --light-grey-rgb: 189, 194, 209;
   --very-light-grey: #ececec;
   --lynch: #697E9A;
+  --mirage: #1b212e;
 
   /* light mode */
   --selago: #ecf2fc; /* ok */
@@ -39,7 +41,9 @@
   --btn-bg-color: var(--gold);
   --btn-icon-mode: var(--light-grey);
   --footer-color-typo: var(--lynch);
-  --hyphen: var(--gold);
+  --hyphen: #3c4553;
+  --form-bg-color: var(--mirage);
+  --form-ph-color: rgba(var(--light-grey-rgb), 0.5);
   /*transition: 0.3s;*/
 }
 
@@ -56,6 +60,8 @@
   --btn-icon-mode: var(--shark); 
   --footer-color-typo: var(--bright-grey);
   --hyphen: var(--slate-gray);
+  --form-bg-color: #F8F9FE;
+  --form-ph-color: var(--light-grey);
   /*transition: 0.3s; */
 }
 
@@ -141,9 +147,9 @@
   }  
 }
 
-#fp-nav ul li a span, .fp-slidesNav ul li a span {
-  /*background: var(--gold) !important;*/
-}
+/*#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background: var(--gold) !important;
+}*/
 
 .fp-tooltip {
   top: 1px !important;
