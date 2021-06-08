@@ -87,7 +87,7 @@
     bottom: 35px;
     font-size: 16px;
     font-weight: bold;
-    color: #6B8E23;
+    color: var(--secondary);
     opacity: 0;
     transition: 0.3s;
     /*white-space: nowrap;*/
@@ -96,12 +96,13 @@
     #form-contact #msg-send-sucess {
         transform: none;
         left: 10px;
-        bottom: 100px;
+        bottom: 125px;
     }
 }
 
 #form-contact button {
-    margin-top: -5px; /* hack ? */ 
+    z-index: 100;
+    margin-top: -6px; /* hack ? */ 
     align-self: flex-end;
     border: none;
     padding: 0;
@@ -153,7 +154,6 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    border-bottom: 1px solid var(--light-grey) !important;
     -webkit-text-fill-color: var(--secondary) !important;
     box-shadow: 0 0 0px 1000px var(--primary) inset !important;
     transition: background-color 5000s ease-in-out 0s !important;

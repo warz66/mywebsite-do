@@ -15,7 +15,7 @@
     overflow: hidden;
 }
 
-@media (max-height: 740px) {
+/*@media (max-height: 740px) {
     #wrapper-hero {
         height: 740px;
     }
@@ -25,7 +25,7 @@
     #wrapper-hero {
         height: 700px;
     }
-}
+}*/
 
 #hero-text {
     position: absolute;
