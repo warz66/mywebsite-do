@@ -26,6 +26,7 @@
 
 @media(max-width: 575px) {
     #form-contact  {
+        height: 500px;
         padding: 0 10px;
         box-shadow: none;
         background-color: transparent;
