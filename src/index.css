@@ -44,6 +44,7 @@
   --hyphen: #3c4553;
   --form-bg-color: var(--mirage);
   --form-ph-color: rgba(var(--light-grey-rgb), 0.5);
+  --progressBar-bg: black;
   /*transition: 0.3s;*/
 }
 
@@ -62,6 +63,7 @@
   --hyphen: var(--slate-gray);
   --form-bg-color: #F8F9FE;
   --form-ph-color: var(--light-grey);
+  --progressBar-bg: var(--light-grey);
   /*transition: 0.3s; */
 }
 

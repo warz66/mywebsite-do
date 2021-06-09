@@ -152,7 +152,7 @@
     margin-top: 15px;
     display: block;
     position: relative;
-    background-color: black;
+    background-color: var(--progressBar-bg);
     width: 250px;
     height: 6px;
     border-radius: 10px;

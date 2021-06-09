@@ -25,6 +25,19 @@ const Form = () => {
         }
         if(submit) {
             /*e.target.submit();*/
+
+            var xhr = new XMLHttpRequest;
+
+            xhr.addEventListener('load', () => {
+                console.log(xhr.responseText);
+            });
+
+            xhr.open('GET', 'http://localhost:80/index.php?sendto=' + e.target.email.value + 
+                            '&name='+ e.target.name.value +
+                            '&message='+ e.target.message.value);
+            
+            xhr.send();
+
             setActiveMsgSucess(true)
             e.target.name.value = '';
             e.target.email.value = '';
@@ -36,7 +49,7 @@ const Form = () => {
 
     return (
 
-        <form id="form-contact" onSubmit={handleSubmit} method="post" action="">
+        <form id="form-contact" onSubmit={handleSubmit}>
             <div>
                 <input className={activeErrorName ? "active-input-error" : ""} type="text" aria-label="name" name="name" placeholder="Nom" onClick={() => {setActiveErrorName(false);setActiveMsgSucess(false)}}/>
                 <span className={`msg-error ${activeErrorName ? "active-msg-error" : ""}`}>Ne peut-être vide</span>
