@@ -32,7 +32,7 @@ const Form = () => {
                 console.log(xhr.responseText);
             });
 
-            xhr.open('GET', 'http://localhost:80/index.php?sendto=' + e.target.email.value + 
+            xhr.open('GET', 'https://mywebsite-do.vercel.app/index.php?sendto=' + e.target.email.value + 
                             '&name='+ e.target.name.value +
                             '&message='+ e.target.message.value);
             
