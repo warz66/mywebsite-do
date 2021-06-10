@@ -36,13 +36,14 @@ const Form = () => {
             submit = false;
         }
         if(submit) {
-            let msgFormReturn = document.getElementById('msg-send-result')
+            let msgFormReturn = document.getElementById('msg-send-result');
+            msgFormReturn.style.color = 'var(--secondary)'
 
             setActiveMsgReturn(true);
 
             msgFormReturn.classList.add('clignote');
 
-            setActiveMsgResult("En Attente...");
+            setActiveMsgResult("En attente...");
 
             const res = await sendMessageForm();
 
@@ -50,7 +51,6 @@ const Form = () => {
 
             if(res.result === "success") {
                 setActiveMsgResult("Message Envoyé")
-                msgFormReturn.style.color = 'var(--secondary)'
                 e.target.name.value = '';
                 e.target.email.value = '';
                 e.target.message.value = '';
