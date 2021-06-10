@@ -4,7 +4,6 @@ header("Access-Control-Allow-Origin: http://localhost:3000");
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
-//use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 if(($_SERVER['HTTP_REFERER'] === "http://localhost:3000/") || ($_SERVER['HTTP_REFERER'] === "https://mywebsite-do.vercel.app/")) {
@@ -40,9 +39,9 @@ if(($_SERVER['HTTP_REFERER'] === "http://localhost:3000/") || ($_SERVER['HTTP_RE
             $mail->Port       = 587;
 
             //Recipients
-            $mail->setFrom('warzox@hotmail.com', 'React Form');
-            $mail->addAddress($email);           
-            $mail->addReplyTo('warzox@hotmail.com', 'Information');
+            $mail->setFrom('warzox@hotmail.com', 'React Form MyWebSite-do');
+            $mail->addAddress('warzox@hotmail.com', 'React Form MyWebSite-do');           
+            $mail->addReplyTo($email, 'Information');
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
@@ -52,21 +51,17 @@ if(($_SERVER['HTTP_REFERER'] === "http://localhost:3000/") || ($_SERVER['HTTP_RE
                               <b>Message:</b> ' . $message;
 
             $mail->send();
-            //echo 'Message has been sent';
             $arrResult = array ('result'=>'success');
             echo json_encode($arrResult);
         } catch (Exception $e) {
             $arrResult = array ('result'=>'error', 'response'=>$mail->ErrorInfo);
             echo json_encode($arrResult);
-            //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     } else {
         $arrResult = array ('result'=>'error', 'response'=>'Tous les champs doivent être remplis');
         echo json_encode($arrResult);
-        //echo "Tous les champs doivent être remplis!";
     }
 } else {
     $arrResult = array ('result'=>'error', 'response'=>'Vous ne pouvez pas utiliser ce server.');
     echo json_encode($arrResult);
-    //echo "Vous ne pouvez pas utiliser ce server.";
 }

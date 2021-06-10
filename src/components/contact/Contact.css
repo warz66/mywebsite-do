@@ -97,6 +97,7 @@
 }
 #info-contact p {
     z-index: 100;
+    max-width: 500px;
     margin-bottom: 30px;
     display: flex;
     align-items: center;
