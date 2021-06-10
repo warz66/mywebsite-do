@@ -1,15 +1,16 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: http://localhost:3000");
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+//use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 if(($_SERVER['HTTP_REFERER'] === "http://localhost:3000/") || ($_SERVER['HTTP_REFERER'] === "https://mywebsite-do.vercel.app/")) {
-    $name = isset($_GET['name']) ? $_GET['name'] : null;
-    $email = isset($_GET['sendto']) ? $_GET['sendto'] : null;
-    $message = isset($_GET['message']) ? $_GET['message'] : null;
+    $name = isset($_POST['name']) ? $_POST['name'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $message = isset($_POST['message']) ? $_POST['message'] : null;
 
     if($name && $email && $message) {
         //Load Composer's autoloader
@@ -20,8 +21,7 @@ if(($_SERVER['HTTP_REFERER'] === "http://localhost:3000/") || ($_SERVER['HTTP_RE
 
         try {
             //Server settings
-            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-            $mail->SMTPDebug = 2;
+            $mail->SMTPDebug = 0;
             $mail->isSMTP();                                        //Send using SMTP
             //$mail->Host       = 'localhost';                     //Set the SMTP server to send through
             $mail->Host       = 'smtp.gmail.com'; 
@@ -52,13 +52,21 @@ if(($_SERVER['HTTP_REFERER'] === "http://localhost:3000/") || ($_SERVER['HTTP_RE
                               <b>Message:</b> ' . $message;
 
             $mail->send();
-            echo 'Message has been sent';
+            //echo 'Message has been sent';
+            $arrResult = array ('result'=>'success');
+            echo json_encode($arrResult);
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            $arrResult = array ('result'=>'error', 'response'=>$mail->ErrorInfo);
+            echo json_encode($arrResult);
+            //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     } else {
-        echo "Tous les champs doivent être remplis!";
+        $arrResult = array ('result'=>'error', 'response'=>'Tous les champs doivent être remplis');
+        echo json_encode($arrResult);
+        //echo "Tous les champs doivent être remplis!";
     }
 } else {
-    echo "Vous ne pouvez pas utiliser ce server.";
+    $arrResult = array ('result'=>'error', 'response'=>'Vous ne pouvez pas utiliser ce server.');
+    echo json_encode($arrResult);
+    //echo "Vous ne pouvez pas utiliser ce server.";
 }
