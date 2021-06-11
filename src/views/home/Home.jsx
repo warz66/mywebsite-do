@@ -1,5 +1,7 @@
 import './Home.css';
-//import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
+import ReactFullpage from "@fullpage/react-fullpage";
+import Header from 'components/header/Header';
 import Hero from 'components/hero/Hero';
 import About from 'components/about/About';
 import Services from 'components/services/Services';
@@ -7,75 +9,79 @@ import Realisations from 'components/realisations/Realisations';
 import Contact from 'components/contact/Contact';
 
 const Home = (props) => {
+    const colorGold = '#ffc979';
+    const colorShark = '#25272c';
+    const colorLightGrey = '#bdc2d1'; 
+    const colorBrightGrey = '#3c4151';
 
-    /*const sections = useRef();
-    let lastScrollTop = 0;
-    //let sections = "";
-    let stopScroll = false;
-
-    function stopWheel(e) {
-        if(!e){ e = window.event; } // IE7, IE8, Chrome, Safari 
-        if(e.preventDefault) { e.preventDefault(); } // Chrome, Safari, Firefox 
-        //e.returnValue = false; // IE7, IE8 
-    }
-
-    function whereSection (element, scrollTop, index) {
-        
-        if(scrollTop >= element.offsetTop - 103 && scrollTop <= element.offsetTop -103 +element.clientHeight && !stopScroll) {
-            console.log(element.id);
-            console.log(index);
-            
-            //document.addEventListener('wheel', stopWheel, {passive: false});
-            stopScroll = true;
-            console.log(sections.current[index+1].id);
-            //window.location.href = "#"+sections.current[index+1].id;
-
-            window.scrollTo({
-                top: sections.current[index+1].offsetTop,
-                left:0,
-                behavior: 'smooth'
-            });
-            setTimeout(function() {
-                stopScroll = false;
-                //document.removeEventListener('wheel', stopWheel);
-            }, 2000);
-        }
-    }
-
-    function handleScroll() {
-        //lol = true;
-        //console.log(document.getElementById('hero').offsetHeight); 
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-            //console.log(scrollTop+' down');
-            // downscroll code
-            sections.current.forEach((element, index) => whereSection(element, scrollTop, index));
+    function handleStyleFpNav() {
+        if (props.mode) {
+          for (const s of document.getElementsByClassName("fp-tooltip")) {
+            s.style.setProperty('color', colorBrightGrey);
+          }
+          for (const s of document.querySelectorAll('#fp-nav ul li a span')) {
+            s.style.setProperty('background', colorShark);
+          }
         } else {
-            //console.log(scrollTop+' up');
-            // upscroll code
+          for (const s of document.getElementsByClassName("fp-tooltip")) {
+            s.style.setProperty('color', colorLightGrey);
+          }
+          for (const s of document.querySelectorAll('#fp-nav ul li a span')) {
+            s.style.setProperty('background', colorGold);
+          }
         }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
     }
 
-    useEffect(() => {
-        sections.current = document.querySelectorAll("main section");
-        console.log(sections.current);
-        sections.current.forEach(element => sections.current[element]);
-        //console.log(document.querySelector("main").getElementsByTagName("section"));
-        //console.log(document.querySelectorAll("main section"));
-        //document.addEventListener('scroll', stopWheel, {passive: false});
-        window.addEventListener('wheel', handleScroll);
-      
-        // returned function will be called on component unmount 
-        return () => {
-          //document.removeEventListener('scroll', stopWheel);
-          window.removeEventListener('wheel', handleScroll)
-        }
-    })*/
+    const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
+
+    const FullpageWrapper = () => (
+        <ReactFullpage
+            licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
+            //anchors={anchors}
+            navigation
+            navigationTooltips={anchors}
+            responsiveWidth= "1200"
+            responsiveHeight="937"
+            //verticalCentered= {false}
+            onLeave={(origin, destination, direction) => {
+            console.log("onLeave event", { origin, destination, direction });
+            }}
+            render={({ state, fullpageApi }) => {
+                console.log("render prop change", state/*, fullpageApi*/); // eslint-disable-line no-console
+                handleStyleFpNav();
+    
+                return (
+                    <main id="main">
+
+                        {/*<Header mode={props.mode}/>*/}
+        
+                        <Hero mode={props.mode} changeMode={props.changeMode}/>
+        
+                        <About mode={props.mode}/>
+        
+                        <Services mode={props.mode}/>
+        
+                        <Realisations/>
+        
+                        <Contact/>
+        
+                    </main>
+                );
+            }}
+        />
+    );
+    
+    //console.log(props.fullpageApi);
+    //props.fullpageApi.reBuild();
+
+    /*useEffect(() => {
+        handleStyleFpNav();
+    }, [props.mode]);*/
     
     return (
-        
-        <main id="main">
+
+        <FullpageWrapper />
+        /*<main id="main">
 
                 <Hero mode={props.mode} changeMode={props.changeMode}/>
 
@@ -87,7 +93,7 @@ const Home = (props) => {
 
                 <Contact/>
 
-        </main>
+        </main>*/
 
     );
 }

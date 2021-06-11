@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactFullpage from "@fullpage/react-fullpage";
+//import ReactFullpage from "@fullpage/react-fullpage";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
+/*const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
 
 const FullpageWrapper = () => (
   <ReactFullpage
@@ -24,16 +24,17 @@ const FullpageWrapper = () => (
 
       return (
         <div>
-          <App/>
+          <App fullpageApi={fullpageApi} fpState={state}/>
         </div>
       );
     }}
   />
-);
+);*/
 
 ReactDOM.render(
   <React.StrictMode>
-    <FullpageWrapper />
+    <App />
+    {/*<FullpageWrapper />*/}
   </React.StrictMode>,
   document.getElementById('root')
 );

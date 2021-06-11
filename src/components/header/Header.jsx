@@ -1,8 +1,8 @@
 import './Header.css';
 import React, { useState, useEffect } from 'react';
-/*import { useLocation, Link } from "react-router-dom";*/
+import { /*useLocation,*/ Link } from "react-router-dom";
 
-const Header = (props) => {
+const Header = () => {
     const [openMenu, setOpenMenu] = useState(false);
     /*const location = useLocation();*/
 
@@ -41,7 +41,7 @@ const Header = (props) => {
 
                 <div id="menu" className={openMenu ? 'is-open' : ''}>
                     <ul>
-                        <li><a href="#">ACCUEIL</a></li>
+                        <li><Link to="/">ACCUEIL</Link></li>
                         <li><a href="#">A PROPOS</a></li>
                         <li><a href="#">SERVICES</a></li>
                         <li><a href="#">REALISATIONS</a></li>

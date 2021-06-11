@@ -68,7 +68,7 @@ const Form = () => {
 
         <form ref={form} id="form-contact" onSubmit={handleSubmit}>
             <div>
-                <input className={activeErrorName ? "active-input-error" : ""} type="text" aria-label="name" name="name" placeholder="Nom" onChange={() => {setActiveErrorEmail(false);setActiveMsgReturn(false)}} onClick={() => {setActiveErrorName(false);setActiveMsgReturn(false)}}/>
+                <input className={activeErrorName ? "active-input-error" : ""} type="text" aria-label="name" name="name" placeholder="Nom" onChange={() => {setActiveErrorName(false);setActiveMsgReturn(false)}} onClick={() => {setActiveErrorName(false);setActiveMsgReturn(false)}}/>
                 <span className={`msg-error ${activeErrorName ? "active-msg-error" : ""}`}>Ne peut-être vide</span>
             </div>
             <div>
@@ -76,7 +76,7 @@ const Form = () => {
                 <span className={`msg-error ${activeErrorEmail ? "active-msg-error" : ""}`}>Ne peut-être vide</span>
             </div>
             <div>
-                <textarea className={activeErrorMessage ? "active-input-error" : ""} aria-label="message" name="message" placeholder="Message" rows="3" onChange={() => {setActiveErrorEmail(false);setActiveMsgReturn(false)}} onClick={() => {setActiveErrorMessage(false);setActiveMsgReturn(false)}}/>
+                <textarea className={activeErrorMessage ? "active-input-error" : ""} aria-label="message" name="message" placeholder="Message" rows="3" onChange={() => {setActiveErrorMessage(false);setActiveMsgReturn(false)}} onClick={() => {setActiveErrorMessage(false);setActiveMsgReturn(false)}}/>
                 <span className={`msg-error ${activeErrorMessage ? "active-msg-error" : ""}`}>Ne peut-être vide</span>
             </div>
             <span id="msg-send-result" style={activeMsgReturn ? {opacity: 1} : {opacity: 0}}>{activeMsgResult}</span>

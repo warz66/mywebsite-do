@@ -1,6 +1,6 @@
 import Flickity from 'react-flickity-component'
 import portfolioRealisations from './portfolioRealisations';
-import Realisation from 'components/realisations/realisation/realisation';
+import RealisationCard from 'components/realisations/realisation-card/RealisationCard';
 import 'flickity/dist/flickity.min.css'
 import './Realisations.css'
 
@@ -31,7 +31,7 @@ const Realisations = () => {
                     static // default false
                 >   
                     {portfolioRealisations.map( (realisation, index) => {
-                            return <Realisation realisation={realisation} key={index}/> 
+                            return <RealisationCard realisation={realisation} key={index}/> 
                     })}
                 </Flickity>
             </div> 

@@ -1,7 +1,8 @@
 header {
     z-index: 99;
     width: 100%;
-    position: fixed;
+    /*top: 0px;*/
+    position: absolute;
 }
 
 #wrapper-header {
@@ -223,7 +224,7 @@ header {
         display: initial;
         z-index: 999;
         top: 130px;
-        height: 600vh;
+        height: 100vh;
         bottom:0;
         right:0;
         width: 0;

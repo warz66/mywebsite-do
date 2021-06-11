@@ -14,11 +14,13 @@
 }
 #wrapper-contact > div:first-of-type, #wrapper-contact > div:last-of-type {
     height: calc((100vh - 133px) / 2);
+    min-height: 350px;
     display: flex;
 }
 @media(max-width: 1200px) {
     #wrapper-contact > div:first-of-type, #wrapper-contact > div:last-of-type {
         height: auto;
+        min-height: initial;
     }
 }
 #msg-contact {
@@ -63,6 +65,7 @@
     transform: translateX(-50%);
     width: 100%;
     height: calc((100vh - 133px));
+    min-height: 700px;
     max-width: 1200px;
     padding: 0 40px;
 }
@@ -71,6 +74,7 @@
         position: initial;
         transform: translateX(0);
         height: auto;
+        min-height: initial;
     }
 }
 #info-contact {
