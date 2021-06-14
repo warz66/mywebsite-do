@@ -7,12 +7,19 @@ import About from 'components/about/About';
 import Services from 'components/services/Services';
 import Realisations from 'components/realisations/Realisations';
 import Contact from 'components/contact/Contact';
+import { useLocation } from "react-router-dom";
 
 const Home = (props) => {
     const colorGold = '#ffc979';
     const colorShark = '#25272c';
     const colorLightGrey = '#bdc2d1'; 
     const colorBrightGrey = '#3c4151';
+
+    const location = useLocation();
+    let sectionActive = "";
+    if(location.state.section) {
+      sectionActive = location.state.section;
+    }
 
     function handleStyleFpNav() {
         if (props.mode) {
@@ -44,26 +51,26 @@ const Home = (props) => {
             responsiveHeight="937"
             //verticalCentered= {false}
             onLeave={(origin, destination, direction) => {
-            console.log("onLeave event", { origin, destination, direction });
+            //console.log("onLeave event", { origin, destination, direction });
             }}
             render={({ state, fullpageApi }) => {
-                console.log("render prop change", state/*, fullpageApi*/); // eslint-disable-line no-console
+                //console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
                 handleStyleFpNav();
     
                 return (
                     <main id="main">
 
-                        {/*<Header mode={props.mode}/>*/}
+                        <Header fullpageApi={fullpageApi} mode={props.mode}/>
         
                         <Hero mode={props.mode} changeMode={props.changeMode}/>
         
-                        <About mode={props.mode}/>
+                        <About mode={props.mode} sectionActive={(sectionActive === "about") ? true : false}/>
         
-                        <Services mode={props.mode}/>
+                        <Services mode={props.mode} sectionActive={(sectionActive === "services") ? true : false}/>
         
-                        <Realisations/>
+                        <Realisations sectionActive={(sectionActive === "realisations") ? true : false}/>
         
-                        <Contact/>
+                        <Contact sectionActive={(sectionActive === "contact") ? true : false}/>
         
                     </main>
                 );

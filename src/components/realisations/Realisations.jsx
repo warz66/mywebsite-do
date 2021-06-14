@@ -4,7 +4,7 @@ import RealisationCard from 'components/realisations/realisation-card/Realisatio
 import 'flickity/dist/flickity.min.css'
 import './Realisations.css'
 
-const Realisations = () => {
+const Realisations = ({sectionActive}) => {
 
     const flickityOptions = {
         /*freeScroll: true,*/
@@ -18,7 +18,7 @@ const Realisations = () => {
 
     return (
 
-        <section id="realisations" className="section bg-dark">
+        <section id="realisations" className={`section bg-dark ${sectionActive ? " active" : ""}`}>
             <div id="wrapper-realisations">
                 <h2>Réalisations</h2>
                 <p>In viverra sapien quis finibus egestas. Curabitur quis mattis arcu. Suspendisse ac est nibh. Mauris at nibh ut magna convallis viverra. Vestibulum felis erat, lacinia id sodales porttitor, gravida quis nibh.</p>

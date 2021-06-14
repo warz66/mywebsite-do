@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Contact.css'
 import Form from 'components/contact/form/Form';
 
-const Contact = () => {
+const Contact = ({sectionActive}) => {
     const [bgMode, setBgMode] = useState(true);
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const Contact = () => {
 
     return (
 
-        <section id="contact" className="section">
+        <section id="contact" className={`section ${sectionActive ? " active" : ""}`}>
             <div id="wrapper-contact" className={bgMode ? "" : "bg-vr"}>
                 <div className={bgMode ? "bg-dark" : ""}>
                     <div id="msg-contact">

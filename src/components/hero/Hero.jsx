@@ -3,7 +3,7 @@ import cv from 'assets/rsc/CVOeslickDavid.pdf'
 import keanu from 'assets/images/keanu-reeves.png'
 //import arrowDown from 'assets/images/arrow-down.svg'
 
-const Hero = (props) => {
+const Hero = ({mode, changeMode}) => {
 
     return (
 
@@ -28,8 +28,8 @@ const Hero = (props) => {
                 </div>
                 <div className="switch-mode">
                     <label>
-                        <span className="switch-mode-text">{props.mode ? 'LIGHT MODE' : 'DARK MODE'}</span>
-                        <input type="checkbox" defaultChecked={props.mode} onChange={props.changeMode}/>
+                        <span className="switch-mode-text">{mode ? 'LIGHT MODE' : 'DARK MODE'}</span>
+                        <input type="checkbox" defaultChecked={mode} onChange={changeMode}/>
                         <div className="switch">
                             <div></div>
                             <div></div>

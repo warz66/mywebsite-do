@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Header from 'components/header/Header';
+//import Header from 'components/header/Header';
 import Realisation from 'views/realisation/Realisation';
 import Home from 'views/home/Home';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -41,13 +41,13 @@ function App() {
 
   return (
     <div className={mode ? 'App light-mode' : 'App dark-mode'}>
-
+      
       <Router>
 
-        {<Header mode={mode}/>}
+        {/*{<Header mode={mode}/>}*/}
         
         <Switch>
-          <Route path="/realisation/" component={Realisation}/>
+          <Route path="/realisation/" render={() => <Realisation mode={mode} changeMode={changeMode} />}/>
           <Route exact path="/" render={() => <Home mode={mode} changeMode={changeMode} />}/>
           {/*<Route path="/realisation/" component={() => <Realisation fullpageApi={fullpageApi} />} />
           <Route exact path="/" component={() => <Home fullpageApi={fullpageApi} mode={mode} changeMode={changeMode} />}/>*/}

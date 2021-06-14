@@ -3,11 +3,11 @@ import krPortrait from 'assets/images/kr-portrait.png'
 import signatureDark from 'assets/images/signature-dark.svg'
 import signatureLight from 'assets/images/signature-light.svg'
 
-const About = (props) => {
+const About = ({mode, sectionActive}) => {
 
     return (
 
-        <section id="about" className="section bg-dark">
+        <section id="about" className={`section bg-dark ${sectionActive ? " active" : ""}`}>
             
             <div id="wrapper-about">
 
@@ -28,7 +28,7 @@ const About = (props) => {
                             <a href="" className="btn">
                                 ENGAGEZ MOI
                             </a>
-                            <span><img src={props.mode ? signatureLight : signatureDark} alt="" /></span>
+                            <span><img src={mode ? signatureLight : signatureDark} alt="" /></span>
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,9 @@
 import './Header.css';
 import React, { useState, useEffect } from 'react';
-import { /*useLocation,*/ Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({fullpageApi}) => {
     const [openMenu, setOpenMenu] = useState(false);
-    /*const location = useLocation();*/
 
     var body = document.body,
         html = document.documentElement;
@@ -27,6 +26,31 @@ const Header = () => {
             window.removeEventListener('resize', closeMenuHandleResize);
         }
     });
+
+    function menuRender() {
+        if (fullpageApi) {
+            return (
+                <ul>
+                    <li><Link to="/">ACCUEIL</Link></li>
+                    <li onClick={() => fullpageApi.moveTo(2)}>A PROPOS</li>
+                    <li onClick={() => fullpageApi.moveTo(3)}>SERVICES</li>
+                    <li onClick={() => fullpageApi.moveTo(4)}>REALISATIONS</li>
+                    <li onClick={() => fullpageApi.moveTo(5)}>CONTACT</li>
+                </ul> 
+            );
+        } else {
+            return (
+                <ul>
+                    <li><Link to="/">ACCUEIL</Link></li>
+                    <li><Link to={{ pathname: "/", state: { section: "about" } }}>A PROPOS</Link></li>
+                    <li><Link to={{ pathname: "/", state: { section: "services" } }}>SERVICES</Link></li>
+                    <li><Link to={{ pathname: "/", state: { section: "realisations" } }}>REALISATIONS</Link></li>
+                    <li><Link to={{ pathname: "/", state: { section: "contact" } }}>CONTACT</Link></li>
+                </ul>
+            );
+        }
+    }
+
     
     return (
         <header>
@@ -40,13 +64,7 @@ const Header = () => {
                 </div>
 
                 <div id="menu" className={openMenu ? 'is-open' : ''}>
-                    <ul>
-                        <li><Link to="/">ACCUEIL</Link></li>
-                        <li><a href="#">A PROPOS</a></li>
-                        <li><a href="#">SERVICES</a></li>
-                        <li><a href="#">REALISATIONS</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                    </ul>
+                    {menuRender()}
                 </div>
 
                 <div id="social-header">
