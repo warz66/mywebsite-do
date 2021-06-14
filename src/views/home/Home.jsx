@@ -17,7 +17,7 @@ const Home = (props) => {
 
     const location = useLocation();
     let sectionActive = "";
-    if(location.state.section) {
+    if(location.state) {
       sectionActive = location.state.section;
     }
 
