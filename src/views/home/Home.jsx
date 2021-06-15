@@ -7,7 +7,7 @@ import About from 'components/about/About';
 import Services from 'components/services/Services';
 import Realisations from 'components/realisations/Realisations';
 import Contact from 'components/contact/Contact';
-import { useLocation } from "react-router-dom";
+import { useRouteMatch, useHistory, useLocation } from "react-router-dom";
 
 const Home = (props) => {
     const colorGold = '#ffc979';
@@ -16,9 +16,17 @@ const Home = (props) => {
     const colorBrightGrey = '#3c4151';
 
     const location = useLocation();
-    let sectionActive = "";
-    if(location.state) {
-      sectionActive = location.state.section;
+    const history = useHistory();
+    const route = useRouteMatch();
+    let sectionActive = false;
+    if(history.location.state) {
+      //console.log(location);
+      console.log(history);
+      //console.log(route);
+      sectionActive = history.location.state.section;
+      //history.location.state = undefined;
+      //history.replace("/", undefined);
+      //window.history.replaceState(null, null, "/");
     }
 
     function handleStyleFpNav() {
@@ -51,10 +59,17 @@ const Home = (props) => {
             responsiveHeight="937"
             //verticalCentered= {false}
             onLeave={(origin, destination, direction) => {
-            //console.log("onLeave event", { origin, destination, direction });
+              //console.log("onLeave event", { origin, destination, direction });
             }}
             render={({ state, fullpageApi }) => {
                 //console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
+                if (state.initialized) {
+                  //fullpageApi.moveTo(4);
+                  if(history.location.state) {
+                    history.location.state = undefined;
+                  }
+                }
+                //location.state = 'undefined';
                 handleStyleFpNav();
     
                 return (
