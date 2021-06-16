@@ -32,7 +32,8 @@ function App() {
   handleStyleFpNav();
 
   function changeMode(e) {
-    setMode(e.target.checked);
+    setMode(!mode);
+    //setMode(e.target.checked);
   }
 
   useEffect(() => {

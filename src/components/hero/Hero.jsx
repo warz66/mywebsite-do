@@ -29,7 +29,7 @@ const Hero = ({mode, changeMode}) => {
                 <div className="switch-mode">
                     <label>
                         <span className="switch-mode-text">{mode ? 'LIGHT MODE' : 'DARK MODE'}</span>
-                        <input type="checkbox" defaultChecked={mode} onChange={changeMode}/>
+                        <input type="checkbox" onChange={changeMode} defaultChecked={mode}/>
                         <div className="switch">
                             <div></div>
                             <div></div>

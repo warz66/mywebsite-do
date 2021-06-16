@@ -19,11 +19,12 @@ const Home = (props) => {
     const history = useHistory();
     const route = useRouteMatch();
     let sectionActive = false;
-    if(history.location.state) {
-      //console.log(location);
+    if(location.state) {
+      console.log(location);
       console.log(history);
+      console.log(sectionActive);
       //console.log(route);
-      sectionActive = history.location.state.section;
+      sectionActive = location.state.section;
       //history.location.state = undefined;
       //history.replace("/", undefined);
       //window.history.replaceState(null, null, "/");
@@ -59,25 +60,28 @@ const Home = (props) => {
             responsiveHeight="937"
             //verticalCentered= {false}
             onLeave={(origin, destination, direction) => {
+              //console.log(location);
+              //console.log(sectionActive);
+              //sectionActive = false;
               //console.log("onLeave event", { origin, destination, direction });
             }}
             render={({ state, fullpageApi }) => {
                 //console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
                 if (state.initialized) {
                   //fullpageApi.moveTo(4);
-                  if(history.location.state) {
-                    history.location.state = undefined;
+                  if(location.state) {
+                    
+                    location.state = undefined;
                   }
                 }
-                //location.state = 'undefined';
-                handleStyleFpNav();
+                //handleStyleFpNav();
     
                 return (
                     <main id="main">
 
                         <Header fullpageApi={fullpageApi} mode={props.mode}/>
         
-                        <Hero mode={props.mode} changeMode={props.changeMode}/>
+                        <Hero mode={props.mode} changeMode={props.changeMode} />
         
                         <About mode={props.mode} sectionActive={(sectionActive === "about") ? true : false}/>
         
@@ -92,13 +96,10 @@ const Home = (props) => {
             }}
         />
     );
-    
-    //console.log(props.fullpageApi);
-    //props.fullpageApi.reBuild();
 
-    /*useEffect(() => {
+    useEffect(() => {
         handleStyleFpNav();
-    }, [props.mode]);*/
+    }, [props.mode]);
     
     return (
 
