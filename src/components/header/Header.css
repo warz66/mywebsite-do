@@ -65,6 +65,7 @@ header {
     font-size: 10.5px;
     letter-spacing: 1.2px;
     display: inline; 
+    cursor: pointer;
 }
 
 @media (max-width: 800px) {
@@ -81,21 +82,24 @@ header {
     margin-right: 0px; 
 }
 
-#menu a {
+#menu a, #menu li {
     padding: 5px 0;
     color: var(--tertiary);
-    text-decoration: none;
     position: relative;
 }
 
+#menu a {
+    text-decoration: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
-    #menu a:hover {
+    #menu a:hover, #menu li:hover {
         transition: 0.3s;
         color: var(--secondary);
     }
 }
 
-#menu li a:after {
+#menu li:after, #menu li a:after {
     position: absolute;
     content: "";
     left: 0;
@@ -108,7 +112,7 @@ header {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    #menu li a:hover:after {
+    #menu li:hover:after , #menu li a:hover:after {
         width: 100%;
         opacity: 1;
     }
