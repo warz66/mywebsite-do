@@ -318,7 +318,15 @@
     width:100%; /*width change*/
     height:100%; /*height change*/
     background: var(--secondary); /*color change*/
-    animation: 1s ease anim3;
+    animation: 0.75s ease anim3;
+    /*we get a full moon*/
+}
+
+.switch-mode input:checked ~ .switch span {
+    width:70%; /*width change*/
+    height:70%; /*height change*/
+    background: var(--secondary); /*color change*/
+    animation: 0.75s ease reverse anim3;
     /*we get a full moon*/
 }
 
@@ -331,7 +339,13 @@
 .switch-mode input:not(:checked) ~ .switch div::before,
 .switch-mode input:not(:checked) ~ .switch div::after {
     height:50%; /*we hide the sun-rays*/
-    animation: 1s ease anim2;
+    animation: 0.75s ease anim2;
+}
+
+.switch-mode input:checked ~ .switch div::before,
+.switch-mode input:checked ~ .switch div::after {
+    height:130%; /*we hide the sun-rays*/
+    animation: 0.75s ease reverse anim2;
 }
 
 .switch-mode input:not(:checked) ~ .switch::before { /*we draw a white circle a left-top corner to show a half moon*/
@@ -339,7 +353,15 @@
     top:30%;
     width:90%;
     height:90%;
-    animation: 1s ease anim1;
+    animation: 0.75s ease anim1;
+}
+
+.switch-mode input:checked ~ .switch::before { /*we draw a white circle a left-top corner to show a half moon*/
+    left:50%;
+    top:50%;
+    width:30%;
+    height:30%;
+    animation: 0.75s ease reverse anim1;
 }
 
 .switch-mode input:not(:checked) ~ .switch::after { /*we hide the sun outline*/
@@ -347,8 +369,14 @@
     height:0%;
 }
 
+.switch-mode input:checked ~ .switch::after { /*we hide the sun outline*/
+    width:50%; 
+    height:50%;
+    animation: 0.75s ease anim4;
+}
+
 .switch-mode input:checked ~ .switch {
-    animation: 1.5s ease rotate;
+    animation: 1.25s ease 0.15s rotate;
 }
 
 @keyframes rotate {
@@ -389,5 +417,16 @@
     to {
         width:100%;
         height:100%;
+    }
+}
+
+@keyframes anim4 {
+    from {
+        width:0%; 
+        height:0%;
+    }
+    to {
+        width:50%;
+        height:50%;
     }
 }
