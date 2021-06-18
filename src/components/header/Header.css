@@ -137,7 +137,7 @@ header {
     width: 38px;
     border: 1px solid rgba(0, 0, 0, 0);
     padding: 6px;
-    /*transition: 0.3s;*/
+    transition: 0.3s;
 }
 
 #social-header a:not(:last-of-type) {

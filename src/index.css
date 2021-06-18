@@ -105,18 +105,19 @@
   align-items: center;
   height: 45px;
   padding: 0 40px;
-  background-color: var(--btn-bg-color);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  color: var(--btn-color);
+  color: var(--very-tertiary);
   padding-top: 3px;
   transition: 0.3s;
+  border: solid 1px var(--btn-bg-color);
+  border-radius: 2px;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
-      background-color: var(--very-secondary);
-      filter: brightness(1.1);
+    color: var(--btn-color);
+    background-color: var(--secondary);
   }
 }
