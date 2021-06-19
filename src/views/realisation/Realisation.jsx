@@ -1,23 +1,22 @@
 import './Realisation.css'
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams } from "react-router-dom";
 import Contact from 'components/contact/Contact';
 import realisationsMap from 'assets/realisations/realisationsMap';
 
-const Realisation = () => {
+const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     let { slug } = useParams();
     const [isLoaded, setIsLoaded] = useState(false);
     const [errorMapSlug, setErrorMapSlug] = useState(false);
-    //let errorMapSlug = false;
-    let realisation = useState(null);
+    let realisation = null;
 
-    if(!errorMapSlug) {
+    function importRealisation() {
         realisationsMap.map((realisationMap, i) => {
-            if(realisationMap.slug === slug) {
+            if(realisationMap.slug === slug && !isLoaded) {
                 import("assets/realisations/"+realisationMap.path).then( data => {
-                    realisation = data; console.log(realisation); setIsLoaded(true);
+                    realisation = data.default[0]; setIsLoaded(true); console.log(realisation.title);
                 }).catch((err) => {console.log(err); setErrorMapSlug(true);} ); 
             } else if(realisationsMap.length === i+1 && isLoaded === false) {
                 setErrorMapSlug(true);
@@ -25,10 +24,31 @@ const Realisation = () => {
         });
     }
 
-    const anchors = ["PRESENTATION", "CONTACT"];
-    anchors.splice(1, 0, "FUNCTIONALITE P1", "FUNCTIONALITE P2");
+    function RealisationLazy() {
+        if (!errorMapSlug) {
+            if(!isLoaded) {
+                return <div className="section">Loading...</div>
+            } else {
+                return (
+                    <div>
+                        <div className="section">
+                            <h2></h2>
+                        </div>
+                        <div className="section">
 
-    const RealisationData = () => (
+                        </div>
+                    </div>
+                );
+            }
+        } else {
+            return <div className="section">Nous n'avons pas trouvé la réalisation {slug}.</div>
+        }
+    }
+
+    const anchors = ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"];
+    //anchors.splice(1, 0, "FUNCTIONALITE P1", "FUNCTIONALITE P2");
+
+    const RealisationView = () => (
 
         <ReactFullpage
             licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
@@ -44,42 +64,25 @@ const Realisation = () => {
     
                 return (
                     <main>
-                        
                         <Header/>
 
-                        <div className="section">
-                            <h2></h2>
-                        </div>
-                        <div className="section">
+                        <RealisationLazy/>
 
-                        </div>
-                        <div className="section">
-
-                        </div>
-                        
                         <Contact/>
-
                     </main>
                 );
             }}
         />
     );
 
-    function RealisationLazy() {
-        if (!errorMapSlug) {
-            if(!isLoaded) {
-                return <span>Loading...</span>
-            } else {
-                return <RealisationData/>
-            }
-        } else {
-            return <span>Nous n'avons pas trouvé la réalisation {slug}.</span>
-        }
-    }
+    useEffect(() => {
+        handleStyleFpNav();
+        importRealisation();
+    }, [isLoaded]);
 
     return (
- 
-        <RealisationLazy/>
+
+        <RealisationView/>
 
     );
 }

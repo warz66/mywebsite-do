@@ -29,7 +29,7 @@ function App() {
       }
     }
   }
-  handleStyleFpNav();
+  //handleStyleFpNav();
 
   function changeMode(e) {
     setMode(!mode);
@@ -48,7 +48,7 @@ function App() {
         {/*{<Header mode={mode}/>}*/}
         
         <Switch>
-          <Route path="/realisation/:slug" render={() => <Realisation mode={mode} changeMode={changeMode} />}/>
+          <Route path="/realisation/:slug" render={() => <Realisation mode={mode} changeMode={changeMode} handleStyleFpNav={handleStyleFpNav}/>}/>
           <Route exact path="/" render={() => <Home mode={mode} changeMode={changeMode} />}/>
           {/*<Route path="/realisation/" component={() => <Realisation fullpageApi={fullpageApi} />} />
           <Route exact path="/" component={() => <Home fullpageApi={fullpageApi} mode={mode} changeMode={changeMode} />}/>*/}
