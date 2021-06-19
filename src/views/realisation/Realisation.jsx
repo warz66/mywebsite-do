@@ -4,7 +4,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams } from "react-router-dom";
 import Contact from 'components/contact/Contact';
-import realisationsMap from 'assets/realisations/realisationsMap';
+import realisationsMap from 'views/realisation/realisations-data/realisationsMap';
 
 const Realisation = () => {
     let { slug } = useParams();
@@ -16,7 +16,7 @@ const Realisation = () => {
     if(!errorMapSlug) {
         realisationsMap.map((realisationMap, i) => {
             if(realisationMap.slug === slug) {
-                import("assets/realisations/"+realisationMap.path).then( data => {
+                import("./realisations-data/"+realisationMap.path).then( data => {
                     realisation = data; console.log(realisation); setIsLoaded(true);
                 }).catch((err) => {console.log(err); setErrorMapSlug(true);} ); 
             } else if(realisationsMap.length === i+1 && isLoaded === false) {
