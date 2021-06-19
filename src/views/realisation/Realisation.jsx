@@ -18,14 +18,12 @@ const Realisation = () => {
             if(realisationMap.slug === slug) {
                 import("assets/realisations/"+realisationMap.path).then( data => {
                     realisation = data; console.log(realisation); setIsLoaded(true);
-                }).catch(() => setErrorMapSlug(true) ); 
+                }).catch((err) => {console.log(err); setErrorMapSlug(true);} ); 
             } else if(realisationsMap.length === i+1 && isLoaded === false) {
                 setErrorMapSlug(true);
             }
         });
     }
-
-    console.log(realisation);
 
     const anchors = ["PRESENTATION", "CONTACT"];
     anchors.splice(1, 0, "FUNCTIONALITE P1", "FUNCTIONALITE P2");
