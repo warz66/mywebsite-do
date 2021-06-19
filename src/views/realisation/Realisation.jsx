@@ -16,7 +16,7 @@ const Realisation = () => {
     if(!errorMapSlug) {
         realisationsMap.map((realisationMap, i) => {
             if(realisationMap.slug === slug) {
-                import("../../assets/realisations/"+realisationMap.path).then( data => {
+                import("assets/realisations/"+realisationMap.path).then( data => {
                     realisation = data; console.log(realisation); setIsLoaded(true);
                 }).catch(() => setErrorMapSlug(true) ); 
             } else if(realisationsMap.length === i+1 && isLoaded === false) {
@@ -24,6 +24,8 @@ const Realisation = () => {
             }
         });
     }
+
+    console.log(realisation);
 
     const anchors = ["PRESENTATION", "CONTACT"];
     anchors.splice(1, 0, "FUNCTIONALITE P1", "FUNCTIONALITE P2");
