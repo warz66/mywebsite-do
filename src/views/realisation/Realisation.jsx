@@ -29,6 +29,7 @@ const Realisation = () => {
     anchors.splice(1, 0, "FUNCTIONALITE P1", "FUNCTIONALITE P2");
 
     const RealisationData = () => (
+
         <ReactFullpage
             licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
             //anchors={anchors}
@@ -43,6 +44,9 @@ const Realisation = () => {
     
                 return (
                     <main>
+                        
+                        <Header/>
+
                         <div className="section">
                             <h2></h2>
                         </div>
@@ -74,14 +78,9 @@ const Realisation = () => {
     }
 
     return (
-        
-        <div>
+ 
+        <RealisationLazy/>
 
-            <Header/>
-            
-            <RealisationLazy/>
-
-        </div>
     );
 }
 
