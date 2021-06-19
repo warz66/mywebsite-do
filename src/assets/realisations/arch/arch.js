@@ -2,7 +2,6 @@ import archRealisation from 'assets/images/arch-realisation.jpg'
 
 const arch = [
     {   
-        id: 1,
         title: "Arch Studio multi-page website",
         image: archRealisation,
         techs: "React",

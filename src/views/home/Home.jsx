@@ -20,9 +20,6 @@ const Home = (props) => {
     const route = useRouteMatch();
     let sectionActive = false;
     if(location.state) {
-      console.log(location);
-      console.log(history);
-      console.log(sectionActive);
       //console.log(route);
       sectionActive = location.state.section;
       //history.location.state = undefined;

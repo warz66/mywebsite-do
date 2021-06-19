@@ -11,7 +11,7 @@ const RealisationCard = ({realisation}) => {
                 <h4>{realisation.title}</h4>
                 <p>{realisation.sum}</p>
             </div>
-            <Link to={{ pathname: "/realisation/"+realisation.slug , state: { realisationPath: realisation.path } }} className="realisation-card-more">En savoir plus</Link>
+            <Link to={{ pathname: "/realisation/"+realisation.slug }} className="realisation-card-more">En savoir plus</Link>
         </div>
     );
 

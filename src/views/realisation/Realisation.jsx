@@ -2,30 +2,28 @@ import './Realisation.css'
 import React, { useState } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Contact from 'components/contact/Contact';
+import realisationsMap from 'assets/realisations/realisationsMap';
 
-const Realisation = ({fullpageApi}) => {
-    const location = useLocation();
+const Realisation = () => {
+    let { slug } = useParams();
     const [isLoaded, setIsLoaded] = useState(false);
-    const realisation = useState(null);
+    const [errorMapSlug, setErrorMapSlug] = useState(false);
+    //let errorMapSlug = false;
+    let realisation = useState(null);
 
-    /*console.log(fullpageApi);
-    fullpageApi.destroy('all');*/
-
-    //const realisation = React.lazy(() => import("assets/realisations/"+location.state.realisationPath));
-
-    import("assets/realisations/"+location.state.realisationPath).then( data => {
-        realisation = data; console.log(realisation); setIsLoaded(true);
-    });
-
-    console.log(realisation);
-
-    /*function RealisationData() {
-        return (
-            <h1>ça marche !!!</h1>
-        );
-    }*/
+    if(!errorMapSlug) {
+        realisationsMap.map((realisationMap, i) => {
+            if(realisationMap.slug === slug) {
+                import("assets/realisations/"+realisationMap.path).then( data => {
+                    realisation = data; console.log(realisation); setIsLoaded(true);
+                }).catch(() => setErrorMapSlug(true) ); 
+            } else if(realisationsMap.length === i+1 && isLoaded === false) {
+                setErrorMapSlug(true);
+            }
+        });
+    }
 
     const anchors = ["PRESENTATION", "CONTACT"];
     anchors.splice(1, 0, "FUNCTIONALITE P1", "FUNCTIONALITE P2");
@@ -64,10 +62,14 @@ const Realisation = ({fullpageApi}) => {
     );
 
     function RealisationLazy() {
-        if(!isLoaded) {
-            return <span>coucou</span>
+        if (!errorMapSlug) {
+            if(!isLoaded) {
+                return <span>Loading...</span>
+            } else {
+                return <RealisationData/>
+            }
         } else {
-            return <RealisationData/>
+            return <span>Nous n'avons pas trouvé la réalisation {slug}.</span>
         }
     }
 

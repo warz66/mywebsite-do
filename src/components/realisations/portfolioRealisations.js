@@ -7,51 +7,43 @@ import roomRealisation from 'assets/images/room-realisation.jpg'
 
 const portfolio = [
     {   
-        id: 1,
+        slug: 'arch',
         title: "Arch Studio multi-page website",
         image: archRealisation,
         techs: "React",
         sum: "In this challenge, you'll be building a 4-page site that will look great in any portfolio.",
-        path: 'arch.js',
-        slug: 'arch',
     },
     {   
-        id: 2,
         title: "Photosnap multi-page website",
         image: photosnapRealisation,
         techs: "Vue",
         sum: "In this challenge, you'll be building the marketing site for a photo-sharing app. This will be a perfect opportunity to put your CSS Grid skills to the test!",
     },
     {   
-        id: 3,
         title: "REST Countries API with color theme switcher",
         image: countriesRealisation,
         techs: "React",
         sum: "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
     },
     {   
-        id: 4,
         title: "REST Countries API with color theme switcher",
         image: countriesRealisation,
         techs: "Vue",
         sum: "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
     },
     {   
-        id: 5,
         title: "Web Solution Mairie",
         image: mairieRealisation,
         techs: "Symfony",
         sum: "Solution pour site institutionnel.",
     },
     {   
-        id: 6,
         title: "Clipboard landing page",
         image: clipboardRealisation,
         techs: "HTML / CSS",
         sum: "Put your layout skills to the test with this HTML & CSS landing page challenge. This challenge includes a design for hover states.",
     },
     {   
-        id: 7,
         title: "Room homepage",
         image: roomRealisation,
         techs: "HTML / CSS / JS",
