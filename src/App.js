@@ -3,7 +3,6 @@ import './App.css';
 import Realisation from 'views/realisation/Realisation';
 import Home from 'views/home/Home';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ReactFullpage from "@fullpage/react-fullpage";
 
 function App() {
   const[mode, setMode] = useState(false);

@@ -1,43 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import ReactFullpage from "@fullpage/react-fullpage";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store'
 import { Provider } from 'react-redux'
 
-/*const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
-
-const FullpageWrapper = () => (
-  <ReactFullpage
-    licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
-    //anchors={anchors}
-    navigation
-    navigationTooltips={anchors}
-    responsiveWidth= "1200"
-    responsiveHeight="937"
-    //verticalCentered= {false}
-    onLeave={(origin, destination, direction) => {
-      console.log("onLeave event", { origin, destination, direction });
-    }}
-    render={({ state, fullpageApi }) => {
-      //console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
-
-      return (
-        <div>
-          <App fullpageApi={fullpageApi} fpState={state}/>
-        </div>
-      );
-    }}
-  />
-);*/
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
-    {/*<FullpageWrapper />*/}
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,0 +1,256 @@
+.switch-mode {
+    position: absolute;
+    bottom: 123px;
+    left: 125px;
+}
+
+@media(max-width: 1300px) {
+    .switch-mode {
+        left: 70px;
+    }
+}
+
+.switch-mode .switch-mode-text {
+    margin-bottom: 17px;
+    padding-right: 5px;
+    font-size: 10.5px;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    color: var(--secondary);
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    transition: color ease 30s !important;  
+}
+
+.switch-mode label {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing:content-box;
+	position:absolute;
+	left:50%;
+	top:50%;
+	--c:translate(-50%,-50%);
+	transform:var(--c);
+    cursor: pointer;
+}
+
+.switch-mode .switch {
+	position:relative;
+	left:0;top:0;
+	width:26px;
+	height:26px;
+}
+
+@media(max-width: 900px) {
+    .switch-mode .switch-mode-text {
+        display: none;
+    }
+    .switch-mode {
+        z-index: 100;
+        top: 35px;
+        bottom: initial;
+        left: 35px;
+    }
+    .switch-mode .switch {
+        position:relative;
+        left:0;top:0;
+        width:22px;
+        height:22px;
+    }
+}
+
+.switch-mode label > input {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:5;
+	opacity:0;
+}
+
+.switch-mode .switch span {
+	display:block;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:var(--c);
+	border-radius:50%;
+	width:70%;
+	height:70%;
+	background:var(--secondary);
+	border:3px solid var(--primary);
+}
+
+.switch-mode .switch div {
+	position:absolute;
+	left:0;top:0;
+	width:100%;
+	height:100%;
+}
+
+.switch-mode .switch div::before, .switch-mode .switch div::after {
+	content:" ";
+	display:block;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:var(--c);
+	background:var(--secondary);
+	width:12%;
+	height:130%;
+	border-radius:10px;
+}
+
+.switch-mode .switch div:nth-child(1)::before {
+	transform:var(--c) rotate(0deg);
+}
+
+.switch-mode .switch div:nth-child(1)::after {
+	transform:var(--c) rotate(45deg); /*45deg increment each time*/
+}
+
+.switch-mode .switch div:nth-child(2)::before {
+	transform:var(--c) rotate(90deg);
+}
+
+.switch-mode .switch div:nth-child(2)::after {
+	transform:var(--c) rotate(135deg);
+}
+
+.switch-mode .switch::before, .switch::after {
+	content:" ";
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:var(--c);
+	border-radius:50%;
+	background:var(--primary);
+}
+
+.switch-mode .switch::before {
+	width:0%;
+	height:0%;
+	z-index:10;
+}
+
+.switch-mode .switch::after {
+	width:50%;
+	height:50%;
+}
+
+.switch-mode input:not(:checked) ~ .switch span {
+    width:100%; /*width change*/
+    height:100%; /*height change*/
+    background: var(--secondary); /*color change*/
+    animation: 0.75s ease anim3;
+    /*we get a full moon*/
+}
+
+.switch-mode input:checked ~ .switch span {
+    width:70%; /*width change*/
+    height:70%; /*height change*/
+    background: var(--secondary); /*color change*/
+    animation: 0.75s ease reverse anim3;
+    /*we get a full moon*/
+}
+
+@media(max-width: 900px) {
+    .switch-mode input:not(:checked) ~ .switch span {
+        background: var(--btn-icon-mode);
+    }
+}
+
+.switch-mode input:not(:checked) ~ .switch div::before,
+.switch-mode input:not(:checked) ~ .switch div::after {
+    height:50%; /*we hide the sun-rays*/
+    animation: 0.75s ease anim2;
+}
+
+.switch-mode input:checked ~ .switch div::before,
+.switch-mode input:checked ~ .switch div::after {
+    height:130%; /*we hide the sun-rays*/
+    animation: 0.75s ease reverse anim2;
+}
+
+.switch-mode input:not(:checked) ~ .switch::before { /*we draw a white circle a left-top corner to show a half moon*/
+    left:30%;
+    top:30%;
+    width:90%;
+    height:90%;
+    animation: 0.75s ease anim1;
+}
+
+.switch-mode input:checked ~ .switch::before { /*we draw a white circle a left-top corner to show a half moon*/
+    left:50%;
+    top:50%;
+    width:30%;
+    height:30%;
+    animation: 0.75s ease reverse anim1;
+}
+
+.switch-mode input:not(:checked) ~ .switch::after { /*we hide the sun outline*/
+    width:0%;
+    height:0%;
+}
+
+.switch-mode input:checked ~ .switch::after { /*we hide the sun outline*/
+    width:50%; 
+    height:50%;
+    animation: 0.75s ease anim4;
+}
+
+.switch-mode input:checked ~ .switch {
+    animation: 1.25s ease 0.15s rotate;
+}
+
+@keyframes rotate {
+    to {
+        transform:rotate(180deg);
+    }
+}
+
+@keyframes anim1 {
+    from {
+        left:50%;
+        top:50%;
+        width:30%;
+        height:30%;
+    }
+    to {
+        left:30%;
+        top:30%;
+        width:90%;
+        height:90%;
+    }
+}
+
+@keyframes anim2 {
+    from {
+        height: 130%;
+    }
+    to {
+        height: 0%;
+    }
+}
+
+@keyframes anim3 {
+    from {
+        width:70%; 
+        height:70%;
+    }
+    to {
+        width:100%;
+        height:100%;
+    }
+}
+
+@keyframes anim4 {
+    from {
+        width:0%; 
+        height:0%;
+    }
+    to {
+        width:50%;
+        height:50%;
+    }
+}

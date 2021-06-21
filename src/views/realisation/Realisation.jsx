@@ -1,4 +1,6 @@
 import './Realisation.css'
+import SwitchMode from 'components/switch-mode/SwitchMode';
+import ScrollDown from 'components/scroll-down/ScrollDown';
 import React, { useState, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
@@ -36,10 +38,16 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                 return (
                     <>
                         <div className="section">
-                            <h2>{realisation.title}</h2>
+                            <div id="wrapper-presentation">
+                                <h2>{realisation.title}</h2>
+                                <ScrollDown/>
+                                <SwitchMode mode={mode} changeMode={changeMode}/>
+                            </div>
                         </div>
                         <div className="section">
-                            <h2>{realisation.title}</h2>
+                            <div id="wrapper-features">
+                                <h2>{realisation.title}</h2>
+                            </div>
                         </div>
                     </>
                 );

@@ -7,38 +7,39 @@ import { handleSection } from 'features/locationNavFp'
 const Header = ({fullpageApi}) => {
     const dispatch = useDispatch()
     const [openMenu, setOpenMenu] = useState(false);
-
-    var body = document.body,
-        html = document.documentElement;
-        var height = Math.max( body.scrollHeight, body.offsetHeight, 
-                     html.clientHeight, html.scrollHeight, html.offsetHeight );
-
+    const [curtainHeight, setCurtainHeight] = useState(0);
+    
     function handleMenu() {
         setOpenMenu(!openMenu);
     }
 
-    useEffect(() => {
-        
-        function closeMenuHandleResize() {
-            if(window.innerWidth > 800) {
-                setOpenMenu(false);
-            }
+    function closeMenuHandleResize() {
+        if(window.innerWidth > 800) {
+            setOpenMenu(false);
         }
+    }
+
+    function calcCurtainHeight() {
+        setCurtainHeight(document.body.offsetHeight - document.getElementById('header').offsetHeight);
+    }
+
+    useEffect(() => {
+        calcCurtainHeight();
         window.addEventListener('resize', closeMenuHandleResize);
         return () => {
             window.removeEventListener('resize', closeMenuHandleResize);
         }
-    });
+    }, [curtainHeight]);
 
     function menuRender() {
         if (fullpageApi) {
             return (
                 <ul>
                     <li><a href="/">ACCUEIL</a></li>
-                    <li onClick={() => fullpageApi.moveTo(2)}>A PROPOS</li>
-                    <li onClick={() => fullpageApi.moveTo(3)}>SERVICES</li>
-                    <li onClick={() => fullpageApi.moveTo(4)}>REALISATIONS</li>
-                    <li onClick={() => fullpageApi.moveTo(5)}>CONTACT</li>
+                    <li onClick={() => {fullpageApi.moveTo(2); handleMenu();}}>A PROPOS</li>
+                    <li onClick={() => {fullpageApi.moveTo(3); handleMenu();}}>SERVICES</li>
+                    <li onClick={() => {fullpageApi.moveTo(4); handleMenu();}}>REALISATIONS</li>
+                    <li onClick={() => {fullpageApi.moveTo(5); handleMenu();}}>CONTACT</li>
                 </ul> 
             );
         } else {
@@ -56,7 +57,7 @@ const Header = ({fullpageApi}) => {
 
     
     return (
-        <header>
+        <header id="header">
             <div id="wrapper-header">
                 <div id="logo">
                     Keanu.R
@@ -86,7 +87,7 @@ const Header = ({fullpageApi}) => {
 
                 </div>
 
-                <span id="menu-curtain" onClick={handleMenu} className={openMenu ? 'is-open' : ''} style={{'height' : height}}></span>
+                <span id="menu-curtain" onClick={handleMenu} className={openMenu ? 'is-open' : ''} style={{'height' : curtainHeight}}></span>
             </div>
         </header>
     );

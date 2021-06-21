@@ -1,0 +1,28 @@
+#scroll-down {
+    position: absolute;
+    right: 100px;
+    bottom: 60px;
+    color: var(--secondary);
+    font-size: 10.5px;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    writing-mode: vertical-lr;
+}
+
+#scroll-down svg {
+    fill: var(--secondary);
+    margin-left: 2px;
+    margin-top: 12px;
+}
+
+@media(max-width: 1300px) {
+    #scroll-down {
+        right: 50px;
+    }
+}
+
+@media(max-width: 900px) {
+    #scroll-down {
+        display: none;
+    }   
+}
