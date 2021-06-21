@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import store from './store'
+import { Provider } from 'react-redux'
 
 /*const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
 
@@ -33,8 +35,10 @@ const FullpageWrapper = () => (
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
     {/*<FullpageWrapper />*/}
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

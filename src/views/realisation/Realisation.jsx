@@ -8,7 +8,6 @@ import realisationsMap from 'assets/realisations/realisationsMap';
 
 const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     let { slug } = useParams();
-    //const [isLoaded, setIsLoaded] = useState(false);
     const [errorMapSlug, setErrorMapSlug] = useState(false);
     const [realisation, setRealisation] = useState(false);
     const [anchors, setAnchors] = useState(["PRESENTATION", "CONTACT"]);
@@ -17,7 +16,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
         realisationsMap.map((realisationMap, i) => {
             if(realisationMap.slug === slug && !realisation) {
                 import("assets/realisations/"+realisationMap.path).then( data => {
-                    setTimeout(function(){ setRealisation(data.default[0]); setAnchors(["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]);}, 3000); /*setIsLoaded(true);*/ /*console.log(realisation.title);*/
+                    setRealisation(data.default[0]); setAnchors(["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]);
                 }).catch((err) => {console.log(err); setErrorMapSlug(true);} ); 
             } else if(realisationsMap.length === i+1 && !realisation) {
                 setErrorMapSlug(true);
@@ -60,6 +59,9 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             responsiveWidth= "1200"
             responsiveHeight="937"
             //verticalCentered= {false}
+            afterLoad={() => {
+                handleStyleFpNav();
+            }}
             onLeave={(origin, destination, direction) => {
             }}
             render={({ state, fullpageApi }) => {
@@ -80,7 +82,6 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     );
 
     useEffect(() => {
-        handleStyleFpNav();
         importRealisation();
     }, [realisation, anchors, errorMapSlug]);
 

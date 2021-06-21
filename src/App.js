@@ -1,59 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-//import Header from 'components/header/Header';
 import Realisation from 'views/realisation/Realisation';
 import Home from 'views/home/Home';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ReactFullpage from "@fullpage/react-fullpage";
 
 function App() {
   const[mode, setMode] = useState(false);
-  const colorGold = '#ffc979';
-  const colorShark = '#25272c';
-  const colorLightGrey = '#bdc2d1'; 
-  const colorBrightGrey = '#3c4151';
 
   function handleStyleFpNav() {
     if (mode) {
-      for (const s of document.getElementsByClassName("fp-tooltip")) {
-        s.style.setProperty('color', colorBrightGrey);
-      }
-      for (const s of document.querySelectorAll('#fp-nav ul li a span')) {
-        s.style.setProperty('background', colorShark);
-      }
+      document.getElementById("fp-nav").classList.remove('fp-nav-dark'); 
+      document.getElementById("fp-nav").classList.add('fp-nav-light'); 
     } else {
-      for (const s of document.getElementsByClassName("fp-tooltip")) {
-        s.style.setProperty('color', colorLightGrey);
-      }
-      for (const s of document.querySelectorAll('#fp-nav ul li a span')) {
-        s.style.setProperty('background', colorGold);
-      }
+      document.getElementById("fp-nav").classList.remove('fp-nav-light'); 
+      document.getElementById("fp-nav").classList.add('fp-nav-dark');
     }
   }
-  //handleStyleFpNav();
 
   function changeMode(e) {
     setMode(!mode);
-    //setMode(e.target.checked);
   }
-
-  useEffect(() => {
-    handleStyleFpNav();
- }, [mode]);
 
   return (
     <div className={mode ? 'App light-mode' : 'App dark-mode'}>
       
       <Router>
-
-        {/*{<Header mode={mode}/>}*/}
         
         <Switch>
           <Route path="/realisation/:slug" render={() => <Realisation mode={mode} changeMode={changeMode} handleStyleFpNav={handleStyleFpNav}/>}/>
-          <Route exact path="/" render={() => <Home mode={mode} changeMode={changeMode} />}/>
-          {/*<Route path="/realisation/" component={() => <Realisation fullpageApi={fullpageApi} />} />
-          <Route exact path="/" component={() => <Home fullpageApi={fullpageApi} mode={mode} changeMode={changeMode} />}/>*/}
-          {/*<Home mode={mode} changeMode={changeMode}/>*/}
+          <Route exact path="/" render={() => <Home mode={mode} changeMode={changeMode} handleStyleFpNav={handleStyleFpNav}/>}/>
         </Switch>
+
       </Router>
     </div>
   );

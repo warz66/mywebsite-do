@@ -1,8 +1,11 @@
 import './Header.css';
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { handleSection } from 'features/locationNavFp'
 
 const Header = ({fullpageApi}) => {
+    const dispatch = useDispatch()
     const [openMenu, setOpenMenu] = useState(false);
 
     var body = document.body,
@@ -31,7 +34,7 @@ const Header = ({fullpageApi}) => {
         if (fullpageApi) {
             return (
                 <ul>
-                    <li><Link to="/">ACCUEIL</Link></li>
+                    <li><a href="/">ACCUEIL</a></li>
                     <li onClick={() => fullpageApi.moveTo(2)}>A PROPOS</li>
                     <li onClick={() => fullpageApi.moveTo(3)}>SERVICES</li>
                     <li onClick={() => fullpageApi.moveTo(4)}>REALISATIONS</li>
@@ -41,11 +44,11 @@ const Header = ({fullpageApi}) => {
         } else {
             return (
                 <ul>
-                    <li><Link to="/">ACCUEIL</Link></li>
-                    <li><Link to={{ pathname: "/", state: { section: "about" } }}>A PROPOS</Link></li>
-                    <li><Link to={{ pathname: "/", state: { section: "services" } }}>SERVICES</Link></li>
-                    <li><Link to={{ pathname: "/", state: { section: "realisations" } }}>REALISATIONS</Link></li>
-                    <li><Link to={{ pathname: "/", state: { section: "contact" } }}>CONTACT</Link></li>
+                    <li><Link to="/" onClick={() => dispatch(handleSection("accueil"))}>ACCUEIL</Link></li>
+                    <li><Link to="/" onClick={() => dispatch(handleSection("about"))}>A PROPOS</Link></li>
+                    <li><Link to="/" onClick={() => dispatch(handleSection("services"))}>SERVICES</Link></li>
+                    <li><Link to="/" onClick={() => dispatch(handleSection("realisations"))}>REALISATIONS</Link></li>
+                    <li><Link to="/" onClick={() => dispatch(handleSection("contact"))}>CONTACT</Link></li>
                 </ul>
             );
         }
