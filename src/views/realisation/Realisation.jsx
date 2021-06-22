@@ -4,7 +4,7 @@ import ScrollDown from 'components/scroll-down/ScrollDown';
 import React, { useState, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Contact from 'components/contact/Contact';
 import realisationsMap from 'assets/realisations/realisationsMap';
 
@@ -13,20 +13,35 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     const [errorMapSlug, setErrorMapSlug] = useState(false);
     const [realisation, setRealisation] = useState(false);
     const [anchors, setAnchors] = useState(["PRESENTATION", "CONTACT"]);
+    const [index, setIndex] = useState(1);
+
+    console.log(errorMapSlug);
 
     function importRealisation() {
-        realisationsMap.map((realisationMap, i) => {
-            if(realisationMap.slug === slug && !realisation) {
-                import("assets/realisations/"+realisationMap.path).then( data => {
-                    setRealisation(data.default[0]); setAnchors(["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]);
-                }).catch((err) => {console.log(err); setErrorMapSlug(true);} ); 
-            } else if(realisationsMap.length === i+1 && !realisation) {
-                setErrorMapSlug(true);
-            }
-        });
+        const found = realisationsMap.find(realisation => realisation.slug === slug);
+        if(found) {
+            setIndex(realisationsMap.findIndex(realisation => realisation.slug === slug));
+            import("assets/realisations/"+found.path).then( data => {
+                setRealisation(data.default[0]); setAnchors(["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]);
+            }).catch((err) => {console.log(err); setErrorMapSlug(true);} );
+        } else {
+            setErrorMapSlug(true);
+        }
     }
 
-    console.log(realisation);
+    function nextRealisation() {
+        if(index === realisationsMap.length-1) {
+            return realisationsMap[0];
+        }
+        return realisationsMap[index+1];
+    }
+
+    function previousRealisation() {
+        if(index === 0) {
+            return realisationsMap[realisationsMap.length-1];
+        }
+        return realisationsMap[index-1];
+    }
     
     function RealisationLazy() {
         if (!errorMapSlug) {
@@ -40,8 +55,8 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                         <div className="section">
                             <div id="wrapper-presentation">
                                 <h2>{realisation.title}</h2>
-                                <ScrollDown/>
-                                <SwitchMode mode={mode} changeMode={changeMode}/>
+                                {/*<ScrollDown/>*/}
+                                <SwitchMode mode={mode} changeMode={changeMode} text={false}/>
                             </div>
                         </div>
                         <div className="section">
@@ -53,7 +68,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                 );
             }
         } else {
-            return <div className="section">Nous n'avons pas trouvé la réalisation {slug}.</div>
+            return <div className="section">Nous n'avons pas trouvé la réalisation correspondant à l'url: {slug}.</div>
         }
     }
 
@@ -75,9 +90,19 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             render={({ state, fullpageApi }) => {
     
                 return (
-                    <main>
+                    <main id="main-realisation">
 
                         <Header/>
+
+                        <Link className="link-nav-realisation" to={'/realisation/'+previousRealisation().slug}>
+                            Projets précédent<br/>
+                            <span>{previousRealisation().titleNav}</span>
+                        </Link>
+
+                        <Link className="link-nav-realisation" to={'/realisation/'+nextRealisation().slug}>
+                            Projets suivant<br/>
+                            <span>{nextRealisation().titleNav}</span>
+                        </Link>
 
                         <RealisationLazy/>
 
@@ -91,7 +116,10 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
 
     useEffect(() => {
         importRealisation();
-    }, [realisation, anchors, errorMapSlug]);
+        return () => {
+            setErrorMapSlug(false);
+        }
+    },[slug/*, realisation*/]);
 
     return (
 

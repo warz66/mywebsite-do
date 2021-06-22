@@ -23,14 +23,6 @@ const Header = ({fullpageApi}) => {
         setCurtainHeight(document.body.offsetHeight - document.getElementById('header').offsetHeight);
     }
 
-    useEffect(() => {
-        calcCurtainHeight();
-        window.addEventListener('resize', closeMenuHandleResize);
-        return () => {
-            window.removeEventListener('resize', closeMenuHandleResize);
-        }
-    }, [curtainHeight]);
-
     function menuRender() {
         if (fullpageApi) {
             return (
@@ -55,7 +47,16 @@ const Header = ({fullpageApi}) => {
         }
     }
 
-    
+    useEffect(() => {
+        calcCurtainHeight();
+        window.addEventListener('resize', calcCurtainHeight);
+        window.addEventListener('resize', closeMenuHandleResize);
+        return () => {
+            window.removeEventListener('resize', calcCurtainHeight);
+            window.removeEventListener('resize', closeMenuHandleResize);
+        }
+    },[]);
+
     return (
         <header id="header">
             <div id="wrapper-header">

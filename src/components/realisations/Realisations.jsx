@@ -1,6 +1,6 @@
 import Flickity from 'react-flickity-component'
-import portfolioRealisations from './portfolioRealisations';
 import RealisationCard from 'components/realisations/realisation-card/RealisationCard';
+import portfolioRealisations from 'assets/realisations/realisationsMap';
 import 'flickity/dist/flickity.min.css'
 import './Realisations.css'
 

@@ -43,7 +43,7 @@ const Home = (props) => {
           render={({ state, fullpageApi }) => {
   
               return (
-                  <main id="main">
+                  <main>
 
                       <Header fullpageApi={fullpageApi} mode={props.mode}/>
       

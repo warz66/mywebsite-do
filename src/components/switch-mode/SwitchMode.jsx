@@ -1,12 +1,12 @@
 import './SwitchMode.css';
 
-const SwitchMode = ({mode, changeMode}) => {
+const SwitchMode = ({mode, changeMode, text = true}) => {
 
     return (
 
-        <div className="switch-mode">
+        <div className={`switch-mode${text ? "" : " text-none-style"}`}>
             <label>
-                <span className="switch-mode-text">{mode ? 'LIGHT MODE' : 'DARK MODE'}</span>
+                { text && <span className="switch-mode-text">{mode ? 'LIGHT MODE' : 'DARK MODE'}</span>}
                 <input type="checkbox" onChange={changeMode} defaultChecked={mode}/>
                 <div className="switch">
                     <div></div>

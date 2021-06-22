@@ -72,6 +72,7 @@
 .App {
   font-family: 'Spartan', sans-serif;
   background-color: var(--primary);
+  overflow: hidden;
 }
 
 .bg-vr {
