@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Realisation from 'views/realisation/Realisation';
 import Home from 'views/home/Home';

@@ -9,6 +9,7 @@ const RealisationPresentation = ({mode, changeMode, realisation}) => {
                 <img src={realisation.image} alt="" />
                 <div id="realisation-presentation-text">
                     <h2>{realisation.title}</h2>
+                    <span>{realisation.techs}</span>
                     {realisation.presentation.map( (paragraphe, index) => {
                         return <p key={index}>{paragraphe}</p>
                     })}

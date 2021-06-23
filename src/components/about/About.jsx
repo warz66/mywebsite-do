@@ -25,7 +25,7 @@ const About = ({mode, sectionActive}) => {
                             En 2014, il fait un retour remarqué en imposant un nouveau héros du cinéma d'action avec le film John Wick.<br/><br/>*/}
                         </p>
                         <div>
-                            <a href="" className="btn">
+                            <a href="\" className="btn">
                                 ENGAGEZ MOI
                             </a>
                             <span><img src={mode ? signatureLight : signatureDark} alt="" /></span>

@@ -4,7 +4,7 @@ const arch = [
     {   
         title: "Arch Studio",
         image: archRealisation,
-        techs: "React",
+        techs: "REACT HTML CSS",
         sum: "In this challenge, you'll be building a 4-page site that will look great in any portfolio.",
         presentation: [
             "Mihi atque consiliis ipsas ita ita homini publicae homini omnium me Quid inimicus depono me meorum tandem mihi iure rei ipsas ex homini amicus depono homini Quid summorum depono meorum.",

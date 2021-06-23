@@ -18,7 +18,14 @@
 }
 
 #realisation-presentation-text h2 {
-    text-align: center;
+    font-size: 80px;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+#realisation-presentation-text span {
+    display: block;
+    font-size: 15px;
     color: var(--secondary);
     margin-bottom: 35px;
 }
@@ -27,7 +34,7 @@
     color: var(--tertiary);
     font-size: 15px;
     margin-bottom: 15px;
-    line-height: 20px;
+    line-height: 25px;
 }
 
 #realisation-presentation-text p:last-of-type {
@@ -36,13 +43,14 @@
 
 #realisation-presentation-text a {
     display: block;
+    width: max-content;
     color: var(--secondary);
     text-decoration: none;
     margin-bottom: 20px;
     font-size: 15px;
 }
 
-#realisation-presentation-text a::before {
+#realisation-presentation-text a::before, #realisation-presentation-text span::before {
     align-self: center;
     content: "";
     display: inline-block;

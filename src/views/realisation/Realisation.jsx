@@ -12,20 +12,8 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     const [errorMapSlug, setErrorMapSlug] = useState(false);
     const [realisation, setRealisation] = useState(false);
     const [index, setIndex] = useState(1);
-    //const [anchors, setAnchors] = useState(["PRESENTATION", "CONTACT"]);
-    let anchors = ["PRESENTATION", "CONTACT"];
-
-    function importRealisation() {
-        const found = realisationsMap.find(realisation => realisation.slug === slug);
-        if(found) {
-            setIndex(realisationsMap.findIndex(realisation => realisation.slug === slug));
-            import("assets/realisations/"+found.path).then( data => {
-                setRealisation(data.default[0]); anchors = ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]/*setAnchors(["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"])*/;
-            }).catch((err) => {console.log(err); setErrorMapSlug(true);} );
-        } else {
-            setErrorMapSlug(true);
-        }
-    }
+    const [anchors, setAnchors] = useState(["PRESENTATION", "CONTACT"]);
+    //let anchors = ["PRESENTATION", "CONTACT"];
 
     function nextRealisation() {
         if(index === realisationsMap.length-1) {
@@ -108,11 +96,22 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     );
 
     useEffect(() => {
+        function importRealisation() {
+            const found = realisationsMap.find(realisation => realisation.slug === slug);
+            if(found) {
+                setIndex(realisationsMap.findIndex(realisation => realisation.slug === slug));
+                import("assets/realisations/"+found.path).then( data => {
+                    setRealisation(data.default[0]); /*anchors = ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]*/setAnchors(["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]);
+                }).catch((err) => {console.log(err); setErrorMapSlug(true);} );
+            } else {
+                setErrorMapSlug(true);
+            }
+        }
         importRealisation();
         return () => {
             setErrorMapSlug(false);
         }
-    },[slug]);
+    },[slug, index, realisation]);
 
     return (
 

@@ -11,7 +11,7 @@ const Form = () => {
 
     function sendMessageForm() {
         const controller = new AbortController()
-        const timeoutId = setTimeout(() => controller.abort(), 5000)
+        setTimeout(() => controller.abort(), 5000)
         const data = new FormData(form.current)
         return fetch('http://localhost:80/index.php', { method: 'POST', body: data, signal: controller.signal })
             .then(res => {  return res.json() })
