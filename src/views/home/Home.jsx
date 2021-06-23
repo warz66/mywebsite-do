@@ -13,15 +13,11 @@ const Home = (props) => {
   //const dispatch = useDispatch();
   const locationNavFp = useSelector(state => state.locationNavFp.value);
 
-  console.log(useSelector(state => state.locationNavFp.value));
-
   let sectionActive = false;
   if(locationNavFp) {
     sectionActive = locationNavFp.payload;
     //dispatch(resetSection());
   }
-
-  console.log(useSelector(state => state.locationNavFp.value));
 
   const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
 

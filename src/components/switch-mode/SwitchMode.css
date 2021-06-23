@@ -4,11 +4,13 @@
     left: 125px;
 }
 
-.switch-mode.text-none-style {
-    bottom: 73px !important;
+@media(min-width: 901px) {
+    .switch-mode.text-none-style {
+        bottom: 73px !important;
+    }
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1400px) {
     .switch-mode {
         left: 50px;
     }
@@ -55,9 +57,6 @@
         top: 35px;
         bottom: initial;
         left: 35px;
-    }
-    .switch-mode.text-none-style {
-        bottom: initial !important;
     }
     .switch-mode .switch {
         position:relative;

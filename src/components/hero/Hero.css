@@ -78,7 +78,7 @@
     margin-right: 40px;
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1400px) {
     #hero-img img {
         right: 0;
     }

@@ -15,7 +15,7 @@
     margin-top: 12px;
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1400px) {
     #scroll-down {
         right: 50px;
     }

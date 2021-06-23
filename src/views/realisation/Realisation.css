@@ -34,19 +34,11 @@
     right: 103px;
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1400px) {
     .link-nav-realisation:first-of-type {
         left: 43px;
     }
     .link-nav-realisation:last-of-type {
         right: 43px;
     }    
-}
-
-#wrapper-presentation, #wrapper-features {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 100vh !important;
 }

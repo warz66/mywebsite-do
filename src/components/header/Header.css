@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
     #wrapper-header {
         padding: 60px 40px 30px 40px;
     }

@@ -1,28 +1,26 @@
 import './Realisation.css'
-import SwitchMode from 'components/switch-mode/SwitchMode';
-import ScrollDown from 'components/scroll-down/ScrollDown';
 import React, { useState, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams, Link } from "react-router-dom";
 import Contact from 'components/contact/Contact';
 import realisationsMap from 'assets/realisations/realisationsMap';
+import RealisationPresentation from 'components/realisation-presentation/RealisationPresentation';
 
 const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     let { slug } = useParams();
     const [errorMapSlug, setErrorMapSlug] = useState(false);
     const [realisation, setRealisation] = useState(false);
-    const [anchors, setAnchors] = useState(["PRESENTATION", "CONTACT"]);
     const [index, setIndex] = useState(1);
-
-    console.log(errorMapSlug);
+    //const [anchors, setAnchors] = useState(["PRESENTATION", "CONTACT"]);
+    let anchors = ["PRESENTATION", "CONTACT"];
 
     function importRealisation() {
         const found = realisationsMap.find(realisation => realisation.slug === slug);
         if(found) {
             setIndex(realisationsMap.findIndex(realisation => realisation.slug === slug));
             import("assets/realisations/"+found.path).then( data => {
-                setRealisation(data.default[0]); setAnchors(["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]);
+                setRealisation(data.default[0]); anchors = ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]/*setAnchors(["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"])*/;
             }).catch((err) => {console.log(err); setErrorMapSlug(true);} );
         } else {
             setErrorMapSlug(true);
@@ -52,13 +50,8 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             } else {
                 return (
                     <>
-                        <div className="section">
-                            <div id="wrapper-presentation">
-                                <h2>{realisation.title}</h2>
-                                {/*<ScrollDown/>*/}
-                                <SwitchMode mode={mode} changeMode={changeMode} text={false}/>
-                            </div>
-                        </div>
+                        <RealisationPresentation mode={mode} changeMode={changeMode} realisation={realisation}/>
+                        
                         <div className="section">
                             <div id="wrapper-features">
                                 <h2>{realisation.title}</h2>
@@ -119,7 +112,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
         return () => {
             setErrorMapSlug(false);
         }
-    },[slug/*, realisation*/]);
+    },[slug]);
 
     return (
 
