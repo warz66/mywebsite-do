@@ -98,13 +98,6 @@
     }
 }
 
-.clignote {
-    animation: clignote 1s linear infinite;
-}
-@keyframes clignote {  
-    50% { opacity: 0; }
-}
-
 #form-contact button {
     z-index: 100;
     margin-top: -5.5px; /* hack ? */ 

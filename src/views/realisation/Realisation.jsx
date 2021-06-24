@@ -10,39 +10,42 @@ import RealisationPresentation from 'components/realisation-presentation/Realisa
 const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     let { slug } = useParams();
     const [errorMapSlug, setErrorMapSlug] = useState(false);
-    const [realisation, setRealisation] = useState(false);
-    const [index, setIndex] = useState(1);
-    const [anchors, setAnchors] = useState(["PRESENTATION", "CONTACT"]);
-    //let anchors = ["PRESENTATION", "CONTACT"];
+    const[state, setState] = useState({
+        realisation: false,
+        index: 1,
+        anchors: ["PRESENTATION", "CONTACT"],
+    })
+
+    console.log(state)
 
     function nextRealisation() {
-        if(index === realisationsMap.length-1) {
+        if(state.index === realisationsMap.length-1) {
             return realisationsMap[0];
         }
-        return realisationsMap[index+1];
+        return realisationsMap[state.index+1];
     }
 
     function previousRealisation() {
-        if(index === 0) {
+        if(state.index === 0) {
             return realisationsMap[realisationsMap.length-1];
         }
-        return realisationsMap[index-1];
+        return realisationsMap[state.index-1];
     }
     
     function RealisationLazy() {
         if (!errorMapSlug) {
-            if(!realisation) {
+            if(!state.realisation) {
                 return (
-                    <div className="section">Loading...</div>
+                    <div id="realisation-loading" className="section clignote">Loading...</div>
                 );
             } else {
                 return (
                     <>
-                        <RealisationPresentation mode={mode} changeMode={changeMode} realisation={realisation}/>
+                        <RealisationPresentation mode={mode} changeMode={changeMode} realisation={state.realisation}/>
                         
                         <div className="section">
                             <div id="wrapper-features">
-                                <h2>{realisation.title}</h2>
+                                <h2>{state.realisation.title}</h2>
                             </div>
                         </div>
                     </>
@@ -59,7 +62,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
             //anchors={anchors}
             navigation
-            navigationTooltips={anchors}
+            navigationTooltips={state.anchors}
             responsiveWidth= "1200"
             responsiveHeight="937"
             //verticalCentered= {false}
@@ -99,9 +102,9 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
         function importRealisation() {
             const found = realisationsMap.find(realisation => realisation.slug === slug);
             if(found) {
-                setIndex(realisationsMap.findIndex(realisation => realisation.slug === slug));
+                let index = realisationsMap.findIndex(realisation => realisation.slug === slug);
                 import("assets/realisations/"+found.path).then( data => {
-                    setRealisation(data.default[0]); /*anchors = ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]*/setAnchors(["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]);
+                    setTimeout(function(){ setState({realisation: data.default[0], index: index, anchors: ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]});}, 500);
                 }).catch((err) => {console.log(err); setErrorMapSlug(true);} );
             } else {
                 setErrorMapSlug(true);
@@ -110,8 +113,9 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
         importRealisation();
         return () => {
             setErrorMapSlug(false);
+            setState( oldState => ({...oldState, realisation: false,anchors: ["PRESENTATION", "CONTACT"]}));
         }
-    },[slug, index, realisation]);
+    },[slug/*, index, realisation*/]);
 
     return (
 

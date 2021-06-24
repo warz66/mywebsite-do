@@ -5,6 +5,11 @@
     margin: 0 auto;
 }
 
+#realisation-loading {
+    text-align: center;
+    color: var(--very-tertiary);
+}
+
 .link-nav-realisation {
     position: absolute;
     font-size: 13px;
