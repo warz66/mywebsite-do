@@ -1,8 +1,7 @@
 #wrapper-presentation {
     display: flex;
     max-width: 1200px;
-    margin: 0px auto;
-    margin-top: 100px;
+    margin: 133px auto 0px auto;
     animation: fade-in 0.6s;
 }
 
@@ -11,6 +10,12 @@
         opacity: 0;
     } to {
         opacity: 1;
+    }
+}
+
+@media (max-width: 1300px) {
+    #wrapper-presentation {
+        margin: 133px 40px 0px 40px;
     }
 }
 
@@ -23,7 +28,7 @@
 } 
 
 #realisation-presentation-text {
-    padding: 0px 45px 0px 80px; 
+    padding: 0px 45px 0px 100px; 
 }
 
 #realisation-presentation-text h2 {

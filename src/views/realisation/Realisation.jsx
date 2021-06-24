@@ -43,7 +43,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                     <>
                         <RealisationPresentation mode={mode} changeMode={changeMode} realisation={state.realisation}/>
                         
-                        <div className="section">
+                        <div className="section bg-dark">
                             <div id="wrapper-features">
                                 <h2>{state.realisation.title}</h2>
                             </div>
@@ -63,7 +63,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             //anchors={anchors}
             navigation
             navigationTooltips={state.anchors}
-            responsiveWidth= "1200"
+            responsiveWidth= "1300"
             responsiveHeight="937"
             //verticalCentered= {false}
             afterLoad={() => {
