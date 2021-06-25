@@ -1,6 +1,9 @@
 #wrapper-presentation {
-    display: flex;
-    max-width: 1200px;
+    display: grid;
+    grid-template-areas: "img title"
+                         "img text";
+    column-gap: 80px;   
+    max-width: 1400px;
     margin: 133px auto 0px auto;
     animation: fade-in 0.6s;
 }
@@ -13,28 +16,31 @@
     }
 }
 
-@media (max-width: 1300px) {
-    #wrapper-presentation {
-        margin: 133px 40px 0px 40px;
-    }
+#realisation-presentation-img {
+    grid-area: img;
+    align-self: center;
+    justify-self: center;
 }
 
-#wrapper-presentation img {
+#realisation-presentation-img img {
     max-width: 500px;
     max-height: 400px; 
     width: 100%;
     object-fit: cover;
-    align-self: center;
 } 
 
 #realisation-presentation-text {
-    padding: 0px 45px 0px 100px; 
+    grid-area: text;
 }
 
-#realisation-presentation-text h2 {
-    font-size: 80px;
+#realisation-presentation-title {
+    grid-area: title;
+    margin-bottom: 50px;
+}
+
+#realisation-presentation-title h2 {
+    font-size: 75px;
     color: var(--secondary);
-    margin-bottom: 20px;
 }
 
 #realisation-presentation-text span {
@@ -73,4 +79,49 @@
     background-color: var(--hyphen);
     margin-right: 15px;
     margin-bottom: 2px;
+}
+
+@media(max-width: 1600px) {
+    #wrapper-presentation {
+        max-width: 1200px;
+        grid-template-areas: "title title"
+                             "img text";
+    }
+    #realisation-presentation-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    #realisation-presentation-img {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 1285px) {
+    #wrapper-presentation {
+        margin: 133px 40px 0px 40px;
+    }
+}
+
+@media(max-width: 1200px) {
+    #wrapper-presentation {
+        padding: 140px 0px;
+        column-gap: 60px; 
+    }
+}
+
+@media(max-width: 1100px) {
+    #wrapper-presentation {
+        grid-template-areas: "title"
+                             "img"
+                             "text";
+    }
+    #realisation-presentation-img {
+        margin-bottom: 60px;
+    }
+}
+
+@media(max-width: 600px) {
+    #realisation-presentation-title h2 {
+        font-size: 13vw;
+    }
 }

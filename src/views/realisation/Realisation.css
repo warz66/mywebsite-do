@@ -6,7 +6,10 @@
 }
 
 #realisation-loading {
+    display: flex;
     text-align: center;
+    align-items: center;
+    min-height: 100vh;
     color: var(--very-tertiary);
 }
 

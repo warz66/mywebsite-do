@@ -36,7 +36,9 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
         if (!errorMapSlug) {
             if(!state.realisation) {
                 return (
-                    <div id="realisation-loading" className="section clignote">Loading...</div>
+                    <div id="realisation-loading" className="section clignote">
+                        Loading...
+                    </div>
                 );
             } else {
                 return (
@@ -63,7 +65,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             //anchors={anchors}
             navigation
             navigationTooltips={state.anchors}
-            responsiveWidth= "1300"
+            responsiveWidth= "1200"
             responsiveHeight="937"
             //verticalCentered= {false}
             afterLoad={() => {

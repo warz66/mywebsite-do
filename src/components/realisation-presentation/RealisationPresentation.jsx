@@ -6,9 +6,13 @@ const RealisationPresentation = ({mode, changeMode, realisation}) => {
     return (
         <div className="section bg-vr">
             <div id="wrapper-presentation">
-                <img src={realisation.image} alt="" />
-                <div id="realisation-presentation-text">
+                <div id="realisation-presentation-img">
+                    <img src={realisation.image} alt="" />
+                </div>
+                <div id="realisation-presentation-title">
                     <h2>{realisation.title}</h2>
+                </div>
+                <div id="realisation-presentation-text">
                     <span>{realisation.techs}</span>
                     {realisation.presentation.map( (paragraphe, index) => {
                         return <p key={index}>{paragraphe}</p>
