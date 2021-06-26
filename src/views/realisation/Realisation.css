@@ -6,11 +6,16 @@
 }
 
 #realisation-loading {
-    display: flex;
     text-align: center;
-    align-items: center;
-    min-height: 100vh;
     color: var(--very-tertiary);
+}
+
+@media(max-width: 1200px) {
+    #realisation-loading {
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+    }
 }
 
 .link-nav-realisation {
