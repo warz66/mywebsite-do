@@ -4,7 +4,7 @@ const SwitchMode = ({mode, changeMode, text = true}) => {
 
     return (
 
-        <div className={`switch-mode${text ? "" : " text-none-style"}`}>
+        <div className={`switch-mode${text ? "" : " realisation-style"}`}>
             <label>
                 { text && <span className="switch-mode-text">{mode ? 'LIGHT MODE' : 'DARK MODE'}</span>}
                 <input type="checkbox" onChange={changeMode} defaultChecked={mode}/>

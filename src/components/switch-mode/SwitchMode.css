@@ -4,8 +4,26 @@
     left: 125px;
 }
 
-@media(min-width: 901px) {
-    .switch-mode.text-none-style {
+@media(max-width: 1100px) {
+    .switch-mode.realisation-style {
+        z-index: 100;
+        top: 35px;
+        bottom: initial;
+        left: 35px;
+    }
+    .switch-mode.realisation-style .switch {
+        position:relative;
+        left:0;top:0;
+        width:22px;
+        height:22px;
+    }
+    .switch-mode.realisation-style input:not(:checked) ~ .switch span {
+        background: var(--btn-icon-mode);
+    }
+}
+
+@media(min-width: 1101px) {
+    .switch-mode.realisation-style {
         bottom: 73px !important;
     }
 }

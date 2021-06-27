@@ -1,9 +1,9 @@
-#main-realisation {
+/*#main-realisation {
     max-width: 1980px;
     width: 100%;
     position: relative;
     margin: 0 auto;
-}
+}*/
 
 #realisation-loading {
     text-align: center;
@@ -54,4 +54,13 @@
     .link-nav-realisation:last-of-type {
         right: 43px;
     }    
+}
+
+@media (min-width: 1980px) {
+    .link-nav-realisation:last-of-type {
+        right: calc((100vw - (1980px - 206px)) / 2) !important;
+    }
+    .link-nav-realisation:first-of-type {
+        left: calc((100vw - (1980px - 206px)) / 2) !important;
+    }
 }

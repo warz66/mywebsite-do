@@ -5,23 +5,25 @@ const RealisationPresentation = ({mode, changeMode, realisation}) => {
 
     return (
         <div className="section bg-vr">
-            <div id="wrapper-presentation">
-                <div id="realisation-presentation-img">
-                    <img src={realisation.image} alt="" />
+            <div id="wrapper-presentation-1980">
+                <div id="wrapper-presentation">
+                    <div id="realisation-presentation-img">
+                        <img src={realisation.image} alt="" />
+                    </div>
+                    <div id="realisation-presentation-title">
+                        <h2>{realisation.title}</h2>
+                    </div>
+                    <div id="realisation-presentation-text">
+                        <span>{realisation.techs}</span>
+                        {realisation.presentation.map( (paragraphe, index) => {
+                            return <p key={index}>{paragraphe}</p>
+                        })}
+                        <a href={realisation.linkGithub}>Dépôt github</a>
+                        <a href={realisation.linkWebsite}>Voir le site</a>
+                    </div>
                 </div>
-                <div id="realisation-presentation-title">
-                    <h2>{realisation.title}</h2>
-                </div>
-                <div id="realisation-presentation-text">
-                    <span>{realisation.techs}</span>
-                    {realisation.presentation.map( (paragraphe, index) => {
-                        return <p key={index}>{paragraphe}</p>
-                    })}
-                    <a href={realisation.linkGithub}>Dépôt github</a>
-                    <a href={realisation.linkWebsite}>Voir le site</a>
-                </div>
+                <SwitchMode mode={mode} changeMode={changeMode} text={false}/>
             </div>
-            <SwitchMode mode={mode} changeMode={changeMode} text={false}/>
         </div>
     );
 
