@@ -2,6 +2,7 @@
     max-width: 1980px;
     width: 100%;
     height: 100vh;
+    min-height: 937px;
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -56,10 +57,11 @@
 }
 
 #realisation-presentation-text span {
-    display: block;
+    display: flex;
     font-size: 15px;
     color: var(--secondary);
     margin-bottom: 35px;
+    text-transform: uppercase;
 }
 
 #realisation-presentation-text p {
@@ -74,7 +76,7 @@
 }
 
 #realisation-presentation-text a {
-    display: block;
+    display: flex;
     width: max-content;
     color: var(--secondary);
     text-decoration: none;

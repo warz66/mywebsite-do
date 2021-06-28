@@ -6,6 +6,7 @@ import { useParams, Link } from "react-router-dom";
 import Contact from 'components/contact/Contact';
 import realisationsMap from 'assets/realisations/realisationsMap';
 import RealisationPresentation from 'components/realisation-presentation/RealisationPresentation';
+import RealisationFeatures from 'components/realisation-features/RealisationFeatures';
 
 const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     let { slug } = useParams();
@@ -45,11 +46,8 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                     <>
                         <RealisationPresentation mode={mode} changeMode={changeMode} realisation={state.realisation}/>
                         
-                        <div className="section bg-dark">
-                            <div id="wrapper-features">
-                                <h2>{state.realisation.title}</h2>
-                            </div>
-                        </div>
+                        <RealisationFeatures realisation={state.realisation}/>
+
                     </>
                 );
             }
@@ -67,6 +65,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             navigationTooltips={state.anchors}
             responsiveWidth= "1200"
             responsiveHeight="937"
+            slidesNavigation={true}
             //verticalCentered= {false}
             afterLoad={() => {
                 handleStyleFpNav();

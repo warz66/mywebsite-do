@@ -64,3 +64,13 @@
         left: calc((100vw - (1980px - 206px)) / 2) !important;
     }
 }
+
+@media (max-width: 550px) {
+    .link-nav-realisation span {
+        display: inline-block;
+        width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
