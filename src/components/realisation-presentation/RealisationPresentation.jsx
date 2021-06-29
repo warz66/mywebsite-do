@@ -18,8 +18,8 @@ const RealisationPresentation = ({mode, changeMode, realisation}) => {
                         {realisation.presentation.map( (paragraphe, index) => {
                             return <p key={index}>{paragraphe}</p>
                         })}
-                        <a href={realisation.linkGithub}>Dépôt github</a>
-                        <a href={realisation.linkWebsite}>Voir le site</a>
+                        <a href={realisation.linkGithub} target="_blank">Dépôt github</a>
+                        <a href={realisation.linkWebsite} target="_blank">Voir le site</a>
                     </div>
                 </div>
                 <SwitchMode mode={mode} changeMode={changeMode} text={false}/>
