@@ -3,8 +3,11 @@ import './App.css';
 import Realisation from 'views/realisation/Realisation';
 import Home from 'views/home/Home';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { resetSection } from 'features/locationNavFp'
 
 function App() {
+  const dispatch = useDispatch();
   const[mode, setMode] = useState(false);
 
   function handleStyleFpNav() {
@@ -18,6 +21,7 @@ function App() {
   }
 
   function changeMode(e) {
+    dispatch(resetSection());
     setMode(!mode);
   }
 

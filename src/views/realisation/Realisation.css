@@ -5,13 +5,13 @@
     margin: 0 auto;
 }*/
 
-#realisation-loading {
+#realisation-loading-import {
     text-align: center;
     color: var(--very-tertiary);
 }
 
 @media(max-width: 1200px) {
-    #realisation-loading {
+    #realisation-loading-import {
         display: flex;
         align-items: center;
         min-height: 100vh;

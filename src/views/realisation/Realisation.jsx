@@ -37,8 +37,8 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
         if (!errorMapSlug) {
             if(!state.realisation) {
                 return (
-                    <div id="realisation-loading" className="section clignote">
-                        Loading...
+                    <div id="realisation-loading-import" className="section bg-vr">
+                        <div className="clignote">Loading...</div>
                     </div>
                 );
             } else {
@@ -47,7 +47,6 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                         <RealisationPresentation mode={mode} changeMode={changeMode} realisation={state.realisation}/>
                         
                         <RealisationFeatures realisation={state.realisation}/>
-
                     </>
                 );
             }
@@ -105,7 +104,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             if(found) {
                 let index = realisationsMap.findIndex(realisation => realisation.slug === slug);
                 import("assets/realisations/"+found.path).then( data => {
-                    setTimeout(function(){ setState({realisation: data.default[0], index: index, anchors: ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]});}, 500);
+                    setTimeout(function(){ setState({realisation: data.default[0], index: index, anchors: ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]});}, 0);
                 }).catch((err) => {console.log(err); setErrorMapSlug(true);} );
             } else {
                 setErrorMapSlug(true);
@@ -116,7 +115,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             setErrorMapSlug(false);
             setState( oldState => ({...oldState, realisation: false,anchors: ["PRESENTATION", "CONTACT"]}));
         }
-    },[slug/*, index, realisation*/]);
+    },[slug]);
 
     return (
 

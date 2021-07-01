@@ -6,17 +6,14 @@ import About from 'components/about/About';
 import Services from 'components/services/Services';
 import Realisations from 'components/realisations/Realisations';
 import Contact from 'components/contact/Contact';
-import { /*useDispatch,*/ useSelector } from 'react-redux';
-//import { resetSection } from 'features/locationNavFp'
+import { useSelector } from 'react-redux';
 
 const Home = (props) => {
-  //const dispatch = useDispatch();
   const locationNavFp = useSelector(state => state.locationNavFp.value);
 
   let sectionActive = false;
   if(locationNavFp) {
     sectionActive = locationNavFp.payload;
-    //dispatch(resetSection());
   }
 
   const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
