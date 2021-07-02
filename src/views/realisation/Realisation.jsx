@@ -46,7 +46,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                     <>
                         <RealisationPresentation mode={mode} changeMode={changeMode} realisation={state.realisation}/>
                         
-                        <RealisationFeatures realisation={state.realisation}/>
+                        {state.realisation.features && <RealisationFeatures features={state.realisation.features}/>}
                     </>
                 );
             }
@@ -64,7 +64,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             navigationTooltips={state.anchors}
             responsiveWidth= "1200"
             responsiveHeight="937"
-            slidesNavigation={true}
+            //slidesNavigation={true}
             //verticalCentered= {false}
             afterLoad={() => {
                 handleStyleFpNav();
@@ -104,7 +104,8 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             if(found) {
                 let index = realisationsMap.findIndex(realisation => realisation.slug === slug);
                 import("assets/realisations/"+found.path).then( data => {
-                    setTimeout(function(){ setState({realisation: data.default[0], index: index, anchors: ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]});}, 0);
+                    if (data.default[0].features) { var anchors =  ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"] } else { var anchors = ["PRESENTATION", "CONTACT"] }
+                    setTimeout(function(){ setState({realisation: data.default[0], index: index, anchors: anchors});}, 0);
                 }).catch((err) => {console.log(err); setErrorMapSlug(true);} );
             } else {
                 setErrorMapSlug(true);

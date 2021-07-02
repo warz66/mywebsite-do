@@ -1,9 +1,42 @@
 #wrapper-features {
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
+    padding: 0 40px;
     position: relative;
 }
 
-.slide {
-    
+@media (max-width: 1400px) {
+    #wrapper-features {
+        padding: 120px 40px;
+    } 
+}
+
+#wrapper-features .flickity-viewport {
+    overflow: visible !important;
+    width: 100%;
+}
+
+/* position dots up a bit */
+#wrapper-features .flickity-page-dots {
+    bottom: -50px;
+    text-align: left;
+}
+
+/* dots are lines */
+#wrapper-features .flickity-page-dots .dot {
+    height: 4px;
+    width: 25px;
+    border-radius: 0;
+    background: var(--secondary);
+}
+
+#wrapper-features .carousel:after {
+    content: 'flickity';
+    display: none; /* hide :after */
+  }
+
+@media screen and ( max-width: 900px ) {
+    #wrapper-features .carousel:after {
+        content: '';
+    }
 }
