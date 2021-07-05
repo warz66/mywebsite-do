@@ -9,6 +9,8 @@ const Header = ({fullpageApi}) => {
     const [openMenu, setOpenMenu] = useState(false);
     const [curtainHeight, setCurtainHeight] = useState(0);
     
+    console.log('render header');
+
     function handleMenu() {
         setOpenMenu(!openMenu);
     }

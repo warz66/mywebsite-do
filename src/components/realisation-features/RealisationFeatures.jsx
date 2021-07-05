@@ -23,7 +23,7 @@ const RealisationFeatures = ({features}) => {
                     className={'carousel'} // default ''
                     elementType={'div'} // default 'div'
                     options={flickityOptions} // takes flickity options {}
-                    disableImagesLoaded={false} // default false
+                    disableImagesLoaded={true} // default false
                     reloadOnUpdate // default false
                     static // default false
                 >   

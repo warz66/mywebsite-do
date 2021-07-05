@@ -1,5 +1,5 @@
 import './Realisation.css'
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams, Link } from "react-router-dom";
@@ -25,8 +25,6 @@ function reducer(state, action) {
             return {errorMapSlug: true, realisation: false, index: action.payload.index, anchors: ["PRESENTATION", "CONTACT"] };
         case 'notFound':
             return {...state, errorMapSlug: true, realisation: false};
-        default:
-            throw new Error();
     }
 }
 
@@ -99,7 +97,6 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                 }
                 
                 return (
-                    
 
                         <main id="main-realisation">
 
@@ -121,7 +118,6 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
 
                         </main>
 
-                   
                 );
             }}
         />
@@ -132,7 +128,10 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             const found = realisationsMap.find(realisation => realisation.slug === slug);
             if(found) {
                 let index = realisationsMap.findIndex(realisation => realisation.slug === slug);
+                var t0 = performance.now();
                 import("assets/realisations/"+found.path).then( data => {
+                    var t1 = performance.now();
+                    console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.");
                     dispatch({type: 'loaded', payload: {realisation: data.default[0], index: index}});
                 }).catch((err) => {console.log(err); dispatch({type: 'errImport', payload: { index: index }});} );
             } else {
