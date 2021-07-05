@@ -1,5 +1,5 @@
 import './Realisation.css'
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams, Link } from "react-router-dom";
@@ -8,14 +8,31 @@ import realisationsMap from 'assets/realisations/realisationsMap';
 import RealisationPresentation from 'components/realisation-presentation/RealisationPresentation';
 import RealisationFeatures from 'components/realisation-features/RealisationFeatures';
 
+const initialState = {
+    errorMapSlug: false,
+    realisation: false,
+    index: 1,
+    anchors: ["PRESENTATION", "CONTACT"]
+};
+  
+function reducer(state, action) {
+    switch (action.type) {
+        case 'loaded':
+            let anchors;
+            state.realisation.features ? anchors = ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]  : anchors = ["PRESENTATION", "CONTACT"];
+            return {errorMapSlug: false, realisation: action.payload.realisation, index: action.payload.index, anchors: anchors};
+        case 'errImport':
+            return {errorMapSlug: true, realisation: false, index: action.payload.index, anchors: ["PRESENTATION", "CONTACT"] };
+        case 'notFound':
+            return {...state, errorMapSlug: true, realisation: false};
+        default:
+            throw new Error();
+    }
+}
+
 const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     let { slug } = useParams();
-    const [errorMapSlug, setErrorMapSlug] = useState(false);
-    const[state, setState] = useState({
-        realisation: false,
-        index: 1,
-        anchors: ["PRESENTATION", "CONTACT"],
-    })
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     console.log(state)
 
@@ -34,7 +51,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     }
     
     function RealisationLazy() {
-        if (!errorMapSlug) {
+        if (!state.errorMapSlug) {
             if(!state.realisation) {
                 return (
                     <div id="realisation-loading-import" className="section bg-vr">
@@ -66,33 +83,45 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             responsiveHeight="937"
             //slidesNavigation={true}
             //verticalCentered= {false}
-            afterLoad={() => {
+            /*afterLoad={() => {
                 handleStyleFpNav();
             }}
             onLeave={(origin, destination, direction) => {
-            }}
-            render={({ state, fullpageApi }) => {
-    
+            }}*/
+            render={({ state/*, fullpageApi */}) => {
+
+                console.log('render view')
+
+                if(state) {
+                    if(state.initialized) {
+                        handleStyleFpNav();
+                    }
+                }
+                
                 return (
-                    <main id="main-realisation">
+                    
 
-                        <Header/>
+                        <main id="main-realisation">
 
-                        <Link className="link-nav-realisation" to={'/realisation/'+previousRealisation().slug}>
-                            Projets précédent<br/>
-                            <span>{previousRealisation().titleNav}</span>
-                        </Link>
+                            <Header/>
 
-                        <Link className="link-nav-realisation" to={'/realisation/'+nextRealisation().slug}>
-                            Projets suivant<br/>
-                            <span>{nextRealisation().titleNav}</span>
-                        </Link>
+                            <Link className="link-nav-realisation" to={'/realisation/'+previousRealisation().slug}>
+                                Projets précédent<br/>
+                                <span>{previousRealisation().titleNav}</span>
+                            </Link>
 
-                        <RealisationLazy/>
+                            <Link className="link-nav-realisation" to={'/realisation/'+nextRealisation().slug}>
+                                Projets suivant<br/>
+                                <span>{nextRealisation().titleNav}</span>
+                            </Link>
 
-                        <Contact/>
+                            <RealisationLazy/>
 
-                    </main>
+                            <Contact/>
+
+                        </main>
+
+                   
                 );
             }}
         />
@@ -104,18 +133,13 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             if(found) {
                 let index = realisationsMap.findIndex(realisation => realisation.slug === slug);
                 import("assets/realisations/"+found.path).then( data => {
-                    if (data.default[0].features) { var anchors =  ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"] } else { var anchors = ["PRESENTATION", "CONTACT"] }
-                    setTimeout(function(){ setState({realisation: data.default[0], index: index, anchors: anchors});}, 500);
-                }).catch((err) => {console.log(err); setErrorMapSlug(true);} );
+                    dispatch({type: 'loaded', payload: {realisation: data.default[0], index: index}});
+                }).catch((err) => {console.log(err); dispatch({type: 'errImport', payload: { index: index }});} );
             } else {
-                setErrorMapSlug(true);
+                dispatch({type: 'notFound'});
             }
         }
         importRealisation();
-        return () => {
-            setErrorMapSlug(false);
-            setState( oldState => ({...oldState, realisation: false,anchors: ["PRESENTATION", "CONTACT"]}));
-        }
     },[slug]);
 
     return (

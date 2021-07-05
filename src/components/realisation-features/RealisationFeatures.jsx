@@ -2,10 +2,8 @@ import './RealisationFeatures.css'
 import Flickity from 'react-flickity-component'
 import 'flickity/dist/flickity.min.css'
 import RealisationFeature from 'components/realisation-features/realisation-feature/RealisationFeature';
-import { useEffect, useRef } from 'react';
 
 const RealisationFeatures = ({features}) => {
-    let flkty;
 
     const flickityOptions = {
         /*freeScroll: true,*/
@@ -17,20 +15,11 @@ const RealisationFeatures = ({features}) => {
         watchCSS: true
     }
 
-    useEffect(() => {
-        // returned function will be called on component unmount 
-        return () => {
-            /*flkty.destroy();
-            console.log(flkty);*/
-        }
-      }, [])
-
     return(
 
         <div className="section bg-dark">
             <div id="wrapper-features">
                 <Flickity
-                    flickityRef={c => flkty = c}
                     className={'carousel'} // default ''
                     elementType={'div'} // default 'div'
                     options={flickityOptions} // takes flickity options {}

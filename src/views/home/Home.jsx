@@ -27,13 +27,20 @@ const Home = (props) => {
           responsiveWidth= "1200"
           responsiveHeight="937"
           //verticalCentered= {false}
-          afterLoad= { () => {
+          /*afterLoad= { () => {
             props.handleStyleFpNav();
           }}
           onLeave={(origin, destination, direction) => {
-            
-          }}
+          }}*/
           render={({ state, fullpageApi }) => {
+
+              console.log('render home');
+
+              if(state) {
+                if(state.initialized) {
+                  props.handleStyleFpNav();
+                }
+              }
   
               return (
                   <main>

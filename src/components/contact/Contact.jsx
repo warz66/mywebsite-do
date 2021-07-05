@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './Contact.css'
 import Form from 'components/contact/form/Form';
 
-const Contact = ({sectionActive}) => {
+const Contact = React.memo(function({sectionActive}) {
     const [bgMode, setBgMode] = useState(true);
+
+    console.log('render contact');
 
     useEffect(() => {
         
@@ -64,6 +66,6 @@ const Contact = ({sectionActive}) => {
 
     );
 
-}
+});
     
 export default Contact;
