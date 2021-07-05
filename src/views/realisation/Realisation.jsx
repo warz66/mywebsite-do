@@ -105,7 +105,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                 let index = realisationsMap.findIndex(realisation => realisation.slug === slug);
                 import("assets/realisations/"+found.path).then( data => {
                     if (data.default[0].features) { var anchors =  ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"] } else { var anchors = ["PRESENTATION", "CONTACT"] }
-                    setTimeout(function(){ setState({realisation: data.default[0], index: index, anchors: anchors});}, 0);
+                    setTimeout(function(){ setState({realisation: data.default[0], index: index, anchors: anchors});}, 500);
                 }).catch((err) => {console.log(err); setErrorMapSlug(true);} );
             } else {
                 setErrorMapSlug(true);

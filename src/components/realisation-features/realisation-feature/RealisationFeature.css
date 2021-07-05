@@ -1,11 +1,41 @@
-.realisation-feature {
+/*.realisation-feature {
     display: grid;
     width: 1000px;
     height: 600px;
-    margin-right: 20px;
+    margin-right: 150px;
+    grid-template-areas: "title img"
+                         "text text";
+}
+
+.realisation-feature-img {
+    grid-area: img;
+}
+
+.realisation-feature-img img {
+    width: 300px;
+    height: auto;
+}
+
+.realisation-feature-title {
+    grid-area: title;
+}
+
+.realisation-feature-text {
+    grid-area: text;
+}*/
+
+.realisation-feature {
+    width: 1000px;
+    /*height: 600px;*/
+    margin-right: 150px;    
 }
 
 .realisation-feature img {
-    width: 300px;
+    width: 350px;
     height: auto;
+    float: right;
+}
+
+.realisation-feature p {
+    margin-bottom: 15px;
 }
