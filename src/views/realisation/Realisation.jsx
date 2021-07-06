@@ -1,5 +1,5 @@
 import './Realisation.css'
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams, Link } from "react-router-dom";
@@ -52,21 +52,13 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     
     function RealisationLazy() {
         if (!state.errorMapSlug) {
-            if(!state.realisation) {
                 return (
-                    <div id="realisation-loading-import" className="section bg-vr">
-                        <div className="clignote">Loading...</div>
-                    </div>
-                );
-            } else {
-                return (
-                    <>
+                    <>  
                         <RealisationPresentation mode={mode} changeMode={changeMode} realisation={state.realisation}/>
                         
                         {state.realisation.features && <RealisationFeatures features={state.realisation.features}/>}
                     </>
                 );
-            }
         } else {
             return <div className="section">Nous n'avons pas trouvé la réalisation correspondant à l'url: {slug}.</div>
         }

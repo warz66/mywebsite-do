@@ -13,7 +13,7 @@ const RealisationPresentation = ({mode, changeMode, realisation}) => {
                         Loading...
                     </div>
                 }
-                <div id="wrapper-presentation" style={loaded ? {opacity: 1} : {opacity: 0}} onLoad={() => setLoaded(true)}>
+                {realisation && <div id="wrapper-presentation" style={loaded ? {opacity: 1} : {opacity: 0}} onLoad={() => setLoaded(true)}>
                     <div id="realisation-presentation-img">
                         <img src={realisation.image} alt=""/>
                     </div>
@@ -28,7 +28,7 @@ const RealisationPresentation = ({mode, changeMode, realisation}) => {
                         <a href={realisation.linkGithub} target="_blank" rel="noreferrer">Dépôt github</a>
                         <a href={realisation.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>
                     </div>
-                </div>
+                </div>}
                 <SwitchMode mode={mode} changeMode={changeMode} text={false}/>
             </div>
         </div>

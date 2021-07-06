@@ -10,6 +10,15 @@
     color: var(--very-tertiary);
 }
 
+#realisation-presentation-loading {
+    position: absolute;
+    color: var(--very-tertiary);
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @media(max-width: 1200px) {
     #realisation-loading-import {
         display: flex;
