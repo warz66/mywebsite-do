@@ -5,7 +5,7 @@ const RealisationCard = ({realisation}) => {
 
     return (
         <div className="realisation-card">
-            <img className="" src={realisation.image} alt=""/>
+            <img src={realisation.image} alt=""/>
             <div className="realisation-card-text">
                 <div className="realisation-card-tag">{realisation.techs}</div>
                 <h4>{realisation.title}</h4>

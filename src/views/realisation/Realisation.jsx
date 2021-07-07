@@ -1,5 +1,5 @@
 import './Realisation.css'
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams, Link } from "react-router-dom";
@@ -26,6 +26,8 @@ function reducer(state, action) {
         case 'notFound':
             return {...state, errorMapSlug: true, realisation: false};
         case 'reset':
+            return initialState;
+        default:
             return initialState;    
     }
 }
@@ -60,7 +62,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                     </>
                 );
         } else {
-            return <div className="section">Nous n'avons pas trouvé la réalisation correspondant à l'url: {slug}.</div>
+            return <div id="realisation-error" className="section">Nous n'avons pas trouvé la réalisation correspondant à l'url: {slug}.</div>
         }
     }
 
@@ -92,7 +94,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                 
                 return (
 
-                        <main id="main-realisation">
+                        <main>
 
                             <Header/>
 
@@ -119,7 +121,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
 
     useEffect(() => {
         function importRealisation() {
-            dispatch({type: 'reset'});
+            /*dispatch({type: 'reset'});*/
             const found = realisationsMap.find(realisation => realisation.slug === slug);
             if(found) {
                 let index = realisationsMap.findIndex(realisation => realisation.slug === slug);

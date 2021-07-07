@@ -5,6 +5,8 @@ import signatureLight from 'assets/images/signature-light.svg'
 
 const About = ({mode, sectionActive}) => {
 
+    console.log('about render');
+
     return (
 
         <section id="about" className={`section bg-dark ${sectionActive ? " active" : ""}`}>

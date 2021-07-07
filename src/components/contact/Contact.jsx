@@ -22,7 +22,7 @@ const Contact = ({sectionActive}) => {
         return () => {
             window.removeEventListener('resize', handleBg);
         }
-    });
+    },[]);
 
     return (
 

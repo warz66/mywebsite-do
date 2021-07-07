@@ -19,7 +19,7 @@ function App() {
       document.getElementById("fp-nav").classList.add('fp-nav-dark');
     }
   }
-
+  
   function changeMode(e) {
     dispatch(resetSection());
     setMode(!mode);

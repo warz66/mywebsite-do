@@ -1,26 +1,10 @@
-/*#main-realisation {
-    max-width: 1980px;
-    width: 100%;
-    position: relative;
-    margin: 0 auto;
-}*/
-
-#realisation-loading-import {
+#realisation-error {
     text-align: center;
     color: var(--very-tertiary);
-}
-
-#realisation-presentation-loading {
-    position: absolute;
-    color: var(--very-tertiary);
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 @media(max-width: 1200px) {
-    #realisation-loading-import {
+    #realisation-error  {
         display: flex;
         align-items: center;
         min-height: 100vh;
