@@ -1,41 +1,101 @@
-/*.realisation-feature {
-    display: grid;
+.realisation-feature {
+    display: flex;
+    flex-wrap: wrap;
     width: 1000px;
-    height: 600px;
-    margin-right: 150px;
-    grid-template-areas: "title img"
-                         "text text";
+    height: auto;
+    /*grid-template-areas: "title img"
+                         "text img";*/
+    background-color: var(--primary);
+    padding: 50px 60px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.realisation-feature:not(:last-of-type) {
+    margin-right: 65px;
+}
+
+@media (max-width: 1100px) {
+    .realisation-feature:not(:last-of-type) {
+        margin-bottom: 55px;
+    }
 }
 
 .realisation-feature-img {
-    grid-area: img;
+    width: 40%;
 }
 
 .realisation-feature-img img {
-    width: 300px;
+    width: 350px;
     height: auto;
+    margin-left: 50px;
 }
 
-.realisation-feature-title {
+/*.realisation-feature-title {
     grid-area: title;
+    align-self: end;
+}*/
+
+.realisation-feature-text {
+    width: 55%;
 }
+
+.realisation-feature-text h4 {
+    margin-bottom: 30px;
+    color: var(--secondary);
+    /*display: flex;*/
+}
+
+/*.realisation-feature-text h4::before {
+    align-self: center;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--secondary);
+    margin-right: 15px;
+    margin-bottom: 2px;
+}*/
 
 .realisation-feature-text {
     grid-area: text;
+}
+
+.realisation-feature-text p {
+    color: var(--tertiary);
+    line-height: 25px;
+    font-size: 15px;
+}
+
+.realisation-feature-text p:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.realisation-feature-link {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.realisation-feature-link a {
+    display: flex;
+    color: var(--very-tertiary);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/*.realisation-feature-link a:last-of-type {
+    margin-left: 30px;
 }*/
 
-.realisation-feature {
-    width: 1000px;
-    /*height: 600px;*/
-    margin-right: 150px;    
-}
-
-.realisation-feature img {
-    width: 350px;
-    height: auto;
-    float: right;
-}
-
-.realisation-feature p {
-    margin-bottom: 15px;
+.realisation-feature-link a::before {
+    align-self: center;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--hyphen);
+    margin-right: 15px;
+    margin-bottom: 2px;
 }

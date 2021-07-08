@@ -62,7 +62,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                     </>
                 );
         } else {
-            return <div id="realisation-error" className="section">Nous n'avons pas trouvé la réalisation correspondant à l'url: {slug}.</div>
+            return <div id="realisation-error" className="section bg-vr">Nous n'avons pas trouvé la réalisation correspondant à l'url: {slug}.</div>
         }
     }
 
