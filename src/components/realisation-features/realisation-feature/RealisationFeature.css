@@ -1,51 +1,67 @@
 .realisation-feature {
     display: flex;
-    flex-wrap: wrap;
-    width: 1000px;
+    column-gap: 50px;
+    max-width: 1000px;
+    width: 100%;
     height: auto;
-    /*grid-template-areas: "title img"
-                         "text img";*/
     background-color: var(--primary);
     padding: 50px 60px;
     border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
 .realisation-feature:not(:last-of-type) {
-    margin-right: 65px;
+    margin-right: 50px;
 }
 
 @media (max-width: 1100px) {
     .realisation-feature:not(:last-of-type) {
-        margin-bottom: 55px;
+        margin-bottom: 50px;
     }
 }
 
-.realisation-feature-img {
-    width: 40%;
+@media(max-width: 950px) {
+    .realisation-feature {
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .realisation-feature:not(:last-of-type) {
+        margin: 0px auto 50px auto;
+    }   
+}
+
+@media(max-width: 600px) {
+    .realisation-feature {
+        display: flex;
+        background-color: transparent;
+        padding: 0;
+        border: none;
+    }
+    .realisation-feature:not(:last-of-type) {
+        margin: 0px auto 100px auto;
+    }    
 }
 
 .realisation-feature-img img {
-    width: 350px;
-    height: auto;
-    margin-left: 50px;
+    width: 325px;
 }
 
-/*.realisation-feature-title {
-    grid-area: title;
-    align-self: end;
-}*/
-
-.realisation-feature-text {
-    width: 55%;
+@media(max-width: 950px) {
+    .realisation-feature-img img {
+        display: block;
+        margin: 0 auto;
+        max-width: 350px;
+        width: 100%;
+    }    
 }
 
 .realisation-feature-text h4 {
     margin-bottom: 30px;
     color: var(--secondary);
-    /*display: flex;*/
+    display: flex;
 }
 
-/*.realisation-feature-text h4::before {
+.realisation-feature-text h4::before {
     align-self: center;
     content: "";
     display: inline-block;
@@ -54,10 +70,6 @@
     background-color: var(--secondary);
     margin-right: 15px;
     margin-bottom: 2px;
-}*/
-
-.realisation-feature-text {
-    grid-area: text;
 }
 
 .realisation-feature-text p {
@@ -73,29 +85,52 @@
 .realisation-feature-link {
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-    margin-left: 50px;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    color: var(--tertiary);
 }
 
 .realisation-feature-link a {
-    display: flex;
     color: var(--very-tertiary);
     text-decoration: none;
     font-size: 15px;
+    font-weight: 500;
+    position: relative;
 }
 
-/*.realisation-feature-link a:last-of-type {
-    margin-left: 30px;
-}*/
+.realisation-feature-link span {
+    margin: 0 30px;
+}
 
-.realisation-feature-link a::before {
-    align-self: center;
+@media (hover: hover) and (pointer: fine) {
+    .realisation-feature-link a:hover {
+        transition: 0.3s;
+        color: var(--secondary);
+    }
+}
+
+.realisation-feature-link a:after {
+    position: absolute;
     content: "";
-    display: inline-block;
-    width: 20px;
-    height: 2px;
-    background-color: var(--hyphen);
-    margin-right: 15px;
-    margin-bottom: 2px;
+    left: 0;
+    bottom: -6px;
+    height: 1px;
+    width: 0px;
+    opacity: 0;
+    background-color: var(--secondary);
+    transition: 0.3s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .realisation-feature-link a:hover:after {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@media(max-width: 950px) {
+    .realisation-feature-link {
+        justify-content: center;
+        margin: 30px 0px;
+    }    
 }

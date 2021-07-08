@@ -50,9 +50,9 @@
         text-align: center;
     } 
 }
-@media(max-width: 575px) {
+@media(max-width: 600px) {
     #msg-contact {
-        padding-bottom: 0px;
+        padding: 0px 25px;
     }  
 }
 #msg-contact p span {
@@ -77,6 +77,11 @@
         min-height: initial;
     }
 }
+@media(max-width: 600px) {
+    #wrapper-contact > div:nth-child(2) {
+        padding: 0 25px;
+    }
+}
 #info-contact {
     max-width: 1200px;
     width: 100%;
@@ -94,9 +99,9 @@
         padding-top: 80px;
     }   
 }
-@media(max-width: 575px) {
+@media(max-width: 600px) {
     #info-contact  {
-        padding-top: 0;
+        padding: 0 25px;
     }   
 }
 #info-contact p {
@@ -134,7 +139,7 @@
 }
 footer {
     width: 100%;
-    padding: 32px;
+    padding: 32px 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;

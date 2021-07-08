@@ -19,7 +19,7 @@ function reducer(state, action) {
     switch (action.type) {
         case 'loaded':
             let anchors;
-            state.realisation.features ? anchors = ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"]  : anchors = ["PRESENTATION", "CONTACT"];
+            action.payload.realisation.features ? anchors = ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"] : anchors = ["PRESENTATION", "CONTACT"];
             return {errorMapSlug: false, realisation: action.payload.realisation, index: action.payload.index, anchors: anchors};
         case 'errImport':
             return {errorMapSlug: true, realisation: false, index: action.payload.index, anchors: ["PRESENTATION", "CONTACT"] };

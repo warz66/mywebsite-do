@@ -58,7 +58,7 @@
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     .link-nav-realisation span {
         display: inline-block;
         width: 120px;
@@ -66,4 +66,10 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+    .link-nav-realisation:first-of-type {
+        left: 27px;
+    }
+    .link-nav-realisation:last-of-type {
+        right: 27px;
+    }   
 }

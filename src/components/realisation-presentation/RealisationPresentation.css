@@ -153,6 +153,7 @@
 @media(max-width: 600px) {
     #wrapper-presentation {
         padding-bottom: 80px;
+        padding: 140px 25px 80px 25px;
     }
     #realisation-presentation-title h2 {
         font-size: 13vw;

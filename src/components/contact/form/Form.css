@@ -23,7 +23,7 @@
     }
 }
 
-@media(max-width: 575px) {
+@media(max-width: 600px) {
     #form-contact  {
         height: 500px;
         padding: 0 10px;
@@ -90,7 +90,7 @@
     opacity: 0;
     transition: 0.3s;
 }
-@media(max-width: 575px) {
+@media(max-width: 600px) {
     #form-contact #msg-send-result {
         transform: none;
         left: 10px;

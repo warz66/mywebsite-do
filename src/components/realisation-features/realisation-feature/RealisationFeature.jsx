@@ -14,11 +14,13 @@ const RealisationFeature = ({feature}) => {
                 })}
             </div>
             <div className="realisation-feature-img">
-                <img className="" src={feature.image} alt=""/>
-                <div className="realisation-feature-link">
-                    {feature.linkGithub && <a href={feature.linkGithub} target="_blank" rel="noreferrer">Dépôt github</a>}
+            <div className="realisation-feature-link">
+                    {feature.linkGithub && <a href={feature.linkGithub} target="_blank" rel="noreferrer">Lien github</a>}
+                    {feature.linkGithub && feature.linkWebsite && <span>/</span>}
                     {feature.linkWebsite && <a href={feature.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>}
                 </div>
+                <img className="" src={feature.image} alt=""/>
+                
             </div>
         </div>
     );

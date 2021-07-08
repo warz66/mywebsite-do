@@ -17,11 +17,23 @@
     } 
 }
 
+@media (max-width: 600px) {
+    #wrapper-features {
+        padding: 80px 25px;
+    } 
+}
+
 #wrapper-features > h3 {
     text-align: center;
     margin-bottom: 30px;
     color: var(--secondary);
     font-size: 36px;
+}
+
+@media(max-width: 400px) {
+    #wrapper-features > h3 {
+        font-size: 9vw;
+    }    
 }
 
 #wrapper-features > p {
