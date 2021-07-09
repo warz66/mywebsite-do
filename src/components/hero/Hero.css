@@ -33,6 +33,12 @@
     }
 }
 
+@media (max-width: 600px) {
+    #hero-text {
+        margin-left: 25px;
+    }
+}
+
 #hero-text > span {
     display: flex;
     color: var(--secondary);
