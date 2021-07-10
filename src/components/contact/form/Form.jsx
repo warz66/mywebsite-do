@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import './Form.css'
+import './Form.css';
+//import ReCAPTCHA from "react-google-recaptcha";
 
 const Form = () => {
     const [activeErrorName, setActiveErrorName] = useState(false);
@@ -7,12 +8,19 @@ const Form = () => {
     const [activeErrorMessage, setActiveErrorMessage] = useState(false);
     const [activeMsgReturn, setActiveMsgReturn] = useState(false);
     const [activeMsgResult, setActiveMsgResult] = useState(false);
-    const form = useRef(null)
+    /*const [res, setRes] = useState(null);*/
+    const form = useRef(null);
+    //const recaptchaRef = useRef();
 
-    function sendMessageForm() {
-        const controller = new AbortController()
-        setTimeout(() => controller.abort(), 5000)
-        const data = new FormData(form.current)
+    /*function onChange(value) {
+        console.log("Captcha value:", value);
+    }*/
+
+    function sendMessageForm(tokenGrecaptacha) {
+        const controller = new AbortController();
+        setTimeout(() => controller.abort(), 5000);
+        const data = new FormData(form.current);
+        data.set('tokenGrecaptcha', tokenGrecaptacha);
         return fetch('http://localhost:80/index.php', { method: 'POST', body: data, signal: controller.signal })
             .then(res => {  return res.json() })
             .then(result => { return result })
@@ -45,7 +53,19 @@ const Form = () => {
 
             setActiveMsgResult("En attente...");
 
-            const res = await sendMessageForm();
+            /*let tokenGrecaptacha=recaptchaRef.current.getValue();
+
+            console.log(tokenGrecaptacha);*/
+
+            //const res = await sendMessageForm(/*tokenGrecaptacha*/);
+            /*var clientId = grecaptcha.render('inline-badge', {
+                'sitekey': '6Ldqyn4UAAAAAN37vF4e1vsebmNYIA9UVXZ_RfSp',
+                'badge': 'inline',
+                'size': 'invisible'
+            });*/
+            const res = await window.grecaptcha.execute('6LcLgocbAAAAAG51nOiXjdVpZR1w5cIclpm8vVF8', {action: 'submit'}).then( function(tokenGrecaptacha) {
+                return sendMessageForm(tokenGrecaptacha);
+            });
 
             msgFormReturn.classList.remove('clignote');
 
@@ -54,6 +74,7 @@ const Form = () => {
                 e.target.name.value = '';
                 e.target.email.value = '';
                 e.target.message.value = '';
+                console.log(res);
             } else {
                 setActiveMsgResult("Problème d'envoi")
                 msgFormReturn.style.color = 'var(--form-red-error)'
@@ -61,7 +82,7 @@ const Form = () => {
             }
         } else {
             return false;
-        } 
+        }
     }
 
     return (
@@ -82,7 +103,12 @@ const Form = () => {
             <span id="msg-send-result" style={activeMsgReturn ? {opacity: 1} : {opacity: 0}}>{activeMsgResult}</span>
             <button type="submit" aria-label="submit form" form="form-contact">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20"><path fill="none" fillRule="evenodd" strokeWidth="2" d="M15 1l9 9-9 9M0 10h24"></path></svg>
-            </button>    
+            </button>
+            {/*<ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey="6LdtfocbAAAAAKEx-hJEJwXGl3uXmaUUR3JNoPiO"
+                onChange={token => onChange(token)}
+            />*/}  
         </form>
 
     );
