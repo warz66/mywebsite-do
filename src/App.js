@@ -10,7 +10,6 @@ function App() {
   const dispatch = useDispatch();
   const[mode, setMode] = useState(false);
 
-
   function handleStyleFpNav() {
     if (mode) {
       document.getElementById("fp-nav").classList.remove('fp-nav-dark'); 

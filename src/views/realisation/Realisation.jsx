@@ -121,7 +121,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
 
     useEffect(() => {
         function importRealisation() {
-            /*dispatch({type: 'reset'});*/
+            dispatch({type: 'reset'});
             const found = realisationsMap.find(realisation => realisation.slug === slug);
             if(found) {
                 let index = realisationsMap.findIndex(realisation => realisation.slug === slug);
