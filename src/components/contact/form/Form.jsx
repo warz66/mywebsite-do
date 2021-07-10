@@ -18,7 +18,7 @@ const Form = () => {
 
     function sendMessageForm(tokenGrecaptacha) {
         const controller = new AbortController();
-        setTimeout(() => controller.abort(), 5000);
+        setTimeout(() => controller.abort(), 8000);
         const data = new FormData(form.current);
         data.set('tokenGrecaptcha', tokenGrecaptacha);
         return fetch('http://localhost:80/index.php', { method: 'POST', body: data, signal: controller.signal })
@@ -63,21 +63,33 @@ const Form = () => {
                 'badge': 'inline',
                 'size': 'invisible'
             });*/
-            const res = await window.grecaptcha.execute('6LcLgocbAAAAAG51nOiXjdVpZR1w5cIclpm8vVF8', {action: 'submit'}).then( function(tokenGrecaptacha) {
-                return sendMessageForm(tokenGrecaptacha);
+            const promise = new Promise((resolve, reject) => {
+                window.grecaptcha.ready(() => { 
+                    window.grecaptcha.execute('6LcLgocbAAAAAG51nOiXjdVpZR1w5cIclpm8vVF8', {action: 'submit'}).then( function(tokenGrecaptacha) {
+                        resolve(sendMessageForm(tokenGrecaptacha));
+                    });
+                });
             });
+
+            const res = await promise.then((resBack) => {
+                return resBack;
+            });
+
+            /*const res = await window.grecaptcha.execute('6LcLgocbAAAAAG51nOiXjdVpZR1w5cIclpm8vVF8', {action: 'submit'}).then( function(tokenGrecaptacha) {
+                return sendMessageForm(tokenGrecaptacha);
+            });*/
 
             msgFormReturn.classList.remove('clignote');
 
             if(res.result === "success") {
-                setActiveMsgResult("Message Envoyé")
+                setActiveMsgResult("Message Envoyé");
                 e.target.name.value = '';
                 e.target.email.value = '';
                 e.target.message.value = '';
                 console.log(res);
             } else {
-                setActiveMsgResult("Problème d'envoi")
-                msgFormReturn.style.color = 'var(--form-red-error)'
+                setActiveMsgResult("Problème d'envoi");
+                msgFormReturn.style.color = 'var(--form-red-error)';
                 console.log(res);
             }
         } else {
