@@ -92,11 +92,18 @@
 }
 @media(max-width: 600px) {
     #form-contact #msg-send-result {
+        width: 100%;
+        text-align: center;
+        bottom: 25px;
+    }
+}
+/*@media(max-width: 600px) {
+    #form-contact #msg-send-result {
         transform: none;
         left: 10px;
         bottom: 100px;
     }
-}
+}*/
 
 #form-contact button {
     z-index: 100;
@@ -155,6 +162,27 @@ select:-webkit-autofill:focus {
     -webkit-text-fill-color: var(--secondary) !important;
     box-shadow: 0px -1px 0px var(--form-ph-color) inset !important;
     transition: background-color 5000s ease-in-out 0s !important;
+}
+
+#form-contact > div:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    max-height: 55px;
+}
+
+#grecaptcha-marque {
+    color: var(--lynch);
+    display: inline;
+    align-self: center;
+    font-weight: 500;
+    font-size: 10px;
+    width: calc(100% - 80px);
+    line-height: 15px;
+}
+
+#grecaptcha-marque a {
+    text-decoration: none;
+    color: var(--tertiary);
 }
 
 .grecaptcha-badge { 

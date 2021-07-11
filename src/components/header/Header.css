@@ -99,13 +99,13 @@ header {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    #menu a:hover/*, #menu li:hover*/ {
+    #menu a:hover, #menu li:hover {
         transition: 0.3s;
         color: var(--secondary);
     }
 }
 
-/*#menu li:after,*/ #menu li a:after {
+#menu li:after, #menu li a:after {
     position: absolute;
     content: "";
     left: 0;
@@ -118,7 +118,7 @@ header {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    /*#menu li:hover:after ,*/ #menu li a:hover:after {
+    #menu li:hover:after , #menu li a:hover:after {
         width: 100%;
         opacity: 1;
     }

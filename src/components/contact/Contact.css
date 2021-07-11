@@ -52,7 +52,7 @@
 }
 @media(max-width: 600px) {
     #msg-contact {
-        padding: 0px 25px 60px 25px;
+        padding: 0px 25px 30px 25px;
     }  
 }
 #msg-contact p span {
@@ -101,7 +101,7 @@
 }
 @media(max-width: 600px) {
     #info-contact  {
-        padding: 0 25px;
+        padding: 10px 25px 0px 25px;
     }   
 }
 #info-contact p {
