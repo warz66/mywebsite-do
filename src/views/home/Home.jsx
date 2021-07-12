@@ -18,7 +18,7 @@ const Home = (props) => {
 
   const anchors = ["ACCUEIL", "A PROPOS", "SERVICES" , "REALISATIONS", "CONTACT"];
 
-  const FullpageWrapper = () => (
+  const FullpageHome = () => (
       <ReactFullpage
           licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
           //anchors={anchors}
@@ -34,8 +34,6 @@ const Home = (props) => {
           }}*/
           render={({ state, fullpageApi }) => {
 
-              console.log('render home');
-
               if(state) {
                 if(state.initialized) {
                   props.handleStyleFpNav();
@@ -43,21 +41,21 @@ const Home = (props) => {
               }
   
               return (
-                  <main>
+                <ReactFullpage.Wrapper>
 
-                      <Header fullpageApi={fullpageApi} mode={props.mode}/>
+                  <Header fullpageApi={fullpageApi} mode={props.mode}/>
+  
+                  <Hero mode={props.mode} changeMode={props.changeMode} sectionActive={(sectionActive === "accueil") ? true : false}/>
+  
+                  <About mode={props.mode} sectionActive={(sectionActive === "about") ? true : false}/>
+  
+                  <Services mode={props.mode} sectionActive={(sectionActive === "services") ? true : false}/>
+  
+                  <Realisations sectionActive={(sectionActive === "realisations") ? true : false}/>
+  
+                  <Contact sectionActive={(sectionActive === "contact") ? true : false}/>
       
-                      <Hero mode={props.mode} changeMode={props.changeMode} sectionActive={(sectionActive === "accueil") ? true : false}/>
-      
-                      <About mode={props.mode} sectionActive={(sectionActive === "about") ? true : false}/>
-      
-                      <Services mode={props.mode} sectionActive={(sectionActive === "services") ? true : false}/>
-      
-                      <Realisations sectionActive={(sectionActive === "realisations") ? true : false}/>
-      
-                      <Contact sectionActive={(sectionActive === "contact") ? true : false}/>
-      
-                  </main>
+                </ReactFullpage.Wrapper>
               );
           }}
       />
@@ -65,7 +63,7 @@ const Home = (props) => {
   
   return (
 
-      <FullpageWrapper />
+      <FullpageHome />
 
   );
 }

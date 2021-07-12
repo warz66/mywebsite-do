@@ -9,12 +9,14 @@ const Form = () => {
     const [activeMsgResult, setActiveMsgResult] = useState(false);
     const form = useRef(null);
 
+    console.log('render form');
+
     function sendMessageForm(tokenGrecaptacha) {
         const controller = new AbortController();
         setTimeout(() => controller.abort(), 8000);
         const data = new FormData(form.current);
         data.set('tokenGrecaptcha', tokenGrecaptacha);
-        return fetch('http://localhost:80/index.php', { method: 'POST', body: data, signal: controller.signal })
+        return fetch(process.env.REACT_APP_ADRESS_FILE_FORM_BACK, { method: 'POST', body: data, signal: controller.signal })
             .then(res => {  return res.json() })
             .then(result => { return result })
             .catch(error => { return error });
@@ -48,7 +50,7 @@ const Form = () => {
 
             const promise = new Promise((resolve, reject) => {
                 window.grecaptcha.ready(() => { 
-                    window.grecaptcha.execute('6LcLgocbAAAAAG51nOiXjdVpZR1w5cIclpm8vVF8', {action: 'submit'}).then( function(tokenGrecaptacha) {
+                    window.grecaptcha.execute(process.env.REACT_APP_CLE_GRECAPTCHA_API, {action: 'submit'}).then( function(tokenGrecaptacha) {
                         resolve(sendMessageForm(tokenGrecaptacha));
                     });
                 });

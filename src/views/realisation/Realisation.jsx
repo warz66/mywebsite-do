@@ -94,25 +94,25 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
                 
                 return (
 
-                        <main>
+                    <ReactFullpage.Wrapper>
 
-                            <Header/>
+                        <Header/>
 
-                            <Link className="link-nav-realisation" to={'/realisation/'+previousRealisation().slug}>
-                                Projets précédent<br/>
-                                <span>{previousRealisation().titleNav}</span>
-                            </Link>
+                        <Link className="link-nav-realisation" to={'/realisation/'+previousRealisation().slug}>
+                            Projets précédent<br/>
+                            <span>{previousRealisation().titleNav}</span>
+                        </Link>
 
-                            <Link className="link-nav-realisation" to={'/realisation/'+nextRealisation().slug}>
-                                Projets suivant<br/>
-                                <span>{nextRealisation().titleNav}</span>
-                            </Link>
+                        <Link className="link-nav-realisation" to={'/realisation/'+nextRealisation().slug}>
+                            Projets suivant<br/>
+                            <span>{nextRealisation().titleNav}</span>
+                        </Link>
 
-                            <RealisationLazy/>
+                        <RealisationLazy/>
 
-                            <Contact/>
+                        <Contact/>
 
-                        </main>
+                    </ReactFullpage.Wrapper>
 
                 );
             }}

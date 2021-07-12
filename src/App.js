@@ -44,8 +44,7 @@ function App() {
     }
    
     // load the script by passing the URL
-    const SITE_KEY="6LcLgocbAAAAAG51nOiXjdVpZR1w5cIclpm8vVF8";
-    loadScriptByURL("recaptcha-key", `https://www.google.com/recaptcha/api.js?render=${SITE_KEY}`, function () {
+    loadScriptByURL("recaptcha-key", `https://www.google.com/recaptcha/api.js?render=${process.env.REACT_APP_CLE_GRECAPTCHA_API}`, function () {
       console.log("Script loaded!");
     });
   }, []);

@@ -1,13 +1,22 @@
 <?php
-header('Content-Type: application/json');
-header("Access-Control-Allow-Origin: http://localhost:3000");
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use GuzzleHttp\Client;
+use Dotenv\Dotenv;
 
-if(($_SERVER['HTTP_REFERER'] === "http://localhost:3000/") || ($_SERVER['HTTP_REFERER'] === "https://mywebsite-do.vercel.app/")) {
+//Load Composer's autoloader
+require '../../vendor/autoload.php';
+
+$dotenv = Dotenv::createImmutable('../../');
+$dotenv->load();
+
+header('Content-Type: application/json');
+
+if(($_SERVER['HTTP_REFERER'] === $_ENV['SERVER_HTTP_REFERER_LOCALHOST']) || ($_SERVER['HTTP_REFERER'] === $_ENV['SERVER_HTTP_REFERER_URL'])) { 
+    header("Access-Control-Allow-Origin: {$_ENV['ACCESS_CONTROL_ALLOW_ORIGIN']}");
+
     $name = isset($_POST['name']) ? $_POST['name'] : null;
     $email = isset($_POST['email']) ? $_POST['email'] : null;
     $message = isset($_POST['message']) ? $_POST['message'] : null;
@@ -16,9 +25,6 @@ if(($_SERVER['HTTP_REFERER'] === "http://localhost:3000/") || ($_SERVER['HTTP_RE
     if($tokenGrecaptcha) {
 
         if($name && $email && $message) {
-        
-            //Load Composer's autoloader
-            require '../../vendor/autoload.php';
 
             // on gére la protection google recaptcha
             $secretKeyGrecaptcha =  '6LcLgocbAAAAAFESkQZW2dA-8XnB1tsx29cwcQ1D';
