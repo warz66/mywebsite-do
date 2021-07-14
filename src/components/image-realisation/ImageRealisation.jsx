@@ -6,13 +6,11 @@ import ReactDOM from 'react-dom';
 const ImageRealisation = ({image}) => {
     const [openLightbox, setOpenLightbox ] = useState(false);
 
-    console.log(image);
-
     function handleLightbox() {
         setOpenLightbox(!openLightbox);
     }
 
-    const Lightbox = ({imageLarge, openLightbox}) => {
+    function Lightbox ({imageLarge, openLightbox}) {
         return (
             <>
                 <div className={`lightbox ${openLightbox ? 'is-active': ''}`} onClick={handleLightbox} data-display={openLightbox ? true : false} >
@@ -25,28 +23,17 @@ const ImageRealisation = ({image}) => {
     }
 
     function IfLightbox() {
-        if(image.large) {
-            return(
-                <>
-                    <img src={image.thumbnail} alt="" onClick={handleLightbox}/> 
-                    {/*<Lightbox imageLarge={images.large} openLightbox={openLightbox} >*/}
-                </>
-            );
-        } else {
-            return <img src={image} alt="" />
-        }
+        return image.large ? <img src={image.thumbnail} alt="" onClick={handleLightbox}/> : <img src={image} alt="" />;
     }
 
     useEffect(() => {
-        /*const lightboxDiv = React.createElement('div', { className: 'LightboxDiv' });
-        console.log(lightboxDiv);*/
         if (image.large) {
             ReactDOM.render(
                 <Lightbox imageLarge={image.large} openLightbox={openLightbox} />,
                 document.getElementById('lightbox-container')
             );
         }
-    },[openLightbox]);
+    },[openLightbox, image.large]);
 
     return (
         <IfLightbox />

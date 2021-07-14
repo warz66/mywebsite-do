@@ -5,7 +5,7 @@ import Form from 'components/contact/form/Form';
 const Contact = ({sectionActive}) => {
     const [bgMode, setBgMode] = useState(true);
 
-    console.log('render contact');
+    //console.log('render contact');
 
     useEffect(() => {
         

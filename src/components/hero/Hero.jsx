@@ -4,7 +4,7 @@ import ScrollDown from 'components/scroll-down/ScrollDown';
 import cv from 'assets/rsc/CVOeslickDavid.pdf'
 import keanu from 'assets/images/keanu-reeves.png'
 
-const Hero = ({mode, changeMode}) => {
+const Hero = () => {
 
     return (
 
@@ -24,7 +24,7 @@ const Hero = ({mode, changeMode}) => {
                     </div>
                 </div>
                 <ScrollDown/>
-                <SwitchMode mode={mode} changeMode={changeMode}/>
+                <SwitchMode/>
             </div>
         </section>
 

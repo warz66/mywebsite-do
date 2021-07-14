@@ -1,6 +1,16 @@
 import './SwitchMode.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { handleMode } from 'features/mode';
+import { resetSection } from 'features/locationNavFp';
 
-const SwitchMode = ({mode, changeMode, text = true}) => {
+const SwitchMode = ({text = true}) => {
+    const mode = useSelector((state) => state.mode.value);
+    const dispatch = useDispatch();
+
+  function changeMode() {
+    dispatch(resetSection());
+    dispatch(handleMode());
+  }
 
     return (
 

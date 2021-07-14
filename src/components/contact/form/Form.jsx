@@ -9,7 +9,7 @@ const Form = () => {
     const [activeMsgResult, setActiveMsgResult] = useState(false);
     const form = useRef(null);
 
-    console.log('render form');
+    //console.log('render form');
 
     function sendMessageForm(tokenGrecaptacha) {
         const controller = new AbortController();

@@ -1,5 +1,5 @@
 import './Realisation.css'
-import React, { useEffect, useReducer } from "react";
+import React, { useCallback, useEffect, useReducer } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams, Link } from "react-router-dom";
@@ -13,8 +13,6 @@ const initialState = {
     realisation: false,
     index: 1,
     anchors: ["PRESENTATION", "CONTACT"],
-    lightboxOpen: false,
-    lightboxImage: ''
 };
   
 function reducer(state, action) {
@@ -34,20 +32,30 @@ function reducer(state, action) {
     }
 }
 
-const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
+const Realisation = ({handleStyleFpNav}) => {
     let { slug } = useParams();
     const [state, dispatch] = useReducer(reducer, initialState);
 
     console.log(state)
 
-    function nextRealisation() {
+    /*function nextRealisation() {
+        console.log('lol');
         if(state.index === realisationsMap.length-1) {
             return realisationsMap[0];
         }
         return realisationsMap[state.index+1];
-    }
+    }*/
+
+    const nextRealisation = useCallback(function () {
+        console.log('render nextRealisation');
+        if(state.index === realisationsMap.length-1) {
+            return realisationsMap[0];
+        }
+        return realisationsMap[state.index+1];
+    }, [state]);
 
     function previousRealisation() {
+        console.log('render previousRealisation');
         if(state.index === 0) {
             return realisationsMap[realisationsMap.length-1];
         }
@@ -58,7 +66,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
         if (!state.errorMapSlug) {
                 return (
                     <>  
-                        <RealisationPresentation mode={mode} changeMode={changeMode} realisation={state.realisation}/>
+                        <RealisationPresentation realisation={state.realisation}/>
                         
                         {state.realisation.features && <RealisationFeatures features={state.realisation.features}/>}
                     </>
@@ -86,7 +94,7 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
             }}*/
             render={({ state/*, fullpageApi */}) => {
 
-                console.log('render view')
+                //console.log('render view')
 
                 if(state) {
                     if(state.initialized) {

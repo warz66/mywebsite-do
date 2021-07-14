@@ -5,8 +5,10 @@ import vueReactLogoDark from 'assets/images/vue-react-logo-dark.svg'
 import symfonyLogoLight from 'assets/images/symfony-logo-light.svg'
 import wordpressLogoLight from 'assets/images/wordpress-logo-light.svg'
 import vueReactLogoLight from 'assets/images/vue-react-logo-light.svg'
+import { useSelector } from 'react-redux'
 
-const Services = ({mode, sectionActive}) => {
+const Services = ({sectionActive}) => {
+    const mode = useSelector((state) => state.mode.value);
 
     return (
 

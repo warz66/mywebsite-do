@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 const Home = (props) => {
   const locationNavFp = useSelector(state => state.locationNavFp.value);
 
+  //corriger ici lors du changement de mode le retour a la section
   let sectionActive = false;
   if(locationNavFp) {
     sectionActive = locationNavFp.payload;
@@ -62,13 +63,13 @@ const Home = (props) => {
               return (
                 <ReactFullpage.Wrapper>
 
-                  <Header fullpageApi={fullpageApi} mode={props.mode}/>
+                  <Header fullpageApi={fullpageApi}/>
   
-                  <Hero mode={props.mode} changeMode={props.changeMode} sectionActive={(sectionActive === "accueil") ? true : false}/>
+                  <Hero sectionActive={(sectionActive === "accueil") ? true : false}/>
   
-                  <About mode={props.mode} sectionActive={(sectionActive === "about") ? true : false}/>
+                  <About sectionActive={(sectionActive === "about") ? true : false}/>
   
-                  <Services mode={props.mode} sectionActive={(sectionActive === "services") ? true : false}/>
+                  <Services sectionActive={(sectionActive === "services") ? true : false}/>
   
                   <Realisations sectionActive={(sectionActive === "realisations") ? true : false}/>
   

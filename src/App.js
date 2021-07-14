@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Realisation from 'views/realisation/Realisation';
 import Home from 'views/home/Home';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { resetSection } from 'features/locationNavFp';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const dispatch = useDispatch();
-  const[mode, setMode] = useState(false);
+  const mode = useSelector((state) => state.mode.value);
 
   function handleStyleFpNav() {
     if (mode) {
@@ -18,11 +16,6 @@ function App() {
       document.getElementById("fp-nav").classList.remove('fp-nav-light'); 
       document.getElementById("fp-nav").classList.add('fp-nav-dark');
     }
-  }
-  
-  function changeMode(e) {
-    dispatch(resetSection());
-    setMode(!mode);
   }
 
   useEffect(() => {
@@ -55,8 +48,8 @@ function App() {
       <Router>
         
         <Switch>
-          <Route path="/realisation/:slug" render={() => <Realisation mode={mode} changeMode={changeMode} handleStyleFpNav={handleStyleFpNav}/>}/>
-          <Route exact path="/" render={() => <Home mode={mode} changeMode={changeMode} handleStyleFpNav={handleStyleFpNav}/>}/>
+          <Route path="/realisation/:slug" render={() => <Realisation handleStyleFpNav={handleStyleFpNav}/>}/>
+          <Route exact path="/" render={() => <Home handleStyleFpNav={handleStyleFpNav}/>}/>
         </Switch>
 
       </Router>

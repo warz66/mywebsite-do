@@ -3,7 +3,7 @@ import SwitchMode from 'components/switch-mode/SwitchMode';
 import { useState } from 'react';
 import ImageRealisation from 'components/image-realisation/ImageRealisation';
 
-const RealisationPresentation = ({mode, changeMode, realisation}) => {
+const RealisationPresentation = ({realisation}) => {
     const [loaded, setLoaded] = useState(false);
 
     return (
@@ -31,7 +31,7 @@ const RealisationPresentation = ({mode, changeMode, realisation}) => {
                         <a href={realisation.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>
                     </div>
                 </div>}
-                <SwitchMode mode={mode} changeMode={changeMode} text={false}/>
+                <SwitchMode text={false}/>
             </div>
         </div>
     );

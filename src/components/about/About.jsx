@@ -2,10 +2,12 @@ import './About.css'
 import krPortrait from 'assets/images/kr-portrait.png'
 import signatureDark from 'assets/images/signature-dark.svg'
 import signatureLight from 'assets/images/signature-light.svg'
+import { useSelector } from 'react-redux';
 
-const About = ({mode, sectionActive}) => {
+const About = ({sectionActive}) => {
+    const mode = useSelector((state) => state.mode.value);
 
-    console.log('about render');
+    //console.log('about render');
 
     return (
 
