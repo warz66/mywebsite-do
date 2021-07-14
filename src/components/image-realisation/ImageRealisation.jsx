@@ -3,8 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { Transition } from 'react-transition-group';
 import ReactDOM from 'react-dom';
 
-const ImageRealisation = ({images}) => {
+const ImageRealisation = ({image}) => {
     const [openLightbox, setOpenLightbox ] = useState(false);
+
+    console.log(image);
 
     function handleLightbox() {
         setOpenLightbox(!openLightbox);
@@ -23,24 +25,24 @@ const ImageRealisation = ({images}) => {
     }
 
     function IfLightbox() {
-        if(images.large) {
+        if(image.large) {
             return(
                 <>
-                    <img src={images.thumbnail} alt="" onClick={handleLightbox}/> 
+                    <img src={image.thumbnail} alt="" onClick={handleLightbox}/> 
                     {/*<Lightbox imageLarge={images.large} openLightbox={openLightbox} >*/}
                 </>
             );
         } else {
-            return <img src={images.thumbnail} alt="" />
+            return <img src={image} alt="" />
         }
     }
 
     useEffect(() => {
         /*const lightboxDiv = React.createElement('div', { className: 'LightboxDiv' });
         console.log(lightboxDiv);*/
-        if (images.large) {
+        if (image.large) {
             ReactDOM.render(
-                <Lightbox imageLarge={images.large} openLightbox={openLightbox} />,
+                <Lightbox imageLarge={image.large} openLightbox={openLightbox} />,
                 document.getElementById('lightbox-container')
             );
         }

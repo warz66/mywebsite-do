@@ -17,7 +17,7 @@ const RealisationPresentation = ({mode, changeMode, realisation}) => {
                 {realisation && <div id="wrapper-presentation" style={loaded ? {opacity: 1} : {opacity: 0}} onLoad={() => setLoaded(true)}>
                     <div id="realisation-presentation-img">
                         {/*<img src={realisation.image} alt=""/>*/}
-                        <ImageRealisation images={realisation.images}/>
+                        <ImageRealisation image={realisation.image}/>
                     </div>
                     <div id="realisation-presentation-title">
                         <h2>{realisation.title}</h2>

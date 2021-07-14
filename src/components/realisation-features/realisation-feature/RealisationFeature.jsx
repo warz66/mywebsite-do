@@ -18,7 +18,7 @@ const RealisationFeature = ({feature}) => {
                     {feature.linkWebsite && <a href={feature.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>}
                 </div>
                 {/*<img src={feature.image} alt=""/>*/}
-                <ImageRealisation images={feature.images}/>
+                <ImageRealisation image={feature.image}/>
             </div>
         </div>
     );

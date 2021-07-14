@@ -4,8 +4,7 @@ import photosnapRealisation from 'assets/images/photosnap-realisation.jpg'
 const arch = [
     {   
         title: "Arch Studio",
-        image: archRealisation,
-        images: {
+        image: {
             thumbnail: archRealisation,
             large: archRealisation,
         },
@@ -23,8 +22,7 @@ const arch = [
         features: [
             {
                 title: "Pixel Perfect",
-                image: archRealisation,
-                images: {
+                image: {
                     thumbnail: archRealisation,
                     large: photosnapRealisation,
                 },
@@ -38,8 +36,7 @@ const arch = [
             },
             {
                 title: "Utilisation de leaflet",
-                image: archRealisation,
-                images: {
+                image: {
                     thumbnail: archRealisation,
                     large: archRealisation,
                 },
