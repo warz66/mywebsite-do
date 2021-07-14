@@ -27,10 +27,29 @@ const Home = (props) => {
           responsiveWidth= "1200"
           responsiveHeight="937"
           //verticalCentered= {false}
-          /*afterLoad= { () => {
-            props.handleStyleFpNav();
+          afterLoad= { (origin, destination, direction) => {
+            switch(destination.index) {
+              case 0: 
+                document.title = "Hero | David OESLICK";
+                break;
+              case 1: 
+                document.title = "A propos de moi | David OESLICK";
+                break;
+              case 2: 
+                document.title = "Services | David OESLICK";
+                break;
+              case 3: 
+                document.title = "Réalisations | David OESLICK";
+                break;
+              case 4: 
+                document.title = "Contact | David OESLICK";
+                break;
+              default:
+                document.title = "David OESLICK website"; 
+                break;
+            }
           }}
-          onLeave={(origin, destination, direction) => {
+          /*onLeave={(origin, destination, direction) => {
           }}*/
           render={({ state, fullpageApi }) => {
 

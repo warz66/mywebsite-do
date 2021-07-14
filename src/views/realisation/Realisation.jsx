@@ -12,7 +12,9 @@ const initialState = {
     errorMapSlug: false,
     realisation: false,
     index: 1,
-    anchors: ["PRESENTATION", "CONTACT"]
+    anchors: ["PRESENTATION", "CONTACT"],
+    lightboxOpen: false,
+    lightboxImage: ''
 };
   
 function reducer(state, action) {
@@ -120,6 +122,10 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     );
 
     useEffect(() => {
+        document.title = state.realisation.title+" | Réalisation"
+    },[state.realisation]);
+
+    useEffect(() => {
         function importRealisation() {
             dispatch({type: 'reset'});
             const found = realisationsMap.find(realisation => realisation.slug === slug);
@@ -139,9 +145,11 @@ const Realisation = ({mode, changeMode, handleStyleFpNav}) => {
     },[slug]);
 
     return (
+        <>
+            <RealisationView/>
 
-        <RealisationView/>
-
+            <div id="lightbox-container"></div>
+        </>
     );
 }
 

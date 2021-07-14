@@ -1,4 +1,5 @@
 import './RealisationFeature.css';
+import ImageRealisation from 'components/image-realisation/ImageRealisation';
 
 const RealisationFeature = ({feature}) => {
 
@@ -16,7 +17,8 @@ const RealisationFeature = ({feature}) => {
                     {feature.linkGithub && feature.linkWebsite && <span>/</span>}
                     {feature.linkWebsite && <a href={feature.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>}
                 </div>
-                <img src={feature.image} alt=""/> 
+                {/*<img src={feature.image} alt=""/>*/}
+                <ImageRealisation images={feature.images}/>
             </div>
         </div>
     );

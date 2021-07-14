@@ -1,6 +1,7 @@
 import './RealisationPresentation.css';
 import SwitchMode from 'components/switch-mode/SwitchMode';
 import { useState } from 'react';
+import ImageRealisation from 'components/image-realisation/ImageRealisation';
 
 const RealisationPresentation = ({mode, changeMode, realisation}) => {
     const [loaded, setLoaded] = useState(false);
@@ -15,7 +16,8 @@ const RealisationPresentation = ({mode, changeMode, realisation}) => {
                 }
                 {realisation && <div id="wrapper-presentation" style={loaded ? {opacity: 1} : {opacity: 0}} onLoad={() => setLoaded(true)}>
                     <div id="realisation-presentation-img">
-                        <img src={realisation.image} alt=""/>
+                        {/*<img src={realisation.image} alt=""/>*/}
+                        <ImageRealisation images={realisation.images}/>
                     </div>
                     <div id="realisation-presentation-title">
                         <h2>{realisation.title}</h2>

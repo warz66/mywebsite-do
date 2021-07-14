@@ -40,11 +40,12 @@
 
 #realisation-presentation-img {
     grid-area: img;
+    position: relative;
     align-self: center;
     justify-self: center;
 }
 
-#realisation-presentation-img img {
+#realisation-presentation-img > img {
     max-width: 500px;
     max-height: 400px; 
     width: 100%;
