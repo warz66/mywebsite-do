@@ -1,6 +1,6 @@
 import './ScrollDown.css';
 
-const ScrollDown = ({mode, changeMode}) => {
+const ScrollDown = () => {
 
     return (
 

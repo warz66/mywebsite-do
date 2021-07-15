@@ -1,5 +1,5 @@
 import './Realisation.css'
-import React, { useCallback, useEffect, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams, Link } from "react-router-dom";
@@ -11,7 +11,7 @@ import RealisationFeatures from 'components/realisation-features/RealisationFeat
 const initialState = {
     errorMapSlug: false,
     realisation: false,
-    index: 1,
+    index: 0,
     anchors: ["PRESENTATION", "CONTACT"],
 };
   
@@ -36,26 +36,14 @@ const Realisation = ({handleStyleFpNav}) => {
     let { slug } = useParams();
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    console.log(state)
-
-    /*function nextRealisation() {
-        console.log('lol');
+    function nextRealisation() {
         if(state.index === realisationsMap.length-1) {
             return realisationsMap[0];
         }
         return realisationsMap[state.index+1];
-    }*/
-
-    const nextRealisation = useCallback(function () {
-        console.log('render nextRealisation');
-        if(state.index === realisationsMap.length-1) {
-            return realisationsMap[0];
-        }
-        return realisationsMap[state.index+1];
-    }, [state]);
+    }
 
     function previousRealisation() {
-        console.log('render previousRealisation');
         if(state.index === 0) {
             return realisationsMap[realisationsMap.length-1];
         }
@@ -92,15 +80,18 @@ const Realisation = ({handleStyleFpNav}) => {
             }}
             onLeave={(origin, destination, direction) => {
             }}*/
+            afterRender={() =>{
+                handleStyleFpNav();
+            }}
             render={({ state/*, fullpageApi */}) => {
 
                 //console.log('render view')
 
-                if(state) {
+                /*if(state) {
                     if(state.initialized) {
                         handleStyleFpNav();
                     }
-                }
+                }*/
                 
                 return (
 

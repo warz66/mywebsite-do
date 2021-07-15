@@ -43,7 +43,7 @@
     color: var(--secondary);
     transform: rotate(180deg);
     writing-mode: vertical-lr;
-    transition: color ease 30s !important;  
+    transition: color ease 0.3 !important;  
 }
 
 .switch-mode label {

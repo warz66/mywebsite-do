@@ -7,10 +7,10 @@ const SwitchMode = ({text = true}) => {
     const mode = useSelector((state) => state.mode.value);
     const dispatch = useDispatch();
 
-  function changeMode() {
-    dispatch(resetSection());
-    dispatch(handleMode());
-  }
+    function changeMode() {
+        dispatch(resetSection());
+        dispatch(handleMode());
+    }
 
     return (
 

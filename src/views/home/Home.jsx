@@ -52,13 +52,16 @@ const Home = (props) => {
           }}
           /*onLeave={(origin, destination, direction) => {
           }}*/
+          afterRender={() =>{
+            props.handleStyleFpNav();
+          }}
           render={({ state, fullpageApi }) => {
 
-              if(state) {
+              /*if(state) {
                 if(state.initialized) {
                   props.handleStyleFpNav();
                 }
-              }
+              }*/
   
               return (
                 <ReactFullpage.Wrapper>
