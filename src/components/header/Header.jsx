@@ -63,7 +63,7 @@ const Header = ({fullpageApi}) => {
         <header id="header">
             <div id="wrapper-header">
                 <div id="logo">
-                    Keanu.R
+                    David.O
                 </div>
 
                 <div id="menuH" onClick={handleMenu} className={openMenu ? 'is-active' : ''}>

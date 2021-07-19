@@ -2,7 +2,7 @@ import './RealisationFeatures.css'
 import Flickity from 'react-flickity-component'
 import 'flickity/dist/flickity.min.css'
 import RealisationFeature from 'components/realisation-features/realisation-feature/RealisationFeature';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const RealisationFeatures = ({features}) => {
     const [flkty, setFlkty] = useState(null);
@@ -22,6 +22,18 @@ const RealisationFeatures = ({features}) => {
             flkty.resize();
         }
     }
+
+    useEffect(() => {
+        if(flkty) {
+            function changePointerEvents(value) {
+                document.querySelectorAll(".img-with-lightbox-in-features").forEach(el => {
+                    el.style.pointerEvents = value;
+                });
+            }
+            flkty.on('dragStart', () => {changePointerEvents('none')})
+            flkty.on('dragEnd', () => {changePointerEvents('all')})
+        }
+    }, [flkty])
 
     return(
 

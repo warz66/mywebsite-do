@@ -35,7 +35,7 @@ function reducer(state, action) {
 const Realisation = ({handleStyleFpNav}) => {
     let { slug } = useParams();
     const [state, dispatch] = useReducer(reducer, initialState);
-
+    
     function nextRealisation() {
         if(state.index === realisationsMap.length-1) {
             return realisationsMap[0];
@@ -99,12 +99,12 @@ const Realisation = ({handleStyleFpNav}) => {
 
                         <Header/>
 
-                        <Link className="link-nav-realisation" to={'/realisation/'+previousRealisation().slug}>
+                        <Link className="link-nav-realisation" to={'/realisation/'+previousRealisation().slug} onClick={() => dispatch({type: 'reset'})}>
                             Projets précédent<br/>
                             <span>{previousRealisation().titleNav}</span>
                         </Link>
 
-                        <Link className="link-nav-realisation" to={'/realisation/'+nextRealisation().slug}>
+                        <Link className="link-nav-realisation" to={'/realisation/'+nextRealisation().slug} onClick={() => dispatch({type: 'reset'})}>
                             Projets suivant<br/>
                             <span>{nextRealisation().titleNav}</span>
                         </Link>
@@ -126,7 +126,7 @@ const Realisation = ({handleStyleFpNav}) => {
 
     useEffect(() => {
         function importRealisation() {
-            dispatch({type: 'reset'});
+            //dispatch({type: 'reset'});
             const found = realisationsMap.find(realisation => realisation.slug === slug);
             if(found) {
                 let index = realisationsMap.findIndex(realisation => realisation.slug === slug);

@@ -1,10 +1,17 @@
 import './RealisationPresentation.css';
 import SwitchMode from 'components/switch-mode/SwitchMode';
 import { useState } from 'react';
+import React from 'react';
 import ImageRealisation from 'components/image-realisation/ImageRealisation';
 
 const RealisationPresentation = ({realisation}) => {
     const [loaded, setLoaded] = useState(false);
+
+    function onLoad() {
+        if(!loaded) {
+            setLoaded(true);
+        }
+    }
 
     return (
         <div className="section bg-vr">
@@ -14,9 +21,8 @@ const RealisationPresentation = ({realisation}) => {
                         Loading...
                     </div>
                 }
-                {realisation && <div id="wrapper-presentation" style={loaded ? {opacity: 1} : {opacity: 0}} onLoad={() => setLoaded(true)}>
+                {realisation && <div id="wrapper-presentation" style={loaded ? {opacity: 1} : {opacity: 0}} onLoad={() => onLoad()}>
                     <div id="realisation-presentation-img">
-                        {/*<img src={realisation.image} alt=""/>*/}
                         <ImageRealisation image={realisation.image}/>
                     </div>
                     <div id="realisation-presentation-title">
@@ -38,4 +44,4 @@ const RealisationPresentation = ({realisation}) => {
 
 }
 
-export default RealisationPresentation;
+export default React.memo(RealisationPresentation);

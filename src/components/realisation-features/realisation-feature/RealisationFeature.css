@@ -44,6 +44,7 @@
 
 .realisation-feature-img img {
     width: 325px;
+    /*pointer-events: none !important;*/
 }
 
 @media(max-width: 950px) {

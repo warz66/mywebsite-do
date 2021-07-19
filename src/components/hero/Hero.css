@@ -102,15 +102,19 @@
     }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 730px) {
     #hero-img img {
-        filter: brightness(0.4);
+        right: -210px;
     }
 }
 
-@media(max-width: 580px) {
+@media(max-width: 600px) {
     #hero-img img {
-        right: -30%;
+        filter: brightness(0.3);
+        opacity: 0.9;
+        top:5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -120,9 +124,5 @@
     }
     #hero-text p {
         font-size: 18px;
-    }
-    #hero-img img {
-        right: -55%;
-        filter: brightness(0.3);
     }
 }

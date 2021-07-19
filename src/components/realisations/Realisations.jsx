@@ -1,3 +1,4 @@
+import React from 'react';
 import Flickity from 'react-flickity-component'
 import RealisationCard from 'components/realisations/realisation-card/RealisationCard';
 import portfolioRealisations from 'assets/realisations/realisationsMap';
@@ -41,4 +42,4 @@ const Realisations = ({sectionActive}) => {
 
 }
     
-export default Realisations;
+export default React.memo(Realisations);

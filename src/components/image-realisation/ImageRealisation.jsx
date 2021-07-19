@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Transition } from 'react-transition-group';
 import ReactDOM from 'react-dom';
 
-const ImageRealisation = ({image}) => {
-    const [openLightbox, setOpenLightbox ] = useState(false);
+const ImageRealisation = ({image, comeFromFeatures = false}) => {
+    const [openLightbox, setOpenLightbox] = useState(false);
 
     function handleLightbox() {
         setOpenLightbox(!openLightbox);
@@ -22,10 +22,6 @@ const ImageRealisation = ({image}) => {
         );
     }
 
-    function IfLightbox() {
-        return image.large ? <img src={image.thumbnail} alt="" onClick={handleLightbox}/> : <img src={image} alt="" />;
-    }
-
     useEffect(() => {
         if (image.large) {
             ReactDOM.render(
@@ -36,8 +32,11 @@ const ImageRealisation = ({image}) => {
     },[openLightbox, image.large]);
 
     return (
-        <IfLightbox />
+        <>
+            {image.large ? <img className={comeFromFeatures ? "img-with-lightbox-in-features" : ""} style={{cursor: "pointer" }} src={image.thumbnail} alt="" onClick={handleLightbox}/> : <img src={image} alt="" />}
+        </>
+        
     );
 }
 
-export default ImageRealisation;
+export default React.memo(ImageRealisation);
