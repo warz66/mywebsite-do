@@ -8,6 +8,8 @@ const SwitchMode = ({text = true}) => {
     const mode = useSelector((state) => state.mode.value);
     const animOK = useSelector((state) => state.mode.animBtn);
     const dispatch = useDispatch();
+
+    console.log('lol');
     
     function changeMode() {
         dispatch(resetSection());
