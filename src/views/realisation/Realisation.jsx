@@ -67,7 +67,7 @@ const Realisation = ({handleStyleFpNav}) => {
     const RealisationView = () => (
 
         <ReactFullpage
-            licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
+            licenseKey='Dg4568-sdfg9879-sdfg78795'
             //anchors={anchors}
             navigation
             navigationTooltips={state.anchors}

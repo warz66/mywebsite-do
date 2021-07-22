@@ -21,7 +21,7 @@ const Home = (props) => {
 
   const FullpageHome = () => (
     <ReactFullpage
-        licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
+        licenseKey='Dg4568-sdfg9879-sdfg78795'
         //anchors={anchors}
         navigation
         navigationTooltips={anchors}
