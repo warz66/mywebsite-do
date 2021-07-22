@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Realisation from 'views/realisation/Realisation';
 import Home from 'views/home/Home';
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"; //HashRouter pour test local
 import { useSelector } from 'react-redux';
 
 function App() {
