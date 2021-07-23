@@ -12,9 +12,8 @@ const Header = ({fullpageApi}) => {
     //console.log('render header');
 
     function handleMenu() {
-        setOpenMenu(!openMenu);
         calcCurtainHeight();
-        console.log(curtainHeight);
+        setOpenMenu(!openMenu);
     }
 
     function closeMenuHandleResize() {
