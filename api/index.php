@@ -50,7 +50,7 @@ header('Content-Type: application/json');
                     $mail->Host       = 'smtp.gmail.com'; 
                     $mail->SMTPAuth   = true;                            //Enable SMTP authentication
                     $mail->Username   = 'david.oeslick@gmail.com';                     //SMTP username
-                    $mail->Password   = 'sggtybbhuybrqcnh';                      //SMTP password
+                    $mail->Password   = $_ENV['APPLICATION_PASS_GMAIL'];                      //SMTP password
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                     $mail->SMTPOptions = array(
                         'ssl' => array(
