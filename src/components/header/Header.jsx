@@ -13,6 +13,8 @@ const Header = ({fullpageApi}) => {
 
     function handleMenu() {
         setOpenMenu(!openMenu);
+        calcCurtainHeight();
+        console.log(curtainHeight);
     }
 
     function closeMenuHandleResize() {
@@ -50,7 +52,7 @@ const Header = ({fullpageApi}) => {
     }
 
     useEffect(() => {
-        calcCurtainHeight();
+        //calcCurtainHeight();
         window.addEventListener('resize', calcCurtainHeight);
         window.addEventListener('resize', closeMenuHandleResize);
         return () => {
