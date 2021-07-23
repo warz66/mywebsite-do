@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use GuzzleHttp\Client;
 //use Dotenv\Dotenv;
-
+phpinfo();
 //Load Composer's autoloader
 require_once __DIR__ . '/../vendor/autoload.php';
 
