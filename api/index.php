@@ -4,13 +4,13 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use GuzzleHttp\Client;
-use Dotenv\Dotenv;
+//use Dotenv\Dotenv;
 
 //Load Composer's autoloader
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+/*$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();*/
 
 header('Content-Type: application/json');
 
