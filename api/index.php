@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use GuzzleHttp\Client;
 //use Dotenv\Dotenv;
-phpinfo();
+//phpinfo();
 //Load Composer's autoloader
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -16,7 +16,7 @@ header('Content-Type: application/json');
 
 //if(($_SERVER['HTTP_REFERER'] === $_ENV['SERVER_HTTP_REFERER_LOCALHOST']) || ($_SERVER['HTTP_REFERER'] === $_ENV['SERVER_HTTP_REFERER_URL'])) { 
     //header("Access-Control-Allow-Origin: {$_ENV['ACCESS_CONTROL_ALLOW_ORIGIN']}");
-    header("Access-Control-Allow-Origin: https://mywebsite-do.vercel.app");
+    header("Access-Control-Allow-Origin: {$_ENV['ACCESS_CONTROL_ALLOW_ORIGIN']}");
 
     $name = isset($_POST['name']) ? $_POST['name'] : null;
     $email = isset($_POST['email']) ? $_POST['email'] : null;
@@ -28,7 +28,7 @@ header('Content-Type: application/json');
         if($name && $email && $message) {
 
             // on gére la protection google recaptcha
-            $secretKeyGrecaptcha =  '6LcLgocbAAAAAFESkQZW2dA-8XnB1tsx29cwcQ1D';
+            $secretKeyGrecaptcha =  $_ENV['CLE_GRECAPTCHA_API_SECRET'];
             $client = new Client([
                 'base_uri' => 'https://www.google.com/recaptcha/api/'
             ]);
