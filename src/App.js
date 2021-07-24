@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Realisation from 'views/realisation/Realisation';
 import Home from 'views/home/Home';
+import NotFound from 'views/not-found/NotFound';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"; //HashRouter pour test local
 import { useSelector } from 'react-redux';
 
@@ -50,6 +51,7 @@ function App() {
         <Switch>
           <Route path="/realisation/:slug" render={() => <Realisation handleStyleFpNav={handleStyleFpNav}/>}/>
           <Route exact path="/" render={() => <Home handleStyleFpNav={handleStyleFpNav}/>}/>
+          <Route component={NotFound} />
         </Switch>
 
       </Router>

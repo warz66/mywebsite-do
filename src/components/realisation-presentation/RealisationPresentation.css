@@ -20,7 +20,7 @@
 
 @media(max-width: 1200px) {
     #realisation-presentation-loading {
-        top: 470px;
+        top: calc((100vh + 150px) / 2);
         transform: translateX(-50%);
     }      
 }
