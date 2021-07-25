@@ -3,8 +3,19 @@ import SwitchMode from 'components/switch-mode/SwitchMode';
 import ScrollDown from 'components/scroll-down/ScrollDown';
 import cv from 'assets/rsc/CVOeslickDavid.pdf'
 import keanu from 'assets/images/keanu-reeves.png'
+import { useState } from 'react';
 
 const Hero = () => {
+
+    function ImgHero() {
+        const [imgLoaded, setImgLoaded] = useState(false);
+
+        return(
+            <div id="hero-img" style={imgLoaded ? {opacity: 1} : {opacity: 0}}>
+                <img src={keanu} alt="" onLoad={() => setImgLoaded(true)}/>
+            </div>
+        );
+    }
 
     return (
 
@@ -19,9 +30,7 @@ const Hero = () => {
                             DOWNLOAD CV
                         </a>
                     </div>
-                    <div id="hero-img">
-                        <img src={keanu} alt=""/>
-                    </div>
+                    <ImgHero/>
                 </div>
                 <ScrollDown/>
                 <SwitchMode/>

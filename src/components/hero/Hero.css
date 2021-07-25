@@ -74,6 +74,10 @@
     margin-bottom: 70px;
 }
 
+#hero-img {
+    transition: 0.3s;
+}
+
 #hero-img img {
     position: absolute;
     z-index: 0;

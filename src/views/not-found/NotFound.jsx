@@ -6,8 +6,12 @@ const NotFound = () => {
         <>
             <Header/> 
 
-            <div id="not-found-page" className="bg-dark">
-
+            <div id="not-found-page" className="bg-vr">
+                <div>Erreur 404</div>
+                <div>
+                    Oops! Cette page <br />
+                    n'existe pas.
+                </div>
             </div>
         </>
     );
