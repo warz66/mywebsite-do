@@ -1,5 +1,7 @@
 import './NotFound.css';
 import Header from 'components/header/Header';
+import Footer from 'components/footer/Footer';
+import SwitchMode from 'components/switch-mode/SwitchMode';
 
 const NotFound = () => {
     return(
@@ -12,7 +14,10 @@ const NotFound = () => {
                     Oops! Cette page <br />
                     n'existe pas.
                 </div>
+                <SwitchMode/>
             </div>
+
+            <Footer/>
         </>
     );
 }

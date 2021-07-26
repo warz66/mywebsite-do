@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Contact.css'
 import Form from 'components/contact/form/Form';
+import Footer from 'components/footer/Footer';
 
 const Contact = ({sectionActive}) => {
     const [bgMode, setBgMode] = useState(true);
@@ -58,10 +59,7 @@ const Contact = ({sectionActive}) => {
                     </div>
                 </div>
             </div>
-            <footer className="bg-dark">
-                <p>Copyright © 2021 Freelance_Theme, All rights Reserved.</p>
-                <p>Created by DavidO_Design</p>
-            </footer>
+            <Footer/>
         </section>
 
     );
