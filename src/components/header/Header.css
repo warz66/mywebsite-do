@@ -143,7 +143,6 @@ header {
     width: 38px;
     border: 1px solid rgba(0, 0, 0, 0);
     padding: 6px;
-    /*transition: 0.3s;*/
 }
 
 #social-header a:not(:last-of-type) {
@@ -152,6 +151,7 @@ header {
 
 @media (hover: hover) and (pointer: fine) {
     #social-header a:hover svg {
+        transition: 0.3s;
         border: 1px solid var(--secondary);
         fill: var(--secondary);
     }

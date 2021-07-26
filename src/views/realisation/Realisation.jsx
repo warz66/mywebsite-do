@@ -26,7 +26,7 @@ function reducer(state, action) {
         case 'notFound':
             return {...state, errorMapSlug: true, realisation: false};
         case 'reset':
-            return initialState;
+            return {...state, realisation: false};
         default:
             return initialState;    
     }
@@ -99,12 +99,12 @@ const Realisation = ({handleStyleFpNav}) => {
 
                         <Header/>
 
-                        <Link className="link-nav-realisation" to={'/realisation/'+previousRealisation().slug}>
+                        <Link className="link-nav-realisation" to={'/realisation/'+previousRealisation().slug} onClick={() => dispatch({type: 'reset'})}>
                             Projets précédent<br/>
                             <span>{previousRealisation().titleNav}</span>
                         </Link>
 
-                        <Link className="link-nav-realisation" to={'/realisation/'+nextRealisation().slug}>
+                        <Link className="link-nav-realisation" to={'/realisation/'+nextRealisation().slug} onClick={() => dispatch({type: 'reset'})}>
                             Projets suivant<br/>
                             <span>{nextRealisation().titleNav}</span>
                         </Link>

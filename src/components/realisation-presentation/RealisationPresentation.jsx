@@ -1,17 +1,26 @@
 import './RealisationPresentation.css';
 import SwitchMode from 'components/switch-mode/SwitchMode';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 import ImageRealisation from 'components/image-realisation/ImageRealisation';
 
 const RealisationPresentation = ({realisation}) => {
     const [loaded, setLoaded] = useState(false);
 
+    //var t0 = performance.now();
+
     function onLoad() {
         if(!loaded) {
             setLoaded(true);
         }
     }
+
+    /*useEffect(() => {
+        if (loaded && realisation) {
+            var t1 = performance.now();
+            console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+        }
+    },[loaded, realisation]);*/
 
     return (
         <div className="section bg-vr">
