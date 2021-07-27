@@ -6,15 +6,12 @@ export const locationNavFpSLice = createSlice({
     value: null
   },
   reducers: {
-    resetSection: (state) => {
-        state.value = null;
-    },
     handleSection: (state, goToSection) => {
         state.value = goToSection;
     }
   }
 })
 
-export const { resetSection, handleSection } = locationNavFpSLice.actions
+export const { handleSection } = locationNavFpSLice.actions
 
 export default locationNavFpSLice.reducer
