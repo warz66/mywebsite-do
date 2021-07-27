@@ -1,34 +1,34 @@
 import './ImageRealisation.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
+
+function Lightbox ({imageLarge, openLightbox, handleLightbox}) {
+    return (
+        <>
+            <div className={`lightbox ${openLightbox ? 'is-active': ''}`} onClick={handleLightbox} data-display={openLightbox ? true : false} >
+                <div className="lightbox-wrapper">
+                    <img src={imageLarge} alt="" />
+                </div>
+            </div>
+        </>
+    );
+}
 
 const ImageRealisation = ({image, comeFromFeatures = false}) => {
     const [openLightbox, setOpenLightbox] = useState(false);
 
-    function handleLightbox() {
+    const handleLightbox = useCallback(() => {
         setOpenLightbox(!openLightbox);
-    }
-
-    function Lightbox ({imageLarge, openLightbox}) {
-        return (
-            <>
-                <div className={`lightbox ${openLightbox ? 'is-active': ''}`} onClick={handleLightbox} data-display={openLightbox ? true : false} >
-                    <div className="lightbox-wrapper">
-                        <img src={imageLarge} alt="" />
-                    </div>
-                </div>
-            </>
-        );
-    }
+    },[openLightbox]);
 
     useEffect(() => {
         if (image.large) {
             ReactDOM.render(
-                <Lightbox imageLarge={image.large} openLightbox={openLightbox} />,
+                <Lightbox imageLarge={image.large} openLightbox={openLightbox} handleLightbox={handleLightbox} />,
                 document.getElementById('lightbox-container')
             );
         }
-    },[openLightbox, image.large]);
+    },[openLightbox, image.large, handleLightbox]);
 
     return (
         <>

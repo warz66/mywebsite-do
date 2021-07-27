@@ -137,7 +137,7 @@ const Realisation = () => {
                 var t0 = performance.now();
                 import("assets/realisations/"+found.path).then( data => {
                     var t1 = performance.now();
-                    //console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+                    console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
                     dispatch({type: 'loaded', payload: {realisation: data.default[0], index: index}});
                 }).catch((err) => {console.log(err); dispatch({type: 'errImport', payload: { index: index }});} );
             } else {
