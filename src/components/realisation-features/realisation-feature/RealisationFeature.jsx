@@ -17,7 +17,6 @@ const RealisationFeature = ({feature}) => {
                     {feature.linkGithub && feature.linkWebsite && <span>/</span>}
                     {feature.linkWebsite && <a href={feature.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>}
                 </div>
-                {/*<img src={feature.image} alt=""/>*/}
                 <ImageRealisation image={feature.image} comeFromFeatures={true}/>
             </div>
         </div>

@@ -2,7 +2,6 @@ import './SwitchMode.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleMode, stopAnimBtn } from 'features/mode';
-import { resetSection } from 'features/locationNavFp';
 
 const SwitchMode = ({text = true}) => {
     const mode = useSelector((state) => state.mode.value);
@@ -10,7 +9,6 @@ const SwitchMode = ({text = true}) => {
     const dispatch = useDispatch();
     
     function changeMode() {
-        dispatch(resetSection());
         dispatch(handleMode());
     }
 

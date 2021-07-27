@@ -11,16 +11,6 @@ function App() {
   const mode = useSelector((state) => state.mode.value);
   const dispatch = useDispatch();
 
-  /*function handleStyleFpNav() {
-    if (mode) {
-      document.getElementById("fp-nav").classList.remove('fp-nav-dark'); 
-      document.getElementById("fp-nav").classList.add('fp-nav-light'); 
-    } else {
-      document.getElementById("fp-nav").classList.remove('fp-nav-light'); 
-      document.getElementById("fp-nav").classList.add('fp-nav-dark');
-    }
-  }*/
-
   useEffect(() => {
     dispatch(handleStyleFpNav());
   },[mode, dispatch]);
