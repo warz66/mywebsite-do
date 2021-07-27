@@ -7,6 +7,8 @@ import Contact from 'components/contact/Contact';
 import realisationsMap from 'assets/realisations/realisationsMap';
 import RealisationPresentation from 'components/realisation-presentation/RealisationPresentation';
 import RealisationFeatures from 'components/realisation-features/RealisationFeatures';
+import { useDispatch } from 'react-redux';
+import { handleStyleFpNav } from 'features/mode';
 
 const initialState = {
     errorMapSlug: false,
@@ -32,45 +34,42 @@ function reducer(state, action) {
     }
 }
 
-const Realisation = ({handleStyleFpNav}) => {
-    let { slug } = useParams();
-    const [state, dispatch] = useReducer(reducer, initialState);
-    
+const RealisationLazy = (({stateR, slug}) => {
+    if (!stateR.errorMapSlug) {
+            return (
+                <>  
+                    <RealisationPresentation realisation={stateR.realisation}/>
+                    
+                    {stateR.realisation.features && <RealisationFeatures features={stateR.realisation.features}/>}
+                </>
+            );
+    } else {
+        return <div id="realisation-error" className="section bg-vr">Nous n'avons pas trouvé la réalisation correspondant à l'url: {slug}.</div>
+    }
+});
+
+const RealisationView = ({stateR, dispatch, slug}) => {
+    const dispatchRedux = useDispatch();
+
     function nextRealisation() {
-        if(state.index === realisationsMap.length-1) {
+        if(stateR.index === realisationsMap.length-1) {
             return realisationsMap[0];
         }
-        return realisationsMap[state.index+1];
+        return realisationsMap[stateR.index+1];
     }
 
     function previousRealisation() {
-        if(state.index === 0) {
+        if(stateR.index === 0) {
             return realisationsMap[realisationsMap.length-1];
         }
-        return realisationsMap[state.index-1];
+        return realisationsMap[stateR.index-1];
     }
-    
-    function RealisationLazy() {
-        if (!state.errorMapSlug) {
-                return (
-                    <>  
-                        <RealisationPresentation realisation={state.realisation}/>
-                        
-                        {state.realisation.features && <RealisationFeatures features={state.realisation.features}/>}
-                    </>
-                );
-        } else {
-            return <div id="realisation-error" className="section bg-vr">Nous n'avons pas trouvé la réalisation correspondant à l'url: {slug}.</div>
-        }
-    }
-
-    const RealisationView = () => (
-
+    return (
         <ReactFullpage
             licenseKey='Dg4568-sdfg9879-sdfg78795'
             //anchors={anchors}
             navigation
-            navigationTooltips={state.anchors}
+            navigationTooltips={stateR.anchors}
             responsiveWidth= "1200"
             responsiveHeight="937"
             //slidesNavigation={true}
@@ -81,13 +80,13 @@ const Realisation = ({handleStyleFpNav}) => {
             onLeave={(origin, destination, direction) => {
             }}*/
             afterRender={() =>{
-                handleStyleFpNav();
+                dispatchRedux(handleStyleFpNav());
             }}
             render={({ state/*, fullpageApi */}) => {
 
-                //console.log('render view')
+                /*console.log(state)
 
-                /*if(state) {
+                if(state) {
                     if(state.initialized) {
                         handleStyleFpNav();
                     }
@@ -109,7 +108,7 @@ const Realisation = ({handleStyleFpNav}) => {
                             <span>{nextRealisation().titleNav}</span>
                         </Link>
 
-                        <RealisationLazy/>
+                        <RealisationLazy stateR={stateR} slug={slug}/>
 
                         <Contact/>
 
@@ -119,6 +118,11 @@ const Realisation = ({handleStyleFpNav}) => {
             }}
         />
     );
+};
+
+const Realisation = () => {
+    let { slug } = useParams();
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     useEffect(() => {
         document.title = state.realisation.title+" | Réalisation"
@@ -145,7 +149,7 @@ const Realisation = ({handleStyleFpNav}) => {
 
     return (
         <>
-            <RealisationView/>
+            <RealisationView stateR={state} dispatch={dispatch} slug={slug}/>
 
             <div id="lightbox-container"></div>
         </>

@@ -29,7 +29,7 @@
   --slate-gray : #6e7a94;
 }
 
-.dark-mode {
+:root .dark-mode {
   --primary: var(--dark-blue);
   --very-primary: var(--very-dark-blue);
   --secondary: var(--gold);
@@ -48,7 +48,7 @@
   /*transition: 0.3s;*/
 }
 
-.light-mode {
+:root .light-mode {
   --primary: var(--selago);
   --very-primary: var(--white);
   --secondary: var(--shark);
@@ -160,7 +160,7 @@
 }
 
 /*#fp-nav ul li a span {
-  background: var(--gold) !important;
+  background: var(--secondary) !important;
 }*/
 
 .fp-tooltip {

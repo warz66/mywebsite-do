@@ -14,9 +14,18 @@ export const modeSLice = createSlice({
     stopAnimBtn: (state) => {
       state.animBtn = false;
     },
+    handleStyleFpNav: (state) => {
+      if (state.value) {
+        document.getElementById("fp-nav").classList.remove('fp-nav-dark'); 
+        document.getElementById("fp-nav").classList.add('fp-nav-light'); 
+      } else {
+        document.getElementById("fp-nav").classList.remove('fp-nav-light'); 
+        document.getElementById("fp-nav").classList.add('fp-nav-dark');
+      }
+    }
   }
 })
 
-export const { handleMode, stopAnimBtn } = modeSLice.actions
+export const { handleMode, stopAnimBtn, handleStyleFpNav } = modeSLice.actions
 
 export default modeSLice.reducer
