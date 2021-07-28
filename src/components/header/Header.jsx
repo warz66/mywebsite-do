@@ -29,7 +29,7 @@ const Header = ({fullpageApi}) => {
     function menuRender() {
         if (fullpageApi) {
             return (
-                <ul>
+                <ul className="bg-vr">
                     <li><a href="/">ACCUEIL</a></li>
                     <li onClick={() => {fullpageApi.moveTo(2); handleMenu();}}>A PROPOS</li>
                     <li onClick={() => {fullpageApi.moveTo(3); handleMenu();}}>SERVICES</li>
@@ -39,7 +39,7 @@ const Header = ({fullpageApi}) => {
             );
         } else {
             return (
-                <ul>
+                <ul className="bg-vr">
                     <li><Link to="/" onClick={() => dispatch(handleSection("accueil"))}>ACCUEIL</Link></li>
                     <li><Link to="/" onClick={() => dispatch(handleSection("about"))}>A PROPOS</Link></li>
                     <li><Link to="/" onClick={() => dispatch(handleSection("services"))}>SERVICES</Link></li>
