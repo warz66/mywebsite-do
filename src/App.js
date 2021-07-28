@@ -45,8 +45,8 @@ function App() {
       <Router>
         
         <Switch>
-          <Route path="/realisation/:slug" render={() => <Realisation handleStyleFpNav={handleStyleFpNav}/>}/>
-          <Route exact path="/" render={() => <Home handleStyleFpNav={handleStyleFpNav}/>}/>
+          <Route path="/realisation/:slug" render={() => <Realisation/>}/>
+          <Route exact path="/" render={() => <Home/>}/>
           <Route component={NotFound} />
         </Switch>
 

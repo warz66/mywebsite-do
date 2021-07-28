@@ -15,12 +15,14 @@ export const modeSLice = createSlice({
       state.animBtn = false;
     },
     handleStyleFpNav: (state) => {
-      if (state.value) {
-        document.getElementById("fp-nav").classList.remove('fp-nav-dark'); 
-        document.getElementById("fp-nav").classList.add('fp-nav-light'); 
-      } else {
-        document.getElementById("fp-nav").classList.remove('fp-nav-light'); 
-        document.getElementById("fp-nav").classList.add('fp-nav-dark');
+      if (document.getElementById("fp-nav")) {
+        if (state.value) {
+          document.getElementById("fp-nav").classList.remove('fp-nav-dark'); 
+          document.getElementById("fp-nav").classList.add('fp-nav-light'); 
+        } else {
+          document.getElementById("fp-nav").classList.remove('fp-nav-light'); 
+          document.getElementById("fp-nav").classList.add('fp-nav-dark');
+        }
       }
     }
   }
