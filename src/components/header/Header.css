@@ -113,7 +113,7 @@ header {
     height: 1px;
     width: 0px;
     opacity: 0;
-    /*background-color: var(--secondary);*/
+    background-color: var(--secondary);
     transition: 0.3s;
 }
 
