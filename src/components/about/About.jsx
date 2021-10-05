@@ -30,7 +30,7 @@ const About = ({sectionActive}) => {
                         </p>
                         <div>
                             <a href="\" className="btn">
-                                ENGAGEZ MOI
+                                CONTACTEZ MOI
                             </a>
                             <span><img src={mode ? signatureLight : signatureDark} alt="" /></span>
                         </div>
