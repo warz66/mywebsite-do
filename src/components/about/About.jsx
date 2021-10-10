@@ -4,7 +4,7 @@ import signatureDark from 'assets/images/signature-dark.svg'
 import signatureLight from 'assets/images/signature-light.svg'
 import { useSelector } from 'react-redux';
 
-const About = ({sectionActive}) => {
+const About = ({sectionActive, fullpageApi}) => {
     const mode = useSelector((state) => state.mode.value);
 
     //console.log('about render');
@@ -29,9 +29,10 @@ const About = ({sectionActive}) => {
                             En 2014, il fait un retour remarqué en imposant un nouveau héros du cinéma d'action avec le film John Wick.<br/><br/>*/}
                         </p>
                         <div>
-                            <a href="\" className="btn">
-                                CONTACTEZ MOI
-                            </a>
+                            <div onClick={() => {fullpageApi.moveTo(5)}} className="btn">CONTACTEZ-MOI</div>
+                            {/*<a href="\" className="btn">
+                                CONTACTEZ-MOI
+                            </a>*/}
                             <span><img src={mode ? signatureLight : signatureDark} alt="" /></span>
                         </div>
                     </div>

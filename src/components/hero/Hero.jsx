@@ -5,7 +5,7 @@ import cv from 'assets/rsc/CVOeslickDavid.pdf'
 import keanu from 'assets/images/keanu-reeves.png'
 import React, { useState } from 'react';
 
-const Hero = () => {
+const Hero = ({fullpageApi}) => {
     const [imgLoaded, setImgLoaded] = useState(false);
 
     return (
@@ -17,9 +17,10 @@ const Hero = () => {
                         <span>BONJOUR</span>
                         <h1>Je suis <span>David</span> Oeslick</h1>
                         <p>Développeur Web Junior Front-end / Symfony</p>
-                        <a href={cv} download="CVOeslickDavid.pdf" className="btn">
+                        <div onClick={() => {fullpageApi.moveTo(4)}} className="btn">MES REALISATIONS</div>
+                        {/*<a href={cv} download="CVOeslickDavid.pdf" className="btn">
                             DOWNLOAD CV
-                        </a>
+                        </a>*/}
                     </div>
                     <div id="hero-img" style={imgLoaded ? {opacity: 1} : {opacity: 0}}>
                         <img src={keanu} alt="" onLoad={() => setImgLoaded(true)}/>

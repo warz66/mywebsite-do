@@ -21,7 +21,7 @@ const Realisations = ({sectionActive}) => {
 
         <section id="realisations" className={`section bg-dark ${sectionActive ? " active" : ""}`}>
             <div id="wrapper-realisations">
-                <h2>Réalisations</h2>
+                <h2>Mes réalisations</h2>
                 <p>In viverra sapien quis finibus egestas. Curabitur quis mattis arcu. Suspendisse ac est nibh. Mauris at nibh ut magna convallis viverra. Vestibulum felis erat, lacinia id sodales porttitor, gravida quis nibh.</p>
                 <Flickity
                     className={'carousel'} // default ''

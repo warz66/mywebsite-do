@@ -60,9 +60,9 @@ const Home = () => {
 
             <Header fullpageApi={fullpageApi}/>
 
-            <Hero sectionActive={(sectionActive === "accueil") ? true : false}/>
+            <Hero fullpageApi={fullpageApi} sectionActive={(sectionActive === "accueil") ? true : false}/>
 
-            <About sectionActive={(sectionActive === "about") ? true : false}/>
+            <About fullpageApi={fullpageApi} sectionActive={(sectionActive === "about") ? true : false}/>
 
             <Services sectionActive={(sectionActive === "services") ? true : false}/>
 

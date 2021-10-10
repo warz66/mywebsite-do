@@ -114,6 +114,7 @@
   transition: 0.3s;
   border: solid 1px var(--btn-bg-color);
   border-radius: 2px;
+  cursor: pointer;
 }
 
 @media (hover: hover) and (pointer: fine) {

@@ -14,7 +14,7 @@ const Services = ({sectionActive}) => {
 
         <section id="services" className={`section bg-vr ${sectionActive ? " active" : ""}`}>
             <div id="wrapper-services">
-                <h2>Services</h2>
+                <h2>Mes services</h2>
                 <p>In viverra sapien quis finibus egestas. Curabitur quis mattis arcu. Suspendisse ac est nibh. Mauris at nibh ut magna convallis viverra. Vestibulum felis erat, lacinia id sodales porttitor, gravida quis nibh.</p>
                 <div id="box-services">
                     <div className="box-service">
