@@ -10,15 +10,6 @@ const realisationsMap = [
     {   
         slug: "arch",
         path: "arch/arch.js", 
-        title: "Salut max",
-        titleNav: "Arch Studio", 
-        image: archRealisation,
-        techs: "React",
-        sum: "Salut max",
-    },
-    {   
-        slug: "arch",
-        path: "arch/arch.js", 
         title: "Arch Studio multi-page website",
         titleNav: "Arch Studio", 
         image: archRealisation,
