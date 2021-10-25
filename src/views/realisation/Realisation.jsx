@@ -6,7 +6,7 @@ import { useParams, Link } from "react-router-dom";
 import Contact from 'components/contact/Contact';
 import realisationsMap from 'assets/realisations/realisationsMap';
 import RealisationPresentation from 'components/realisation-presentation/RealisationPresentation';
-import RealisationFeatures from 'components/realisation-features/RealisationFeatures';
+import RealisationSpecs from 'components/realisation-specs/RealisationSpecs';
 import { useDispatch } from 'react-redux';
 import { handleStyleFpNav } from 'features/mode';
 
@@ -21,7 +21,7 @@ function reducer(state, action) {
     switch (action.type) {
         case 'loaded':
             let anchors;
-            action.payload.realisation.features ? anchors = ["PRESENTATION" ,"FONCTIONALITES" , "CONTACT"] : anchors = ["PRESENTATION", "CONTACT"];
+            action.payload.realisation.specs ? anchors = ["PRESENTATION" ,"SPECIFICATIONS" , "CONTACT"] : anchors = ["PRESENTATION", "CONTACT"];
             return {errorMapSlug: false, realisation: action.payload.realisation, index: action.payload.index, anchors: anchors};
         case 'errImport':
             return {errorMapSlug: true, realisation: false, index: action.payload.index, anchors: ["PRESENTATION", "CONTACT"] };
@@ -36,15 +36,15 @@ function reducer(state, action) {
 
 const RealisationLazy = (({stateR, slug}) => {
     if (!stateR.errorMapSlug) {
-            return (
-                <>  
-                    <RealisationPresentation realisation={stateR.realisation}/>
-                    
-                    {stateR.realisation.features && <RealisationFeatures features={stateR.realisation.features}/>}
-                </>
+        return (
+            <>  
+                <RealisationPresentation realisation={stateR.realisation}/>
+                
+                {stateR.realisation.specs && <RealisationSpecs specs={stateR.realisation.specs}/>}
+            </>
             );
     } else {
-        return <div id="realisation-error" className="section bg-vr">Nous n'avons pas trouvé la réalisation correspondant à l'url: {slug}.</div>
+        return <div id="realisation-error" className="section bg-vr">Nous n'avons pas trouvé la réalisation correspondant au slug: {slug}.</div>
     }
 });
 
@@ -64,13 +64,14 @@ const RealisationView = ({stateR, dispatch, slug}) => {
         }
         return realisationsMap[stateR.index-1];
     }
+
     return (
         <ReactFullpage
             licenseKey='Dg4568-sdfg9879-sdfg78795'
             //anchors={anchors}
             navigation
             navigationTooltips={stateR.anchors}
-            responsiveWidth= "1200"
+            responsiveWidth="1200"
             responsiveHeight="937"
             //slidesNavigation={true}
             //verticalCentered= {false}
@@ -134,10 +135,7 @@ const Realisation = () => {
             const found = realisationsMap.find(realisation => realisation.slug === slug);
             if(found) {
                 let index = realisationsMap.findIndex(realisation => realisation.slug === slug);
-                var t0 = performance.now();
                 import("assets/realisations/"+found.path).then( data => {
-                    var t1 = performance.now();
-                    console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
                     dispatch({type: 'loaded', payload: {realisation: data.default[0], index: index}});
                 }).catch((err) => {console.log(err); dispatch({type: 'errImport', payload: { index: index }});} );
             } else {

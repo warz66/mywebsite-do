@@ -1,10 +1,10 @@
-import './RealisationFeatures.css'
+import './RealisationSpecs.css'
 import Flickity from 'react-flickity-component'
 import 'flickity/dist/flickity.min.css'
-import RealisationFeature from 'components/realisation-features/realisation-feature/RealisationFeature';
+import RealisationSpec from 'components/realisation-specs/realisation-spec/RealisationSpec';
 import { useEffect, useState } from 'react';
 
-const RealisationFeatures = ({features}) => {
+const RealisationSpecs = ({specs}) => {
     const [flkty, setFlkty] = useState(null);
 
     const flickityOptions = {
@@ -26,7 +26,7 @@ const RealisationFeatures = ({features}) => {
     useEffect(() => {
         if(flkty) {
             function changePointerEvents(value) {
-                document.querySelectorAll(".img-with-lightbox-in-features").forEach(el => {
+                document.querySelectorAll(".img-with-lightbox-in-specs").forEach(el => {
                     el.style.pointerEvents = value;
                 });
             }
@@ -38,9 +38,9 @@ const RealisationFeatures = ({features}) => {
     return(
 
         <div className="section bg-dark">
-            <div id="wrapper-features" onLoad={flktyResize}>
-                <h3>Fonctionalités</h3>
-                <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still.</p>
+            <div id="wrapper-specs" onLoad={flktyResize}>
+                <h3>Spécifications</h3>
+                {/*<p>Ici, je vous fait part des caractéristiques essentielles du projets.</p>*/}
                 <Flickity
                     flickityRef={c => setFlkty(c)}
                     className={'carousel'} // default ''
@@ -50,8 +50,8 @@ const RealisationFeatures = ({features}) => {
                     reloadOnUpdate // default false
                     static // default false
                 >   
-                    {features.map( (feature, index) => {
-                            return <RealisationFeature feature={feature} key={index}/> 
+                    {specs.map( (spec, index) => {
+                            return <RealisationSpec spec={spec} key={index}/> 
                     })}
                 </Flickity>
             </div>
@@ -60,4 +60,4 @@ const RealisationFeatures = ({features}) => {
     );
 }
 
-export default RealisationFeatures;
+export default RealisationSpecs;

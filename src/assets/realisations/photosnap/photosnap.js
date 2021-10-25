@@ -13,7 +13,7 @@ const photosnap = [
         ],
         linkGithub: "https://github.com/warz66/FMentor-ArchStudio",
         linkWebsite: "https://fmentor-arch-studio.vercel.app",
-        features: [
+        specs: [
             {
                 title: "Pixel Perfect",
                 image: photosnapRealisation,

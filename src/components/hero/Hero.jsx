@@ -1,7 +1,6 @@
 import './Hero.css';
 import SwitchMode from 'components/switch-mode/SwitchMode';
 import ScrollDown from 'components/scroll-down/ScrollDown';
-import cv from 'assets/rsc/CVOeslickDavid.pdf'
 import keanu from 'assets/images/keanu-reeves.png'
 import React, { useState } from 'react';
 

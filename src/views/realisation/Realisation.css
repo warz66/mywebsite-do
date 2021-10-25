@@ -1,15 +1,19 @@
 #realisation-error {
-    text-align: center;
-    color: var(--very-tertiary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--tertiary);
 }
 
-@media(max-width: 1200px) {
+/*@media(max-width: 1200px) {
     #realisation-error  {
         display: flex;
+        justify-content: center;
         align-items: center;
         min-height: 100vh;
     }
-}
+}*/
 
 .link-nav-realisation {
     position: absolute;

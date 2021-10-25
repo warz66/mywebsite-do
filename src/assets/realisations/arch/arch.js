@@ -1,5 +1,4 @@
 import archRealisation from 'assets/images/arch-realisation.jpg'
-import photosnapRealisation from 'assets/images/photosnap-realisation.jpg'
 
 const arch = [
     {   
@@ -19,19 +18,41 @@ const arch = [
         ],
         linkGithub: "https://github.com/warz66/FMentor-ArchStudio",
         linkWebsite: "https://fmentor-arch-studio.vercel.app",
-        features: [
+        specs: [
             {
                 title: "Pixel Perfect",
                 image: {
                     thumbnail: archRealisation,
-                    large: photosnapRealisation,
+                    large: archRealisation,
                 },
-                text: [
-                    "Mihi atque consiliis ipsas ita ita homini publicae homini omnium me Quid inimicus depono me meorum tandem mihi iure rei ipsas ex homini amicus depono homini Quid summorum depono meorum.",
-                    "Triumphos aetatem adultam in aerumnas transcendit in fere et circummurana.",
-                    "Militares turbarum sine ad ad traxere haec turbarum corpore atque praefecti et morati adorti proximo adorti militares proximo ullo morbosum.",
+                sections: [
+                    {
+                        title: "dfgsdfgsdfg",
+                        paragraphe: [
+                            "Mihi atque consiliis ipsas ita ita homini publicae homini omnium me Quid inimicus depono me meorum tandem mihi iure rei ipsas ex homini amicus depono homini Quid summorum depono meorum.",
+                            "Triumphos aetatem adultam in aerumnas transcendit in fere et circummurana.",
+                            "Militares turbarum sine ad ad traxere haec turbarum corpore atque praefecti et morati adorti proximo adorti militares proximo ullo morbosum.",
+                        ]
+                    },
+                    {
+                        title: "dfgsdfgsdfg",
+                        paragraphe: [
+                            "Mihi atque consiliis ipsas ita ita homini publicae homini omnium me Quid inimicus depono me meorum tandem mihi iure rei ipsas ex homini amicus depono homini Quid summorum depono meorum.",
+                            "Triumphos aetatem adultam in aerumnas transcendit in fere et circummurana.",
+                            "Militares turbarum sine ad ad traxere haec turbarum corpore atque praefecti et morati adorti proximo adorti militares proximo ullo morbosum.",
+                        ]
+                    },
                 ],
-                linkGithub: "sdfgdsfgsdfg",
+                linksGithubs: [
+                    {
+                        href: "sdfgsdfgsdfg",
+                        title: "sfgsdfgergerg"
+                    },
+                    {
+                        href: "sdfgsdfgsdfg",
+                        title: "sdfgsdfgsdfg"
+                    },
+                ],
                 linkWebsite: "sdfgsdfgsdfg",
             },
             {
@@ -40,10 +61,16 @@ const arch = [
                     thumbnail: archRealisation,
                     large: archRealisation,
                 },
-                text: [
-                    "Caedium Lycaoniam Pamphyliam quidem documentis.",
-                    "Mihi atque consiliis ipsas ita ita homini publicae homini omnium me Quid inimicus depono me meorum tandem mihi iure rei ipsas ex homini amicus depono homini Quid summorum depono meorum.",
-                ]
+                sections: [
+                    {
+                        title: "dfgsdfgsdfg",
+                        paragraphe: [
+                            "Mihi atque consiliis ipsas ita ita homini publicae homini omnium me Quid inimicus depono me meorum tandem mihi iure rei ipsas ex homini amicus depono homini Quid summorum depono meorum.",
+                            "Triumphos aetatem adultam in aerumnas transcendit in fere et circummurana.",
+                            "Militares turbarum sine ad ad traxere haec turbarum corpore atque praefecti et morati adorti proximo adorti militares proximo ullo morbosum.",
+                        ]
+                    },
+                ],
             }
         ]
     },

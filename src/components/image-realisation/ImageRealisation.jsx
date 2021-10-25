@@ -14,7 +14,7 @@ function Lightbox ({imageLarge, openLightbox, handleLightbox}) {
     );
 }
 
-const ImageRealisation = ({image, comeFromFeatures = false}) => {
+const ImageRealisation = ({image, comeFromSpecs = false}) => {
     const [openLightbox, setOpenLightbox] = useState(false);
 
     const handleLightbox = useCallback(() => {
@@ -32,7 +32,7 @@ const ImageRealisation = ({image, comeFromFeatures = false}) => {
 
     return (
         <>
-            {image.large ? <img className={comeFromFeatures ? "img-with-lightbox-in-features" : ""} style={{cursor: "pointer" }} src={image.thumbnail} alt="" onClick={handleLightbox}/> : <img src={image} alt="" />}
+            {image.large ? <img className={comeFromSpecs ? "img-with-lightbox-in-specs" : ""} style={{cursor: "pointer" }} src={image.thumbnail} alt="" onClick={handleLightbox}/> : <img src={image} alt="" />}
         </>
         
     );

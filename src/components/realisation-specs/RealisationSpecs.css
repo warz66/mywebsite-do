@@ -1,4 +1,4 @@
-#wrapper-features {
+#wrapper-specs {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
@@ -6,37 +6,37 @@
 }
 
 @media (max-width: 1200px) {
-    #wrapper-features {
+    #wrapper-specs {
         padding: 120px 40px 186px 40px;
     } 
 }
 
 @media (max-width: 1100px) {
-    #wrapper-features {
+    #wrapper-specs {
         padding: 120px 40px;
     } 
 }
 
 @media (max-width: 600px) {
-    #wrapper-features {
+    #wrapper-specs {
         padding: 80px 25px;
     } 
 }
 
-#wrapper-features > h3 {
+#wrapper-specs > h3 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     color: var(--secondary);
     font-size: 36px;
 }
 
 @media(max-width: 400px) {
-    #wrapper-features > h3 {
+    #wrapper-specs > h3 {
         font-size: 9vw;
     }    
 }
 
-#wrapper-features > p {
+#wrapper-specs > p {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 60px auto;
@@ -45,32 +45,32 @@
     font-size: 14px; 
 }
 
-#wrapper-features .flickity-viewport {
+#wrapper-specs .flickity-viewport {
     overflow: visible !important;
     width: 100%;
 }
 
 /* position dots up a bit */
-#wrapper-features .flickity-page-dots {
+#wrapper-specs .flickity-page-dots {
     bottom: -50px;
     text-align: left;
 }
 
 /* dots are lines */
-#wrapper-features .flickity-page-dots .dot {
+#wrapper-specs .flickity-page-dots .dot {
     height: 4px;
     width: 25px;
     border-radius: 0;
     background: var(--secondary);
 }
 
-#wrapper-features .carousel:after {
+#wrapper-specs .carousel:after {
     content: 'flickity';
     display: none; /* hide :after */
   }
 
 @media screen and ( max-width: 1100px ) {
-    #wrapper-features .carousel:after {
+    #wrapper-specs .carousel:after {
         content: '';
     }
 }

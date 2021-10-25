@@ -1,54 +1,54 @@
-.realisation-feature {
+.realisation-spec {
     display: flex;
-    column-gap: 50px;
-    max-width: 1000px;
+    column-gap: 40px;
+    max-width: 1100px;
     width: 100%;
     height: auto;
     background-color: var(--primary);
-    padding: 50px 60px;
+    padding: 35px 45px;
     border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-.realisation-feature:not(:last-of-type) {
-    margin-right: 50px;
+.realisation-spec:not(:last-of-type) {
+    margin-right: 40px;
 }
 
 @media (max-width: 1100px) {
-    .realisation-feature:not(:last-of-type) {
+    .realisation-spec:not(:last-of-type) {
         margin-bottom: 50px;
     }
 }
 
 @media(max-width: 950px) {
-    .realisation-feature {
+    .realisation-spec {
         flex-direction: column;
         max-width: 600px;
         margin: 0 auto;
     }
-    .realisation-feature:not(:last-of-type) {
+    .realisation-spec:not(:last-of-type) {
         margin: 0px auto 50px auto;
     }   
 }
 
 @media(max-width: 600px) {
-    .realisation-feature {
+    .realisation-spec {
         display: flex;
         background-color: transparent;
         padding: 0;
         border: none;
     }
-    .realisation-feature:not(:last-of-type) {
+    .realisation-spec:not(:last-of-type) {
         margin: 0px auto 100px auto;
     }    
 }
 
-.realisation-feature-img img {
+.realisation-spec-img img {
     width: 325px;
     /*pointer-events: none !important;*/
 }
 
 @media(max-width: 950px) {
-    .realisation-feature-img img {
+    .realisation-spec-img img {
         display: block;
         margin: 0 auto;
         max-width: 350px;
@@ -56,13 +56,17 @@
     }    
 }
 
-.realisation-feature-text h4 {
+.realisation-spec-text > div:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.realisation-spec-text h4 {
     margin-bottom: 30px;
     color: var(--secondary);
     display: flex;
 }
 
-.realisation-feature-text h4::before {
+.realisation-spec-text h4::before {
     align-self: center;
     content: "";
     display: inline-block;
@@ -73,17 +77,29 @@
     margin-bottom: 2px;
 }
 
-.realisation-feature-text p {
+.realisation-spec-text h5 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--tertiary);
+    text-decoration: underline;
+}
+
+.realisation-spec-text p {
     color: var(--tertiary);
     line-height: 25px;
     font-size: 15px;
 }
 
-.realisation-feature-text p:not(:last-of-type) {
+.realisation-spec-text p:not(:last-of-type) {
     margin-bottom: 20px;
 }
 
-.realisation-feature-link {
+.realisation-spec-text a {
+    color: var(--tertiary);
+}
+
+.realisation-spec-links {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -91,7 +107,7 @@
     color: var(--tertiary);
 }
 
-.realisation-feature-link a {
+.realisation-spec-links a {
     color: var(--very-tertiary);
     text-decoration: none;
     font-size: 15px;
@@ -99,18 +115,22 @@
     position: relative;
 }
 
-.realisation-feature-link span {
+.realisation-spec-links-git  a:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.realisation-spec-links-slash {
     margin: 0 30px;
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .realisation-feature-link a:hover {
+    .realisation-spec-links a:hover {
         transition: 0.3s;
         color: var(--secondary);
     }
 }
 
-.realisation-feature-link a:after {
+.realisation-spec-links a:after {
     position: absolute;
     content: "";
     left: 0;
@@ -123,14 +143,14 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .realisation-feature-link a:hover:after {
+    .realisation-spec-links a:hover:after {
         width: 100%;
         opacity: 1;
     }
 }
 
 @media(max-width: 950px) {
-    .realisation-feature-link {
+    .realisation-spec-links {
         justify-content: center;
         margin: 30px 0px;
     }    

@@ -5,8 +5,18 @@ import mairieRealisation from 'assets/images/mairie-realisation.jpg'
 import clipboardRealisation from 'assets/images/clipboard-realisation.jpg'
 import roomRealisation from 'assets/images/room-realisation.jpg'
 import davidRealisation from 'assets/images/david-oeslick-website.jpg'
+import svenrybinRealisation from 'assets/images/svenrybin-realisation.jpg'
 
 const realisationsMap = [
+    {
+        slug: "svenrybin",
+        path: "svenrybin/svenrybin.js", 
+        title: "Svenrybin.fr",
+        titleNav: "Svenrybin.fr", 
+        image: svenrybinRealisation,
+        techs: "React, Next, Symfony, Api-Platform",
+        sum: "Site web de l'artiste peintre Sven Rybin.",   
+    },
     {   
         slug: "arch",
         path: "arch/arch.js", 
