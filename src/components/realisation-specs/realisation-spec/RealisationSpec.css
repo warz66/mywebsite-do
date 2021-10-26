@@ -5,7 +5,7 @@
     width: 100%;
     height: auto;
     background-color: var(--primary);
-    padding: 35px 45px;
+    padding: 35px 40px;
     border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -61,7 +61,7 @@
 }
 
 .realisation-spec-text h4 {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     color: var(--secondary);
     display: flex;
 }
