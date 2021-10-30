@@ -47,11 +47,11 @@ const RealisationPresentation = ({realisation}) => {
                     </div>
                     <div id="realisation-presentation-text">
                         <span>{realisation.techs}</span>
-                        {realisation.presentation.map( (paragraphe, index) => {
-                            return <p key={index}>{paragraphe}</p>
+                        {realisation.presentation.map((paragraphe, index) => {
+                            return <p key={index} dangerouslySetInnerHTML={{ __html:paragraphe}}></p>
                         })}
-                        <a href={realisation.linkGithub} target="_blank" rel="noreferrer">Dépôt github</a>
-                        <a href={realisation.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>
+                        <a className="realisation-presentation-link" href={realisation.linkGithub} target="_blank" rel="noreferrer">Dépôt github</a>
+                        <a className="realisation-presentation-link" href={realisation.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>
                     </div>
                 </div>}
                 <SwitchMode text={false}/>

@@ -14,11 +14,11 @@ const arch = [
         techs: "NEXT REACT / SYMFONY API-PLATFORM",
         sum: "In this challenge, you'll be building a 4-page site that will look great in any portfolio.",
         presentation: [
-            "Ce projet porte sur un artiste peintre décédé, le but était de mettre en avant son oeuvre (plus de 2000 toiles) et de lui rendre hommage à travers un site web.",
-            "Avant toutes choses c'est un travail effectué pour un proche, j'avais donc la liberté de mes choix comme pour un projet personnel ce qui m'a donné l'occasion de découvrir Next.js, Api-Platforme (sous Symfony) et consolider mes connaissances en React, Js, Html, Css",
-            "A la base ce projet est une refonte d'un site qui date de 2019 et dont je n'était pas satisfait du visuel. J'en ai recupérer que le contenu tel que les images et les textes.",
-            "Pour le design je suis parti d'une maquette réalisé par une amie graphiste. J'ai fait un découpage classique du footer, header, section ainsi que des élèments qui se répètent pour en faire des composants dans React. J'ai intégré une fonctionalité de light-mode, dark-mode, je trouvais que certain tableau pouvait mieux ressortir sur l'un ou l'autre des modes.",
-            "On peut dire que c'est un projet 2 en 1, car il y'a une partie Api et une partie Front-end indépendantes l'une de l'autre mais qui communique ensemble. A la suite de cette page vous verrez les spécifications importantes qui m'ont poussé à choisir cette structure pour ce site web."
+            "Le but du projet était de mettre en avant par le biais d'un site web l'artiste peintre Sven Rybin (décédé en 2012), en exposant son oeuvre (plus de 2000 toiles).",
+            "Avant toutes choses c'est un travail effectué pour un proche, j'avais donc la liberté de mes choix comme pour un projet personnel ce qui m'a donné l'occasion de découvrir <a href='https://nextjs.org/' target='_blank' rel='noreferrer'>Next.js</a>, <a href='https://api-platform.com/' target='_blank' rel='noreferrer'>Api-Platforme</a> (sous <a href='https://symfony.com/' target='_blank' rel='noreferrer'>Symfony</a>) et consolider mes connaissances en React, Js, Html, Css",
+            "A la base ce projet est une refonte d'un site qui date de 2019 et dont je n'était pas satisfait du visuel. J'en ai recupéré que le contenu tel que les images et les textes.",
+            "Pour le design je suis parti d'une maquette réalisée par <a href='https://aurore-graphique.fr/' target='_blank' rel='noreferrer'>une amie graphiste</a>. J'ai fait un découpage classique du footer, header, sections ainsi que des élements qui se répètent pour en faire des composants dans React. J'ai intégré une fonctionalité de light-mode, dark-mode, je trouvais que certain tableau pouvait mieux ressortir sur l'un ou l'autre des modes.",
+            "On peut dire que c'est un projet 2 en 1, car il y a une partie Api et une partie Front-end indépendantes l'une de l'autre mais qui communique ensemble. A la suite de cette page vous verrez les spécifications importantes qui m'ont poussé à choisir cette structure pour ce site web."
         ],
         linkGithub: "https://github.com/warz66/next-sven-rybin",
         linkWebsite: "https://www.svenrybin.fr",

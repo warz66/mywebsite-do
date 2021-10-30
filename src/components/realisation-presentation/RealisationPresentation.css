@@ -46,7 +46,7 @@
 }
 
 #realisation-presentation-img > img {
-    max-width: 500px;
+    max-width: 400px;
     max-height: 400px; 
     width: 100%;
     object-fit: cover;
@@ -62,15 +62,15 @@
 }
 
 #realisation-presentation-title h2 {
-    font-size: 75px;
+    font-size: 70px;
     color: var(--secondary);
 }
 
-#realisation-presentation-text span {
+#realisation-presentation-text > span {
     display: flex;
     font-size: 15px;
     color: var(--secondary);
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     text-transform: uppercase;
 }
 
@@ -82,10 +82,14 @@
 }
 
 #realisation-presentation-text p:last-of-type {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
-#realisation-presentation-text a {
+#realisation-presentation-text p > a {
+    color: var(--tertiary);
+}
+
+.realisation-presentation-link {
     display: flex;
     width: max-content;
     color: var(--secondary);
@@ -93,11 +97,11 @@
     font-size: 15px;
 }
 
-#realisation-presentation-text a:not(:last-of-type) {
+.realisation-presentation-link:not(:last-of-type) {
     margin-bottom: 20px;
 }
 
-#realisation-presentation-text a::before, #realisation-presentation-text span::before {
+.realisation-presentation-link::before, #realisation-presentation-text span::before {
     align-self: center;
     content: "";
     display: inline-block;
@@ -108,11 +112,17 @@
     margin-bottom: 2px;
 }
 
+.text-presentation-title {
+    display: block;
+    margin-bottom: 15px;
+}
+
 @media(max-width: 1600px) {
     #wrapper-presentation {
-        max-width: 1240px;
+        max-width: 1290px;
         grid-template-areas: "title title"
                              "img text";
+        column-gap: 60px; 
     }
     #realisation-presentation-title {
         text-align: center;
