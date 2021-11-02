@@ -1,11 +1,11 @@
 import archRealisation from 'assets/images/arch-realisation.jpg'
 import photosnapRealisation from 'assets/images/photosnap-realisation.jpg'
 import countriesRealisation from 'assets/images/countries-realisation.jpg'
-import mairieRealisation from 'assets/images/mairie-realisation.jpg'
+import mairieRealisation from 'assets/images/wsm/mairie-realisation.jpg'
 import clipboardRealisation from 'assets/images/clipboard-realisation.jpg'
 import roomRealisation from 'assets/images/room-realisation.jpg'
 import davidRealisation from 'assets/images/david-oeslick-website.jpg'
-import svenrybinRealisation from 'assets/images/svenrybin-realisation.jpg'
+import svenrybinRealisation from 'assets/images/svenrybin/svenrybin-realisation.jpg'
 
 const realisationsMap = [
     {
@@ -59,8 +59,8 @@ const realisationsMap = [
         title: "Web Solution Mairie",
         titleNav: "Web Solution Mairie", 
         image: mairieRealisation,
-        techs: "Symfony",
-        sum: "Solution pour site institutionnel.",
+        techs: "Symfony 5, Jquery, Bootstrap 4",
+        sum: "Solution pour sites de partage d'informations pour les collectivités locales, communes.",
     },
     {   
         slug: "clipboard-landing-page",

@@ -1,8 +1,8 @@
-import svenrybinRealisation from 'assets/images/svenrybin-realisation.jpg'
-import svenrybinHomepage from 'assets/images/svenrybin-homepage.jpg'
-import svenrybinGalerie from 'assets/images/svenrybin-galerie.jpg'
-import svenrybinApi from 'assets/images/svenrybin-api.jpg'
-import svenrybinFormContact from 'assets/images/svenrybin-form-contact.jpg'
+import svenrybinRealisation from 'assets/images/svenrybin/svenrybin-realisation.jpg'
+import svenrybinHomepage from 'assets/images/svenrybin/svenrybin-homepage.jpg'
+import svenrybinGalerie from 'assets/images/svenrybin/svenrybin-galerie.jpg'
+import svenrybinApi from 'assets/images/svenrybin/svenrybin-api.jpg'
+import svenrybinFormContact from 'assets/images/svenrybin/svenrybin-form-contact.jpg'
 
 const arch = [
     {   

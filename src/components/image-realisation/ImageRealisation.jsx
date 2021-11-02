@@ -7,7 +7,7 @@ function Lightbox ({imageLarge, openLightbox, handleLightbox}) {
         <>
             <div className={`lightbox ${openLightbox ? 'is-active': ''}`} onClick={handleLightbox} data-display={openLightbox ? true : false} >
                 <div className="lightbox-wrapper">
-                    <img src={imageLarge} alt="" />
+                    {openLightbox && <img src={imageLarge} alt="" />}
                 </div>
             </div>
         </>
