@@ -53,10 +53,12 @@ const arch = [
                         title: "Exemple getServerSideProps"
                     },
                 ],
-                linkWebsite: {
-                    href: "https://www.svenrybin.fr",
-                    title: "Voir la Homepage"
-                }
+                linksWebsites: [
+                    {
+                        href: "https://www.svenrybin.fr",
+                        text: "Voir la Homepage"
+                    }
+                ]
             },
             {
                 title: "Une galerie d'images dynamique",
@@ -94,10 +96,12 @@ const arch = [
                         title: "Galerie filtre form component"
                     },
                 ],
-                linkWebsite: {
-                    href: "https://www.svenrybin.fr/galerie",
-                    title: "Voir la galerie" 
-                }
+                linksWebsites: [
+                    {
+                        href: "https://www.svenrybin.fr/galerie",
+                        text: "Voir la galerie" 
+                    }
+                ]
             },
             {
                 title: "Une Api pour distribuer les images",
@@ -134,10 +138,12 @@ const arch = [
                         title: "Config liip imagine"
                     },
                 ],
-                linkWebsite: {
-                    href: "https://picsy.fr/api",
-                    title: "Opérations Api" 
-                }
+                linksWebsites: [
+                    {
+                        href: "https://picsy.fr/api",
+                        text: "Opérations Api" 
+                    }
+                ]
             },
             {
                 title: "Le formulaire de contact", 
@@ -170,10 +176,12 @@ const arch = [
                         title: "Script php création et redirection du message"
                     },
                 ],
-                linkWebsite: {
-                    href: "https://www.svenrybin.fr/#contact",
-                    title: "Voir la section contact" 
-                }
+                linksWebsites: [
+                    {
+                        href: "https://www.svenrybin.fr/#contact",
+                        text: "Voir la section contact" 
+                    }
+                ]
             }
         ]
     },

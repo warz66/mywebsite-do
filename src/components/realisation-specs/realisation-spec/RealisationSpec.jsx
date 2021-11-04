@@ -27,8 +27,16 @@ const RealisationSpec = ({spec}) => {
                             )
                         })}
                     </span>}
-                    {spec.linksGithubs && spec.linkWebsite && <span className="realisation-spec-links-slash">/</span>}
-                    {spec.linkWebsite && <a href={spec.linkWebsite.href} target="_blank" rel="noreferrer">{spec.linkWebsite.title}</a>}
+                    {spec.linksGithubs && spec.linksWebsites && <span className="realisation-spec-links-slash">/</span>}
+                    {spec.linksWebsites && spec.linksWebsites.map((linkWebsite, index) => {
+                        return (
+                            <>
+                                <a key={index} href={linkWebsite.href} target="_blank" rel="noreferrer">{linkWebsite.text}</a>
+                                {index+1 < spec.linksWebsites.length && <span className="realisation-spec-links-slash">/</span>}
+                            </>
+                        )
+                    })}
+                    {/*spec.linkWebsite && <a href={spec.linkWebsite.href} target="_blank" rel="noreferrer">{spec.linkWebsite.title}</a>*/}
                 </div>
                 <ImageRealisation image={spec.image} comeFromSpecs={true}/>
             </div>

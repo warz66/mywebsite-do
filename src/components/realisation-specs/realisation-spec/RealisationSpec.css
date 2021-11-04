@@ -82,7 +82,20 @@
     font-size: 16px;
     font-weight: 500;
     color: var(--tertiary);
+}
+
+.realisation-spec-text h5 .section-title {
     text-decoration: underline;
+    color: var(--secondary);
+}
+
+.realisation-spec-text h5 .section-title-link {
+    font-size: 14px;
+}
+
+.realisation-spec-text h5 .section-title-link a {
+    text-decoration: underline;
+    font-style: italic;
 }
 
 .realisation-spec-text p {
