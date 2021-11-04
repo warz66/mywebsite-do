@@ -10,7 +10,7 @@ const RealisationSpec = ({spec}) => {
                 {spec.sections.map((section, index) => {
                     return (
                         <div key={index}>
-                            {section.title && <h5>{section.title}</h5>}
+                            {section.title && <h5 dangerouslySetInnerHTML={{ __html: section.title }}></h5>}
                             {section.paragraphe && section.paragraphe.map( (paragraphe, index) => {
                                 return <p key={index} dangerouslySetInnerHTML={{ __html: paragraphe }}></p>
                             })}

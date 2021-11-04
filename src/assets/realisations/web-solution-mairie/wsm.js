@@ -55,7 +55,7 @@ const wsm = [
                 },
                 sections: [
                     {   
-                        title: "Le carrousel",
+                        title: "Le carrousel (Voir liens 1 2 3)",
                         paragraphe: [
                             "La page d’accueil d’une commune concentre pas mal de données. Le carrousel à l'avantage de rassembler plusieurs types de contenu différents et de le mettre en évidence sans noyer l’internaute d’informations. J'ai limité le nombre de 'slide' à 5 pour une question d'Ux. J'ai donné la possibilité de donner un titre, un texte, une image, et de les lier à n'importe qu'elle type de publication.",
                         ]
@@ -100,11 +100,66 @@ const wsm = [
                     {   
                         title: "La barre de recherche",
                         paragraphe: [
-                            "",
+                            "Elle permet de retrouver toutes publications et galeries par requête. Au préalable, j'ai effectué un travail de mise en place avec <a href='https://www.elastic.co/fr/elasticsearch/' target='_blank' rel='noreferrer'>Elasticsearch</a> qui est un moteur de recherche très efficace et optimisé pour ce genre de fonctionnalité. Un processus permet l'enregistrement des données (à l'aide d'écouteurs et d'un service CRUD) sur Elasticsearch lors de modifications, enregistrements sur la bdd Mysql, j'avais donc en parallèle une base de donnée relationnelle et un moteur de recherche. Malheureusement, lors de la mise en production, je me suis aperçu qu'il était techniquement plus compliqué et onéreux à mettre en place. Finalement, j'ai opté pour une solution simple d'utilisé la fonctionnalité <a href='https://dev.mysql.com/doc/refman/8.0/en/fulltext-search.html' target='_blank' rel='noreferrer'>'MATCH AGAINST'</a> de MySQL qui permet la recherche fulltext.",
                         ]
                     },
                     {   
                         title: "Le formulaire de contact",
+                        paragraphe: [
+                            "",
+                        ]
+                    },
+                ],
+                linksGithubs: [
+                    {
+                        href: "https://github.com/warz66/Solution-mairie-symfony-5/tree/main/src/Entity",
+                        title: "Dossier entité du projet"
+                    },
+                ],
+                linkWebsite: {
+                    href: "https://web-solution-mairie.fr",
+                    title: "Voir la Homepage"
+                }
+            },
+            {
+                title: "Modules et fonctionalités (Partie 3)",
+                image: {
+                    thumbnail: bddRelationTableTn,
+                    large: bddRelationTable,
+                },
+                sections: [
+                    {   
+                        title: "<a href='https://web-solution-mairie.fr/newsletter' target='_blank' rel='noreferrer'>La Newsletter</a>",
+                        paragraphe: [
+                            "Elle permet de recevoir une lettre d'informations aux internautes s'y étant inscrit. On peut s'y désinscrire à tout moment. Je sécurise l'inscription à la newsletter à l'aide d'un <a href='https://nouvelle-techno.fr/articles/un-antispam-sur-votre-site-la-technique-du-pot-de-miel' target='_blank' rel='noreferrer'>honeypot</a> et d'un <a href='https://www.google.com/recaptcha/about/' target='_blank' rel='noreferrer'>recaptcha v2 de google</a>. J'étais parti de créer moi même les fonctionaliés de gestion des utlisateurs et d'édition de mail, cependant je me suis aperçu qu'il n'y avait aucun éditeur open source idéale pour la création de mail. J'ai donc à contre coeur utilisé le service dédié <a href='https://mailchimp.com/fr/' target='_blank' rel='noreferrer'>Mailchimp</a> en communiquant avec son <a href='https://mailchimp.com/developer/marketing/api/root/' target='_blank' rel='noreferrer'>API</a> à l'aide de le bibliotheque php <a href='https://github.com/drewm/mailchimp-api' target='_blank' rel='noreferrer'>drewm/mailchimp-api</a>.",
+                        ]
+                    },
+                    {   
+                        title: "Statistique Google Analytics",
+                        paragraphe: [
+                            "",
+                        ]
+                    },
+                ],
+                linksGithubs: [
+                    {
+                        href: "https://github.com/warz66/Solution-mairie-symfony-5/tree/main/src/Entity",
+                        title: "Dossier entité du projet"
+                    },
+                ],
+                linkWebsite: {
+                    href: "https://web-solution-mairie.fr",
+                    title: "Voir la Homepage"
+                }
+            },
+            {
+                title: "Administration du contenu",
+                image: {
+                    thumbnail: bddRelationTableTn,
+                    large: bddRelationTable,
+                },
+                sections: [
+                    {   
                         paragraphe: [
                             "",
                         ]
