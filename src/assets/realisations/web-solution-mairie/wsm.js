@@ -20,7 +20,7 @@ const wsm = [
         linkWebsite: "https://web-solution-mairie.fr/",
         specs: [
             {
-                title: "Conception de la gestion du contenu",
+                title: "Conception du système de gestion de contenu",
                 image: {
                     thumbnail: bddRelationTableTn,
                     large: bddRelationTable,
@@ -28,10 +28,9 @@ const wsm = [
                 sections: [
                     {
                         paragraphe: [
-                            "La principale fonctionnalité de cette solution est de pouvoir éditer et publier du contenu hiérarchisé, catégorisé et libellisé. Je suis parti du principe que tout contenu est une publication qui peut avoir différentes natures : actualité, événement, page, sous-rubrique, rubrique.",
-                            "Pour le contenu fixe, j'ai voulu créer une arborescence en 3 couches maximum (rubriques -> sous-rubriques -> pages) pour une navigation plus ergonomique. La plupart des CMS laissent la possibilité de créer des noeuds d'arborescences illimités, néanmoins, j'ai trouvé cela plus clair et efficace de les limiter. Dans le menu on retrouve les rubriques, les sous-rubriques qui affine la recherche, puis les pages contenant l'information dont l'internaute à besoin.",
+                            "La principale fonctionnalité de cette solution est de pouvoir éditer et publier du contenu de manière hiérarchique (arborescence), typé (différentes natures) et catégorisé (à but de regrouper l'information de même thème). Je suis parti du principe que tout contenu est une publication pouvant être de différentes natures : actualité, événement, page, sous-rubrique, rubrique.",
+                            "Pour le contenu fixe, j'ai voulu créer une arborescence en 3 couches maximum (rubriques -> sous-rubriques -> pages) pour une navigation plus ergonomique. La plupart des CMS laissent la possibilité de créer des noeuds d'arborescences illimités, néanmoins, j'ai trouvé cela plus clair et efficace de le limiter. Dans le menu on retrouve les rubriques, les sous-rubriques qui affine la recherche, puis les pages contenant l'information dont l'internaute à besoin.",
                             "Une actualité et un événement sont deux types de contenu présentés de manière différente de par leur nature temporelle.",
-                            "On peut aussi libelliser ('tags') le contenu, afin de regrouper l'information pour une meilleure expérience.",
                             "Se greffe aussi, selon la nature de la publication des fonctionnalités qui permettent de rajouter des informations pertinentes à mettre en avant, telle que des liens utiles (lien-hypertexte), des documents (pdf), des infos pratiques, une ou des galeries d'images."
                         ]
                     },
@@ -44,11 +43,22 @@ const wsm = [
                 ]
             },
             {
+                title: "Administration du contenu",
+                sections: [
+                    {
+                        paragraphe: [
+                            "Pour l'administration du contenu on peut créer, modifier, mettre à la corbeille, supprimer, prévisualiser, publier ou dépublier une publication.",
+                            "Pour la création du contenu principal d'une publication j'ai utilisé l'éditeur de text open source de type WYSIWYG <a href='https://ckeditor.com/ckeditor-4/' target='_blank' rel='noreferrer'>CKEditor 4</a>."
+                        ]
+                    },
+                ],
+            },
+            {
                 title: "Modules et fonctionalités (Partie 1)",
-                image: {
+                /*image: {
                     thumbnail: bddRelationTableTn,
                     large: bddRelationTable,
-                },
+                },*/
                 sections: [
                     {   
                         paragraphe: [
@@ -80,7 +90,7 @@ const wsm = [
                         ]
                     },
                 ],
-                linksWebsites: [
+                /*linksWebsites: [
                     {
                         href: "https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/home.html.twig",
                         text: "Vue Homepage"
@@ -89,47 +99,14 @@ const wsm = [
                         href: "https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/HomeController.php",
                         text: "Controller Homepage"
                     },
-                ],
+                ],*/
             },
             {
                 title: "Modules et fonctionalités (Partie 2)",
-                image: {
+                /*image: {
                     thumbnail: bddRelationTableTn,
                     large: bddRelationTable,
-                },
-                sections: [
-                    {   
-                        title: "<span class='section-title'>La barre de recherche</span> <span class='section-title-link'>( liens githubs: <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/PublicationController.php' target='_blank' rel='noreferrer'>link 1</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Repository/PublicationRepository.php' target='_blank' rel='noreferrer'>link 2</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/EventListener/ElasticsearchCrudListener.php' target='_blank' rel='noreferrer'>link 3</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Service/ElasticsearchCrudService.php' target='_blank' rel='noreferrer'>link 4</a>)</span>",
-                        paragraphe: [
-                            "Elle permet de retrouver toutes publications et galeries par requête. Au préalable, j'ai effectué un travail de mise en place avec <a href='https://www.elastic.co/fr/elasticsearch/' target='_blank' rel='noreferrer'>Elasticsearch</a> qui est un moteur de recherche très efficace et optimisé pour ce genre de fonctionnalité. Un processus permet l'enregistrement des données (à l'aide d'écouteurs et d'un service CRUD) sur Elasticsearch lors de modifications, enregistrements sur la bdd Mysql, j'avais donc en parallèle une base de donnée relationnelle et un moteur de recherche. Malheureusement, lors de la mise en production, je me suis aperçu qu'il était techniquement plus compliqué et onéreux à mettre en place. Finalement, j'ai opté pour une solution simple d'utilisé la fonctionnalité <a href='https://dev.mysql.com/doc/refman/8.0/en/fulltext-search.html' target='_blank' rel='noreferrer'>'MATCH AGAINST'</a> de MySQL qui permet la recherche fulltext.",
-                        ]
-                    },
-                    {   
-                        title: "<span class='section-title'>Le formulaire de contact</span> <span class='section-title-link'>( <a href='https://web-solution-mairie.fr/contact' target='_blank' rel='noreferrer'>Voir sur le site</a> /  liens githubs:  <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/contact.html.twig' target='_blank' rel='noreferrer'>Vue</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/ContactController.php' target='_blank' rel='noreferrer'>Controller</a> )</span>",
-                        paragraphe: [
-                            "Il va permettre à l'internaute d'avoir un moyen facile d'envoyer un message à la collectivité directement sur le site. Le formulaire est sécurisé des robots/spams au moyen d'un <a href='https://nouvelle-techno.fr/articles/un-antispam-sur-votre-site-la-technique-du-pot-de-miel' target='_blank' rel='noreferrer'>honeypot</a> et d'un <a href='https://www.google.com/recaptcha/about/' target='_blank' rel='noreferrer'>recaptcha v2</a> de google. Le message est construit et envoyé à l'aide de <a href='https://symfony.com/doc/current/mailer.html'>Php Mailer</a>.",
-                        ]
-                    },
-                ],
-                linksGithubs: [
-                    {
-                        href: "https://github.com/warz66/Solution-mairie-symfony-5/tree/main/src/Entity",
-                        title: "Dossier entité du projet"
-                    },
-                ],
-                linksWebsites: [
-                    {
-                        href: "https://web-solution-mairie.fr",
-                        text: "Voir la Homepage"
-                    }
-                ]
-            },
-            {
-                title: "Modules et fonctionalités (Partie 3)",
-                image: {
-                    thumbnail: bddRelationTableTn,
-                    large: bddRelationTable,
-                },
+                },*/
                 sections: [
                     {   
                         title: "<span class='section-title'>La Newsletter</span> <span class='section-title-link'>( <a href='https://web-solution-mairie.fr/newsletter' target='_blank' rel='noreferrer'>Voir sur le site</a> )</span>",
@@ -138,13 +115,19 @@ const wsm = [
                         ]
                     },
                     {   
-                        title: "<span class='section-title'>Google Analytics</span> <span class='section-title-link'>( liens githubs: <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/AdminDashboardController.php' target='_blank' rel='noreferrer'>link 1</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Service/GoogleAnalyticsService.php' target='_blank' rel='noreferrer'>link 2</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/admin/dashboard/ga_report.html.twig' target='_blank' rel='noreferrer'>link 3</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/base.html.twig' target='_blank' rel='noreferrer'>link 4</a>)</span>",
+                        title: "<span class='section-title'>Le formulaire de contact</span> <span class='section-title-link'>( <a href='https://web-solution-mairie.fr/contact' target='_blank' rel='noreferrer'>Voir sur le site</a> /  liens githubs:  <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/contact.html.twig' target='_blank' rel='noreferrer'>Vue</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/ContactController.php' target='_blank' rel='noreferrer'>Controller</a> )</span>",
                         paragraphe: [
-                            "<a href='https://marketingplatform.google.com/intl/fr/about/analytics/' target='_blank' rel='noreferrer'>Google Analytics</a> est un service d'analyse et de statistiques d'audience d'un site web présentées sous forme de chiffres, de diagrammes, graphiques (sur le site officiel de google analytics). Il peut-être pertinant de comprendre certaines données essentielles sur la navigation des internautes, non pas à but commercial, mais à but d'améliorer la structure, la disposition du contenu, etc... J'ai voulu synthétiser les données qui me paraissait les plus importantes directement dans la section dashboard du back-office, il peut être compliqué d'analyser ces données sur le site officiel. Je me suis aidé du bundle <a href='https://github.com/kendrick-k/google-analytics-api-symfony' target='_blank' rel='noreferrer'>google-analytics-api-symfony</a> pour faire cela. Pour que google analytics puisse fonctionner il a besoin de connaître l'adresse ip et d'installer des cookies sur la machine de l'utilisateur, ce qui est une violation sans le consentement de l'internaute, je me suis aidé de <a href='https://github.com/ConnectHolland/cookie-consent-bundle' target='_blank' rel='noreferrer'>cookie-consent-bundle</a> pour faire cela."
+                            "Il permet à l'internaute d'avoir un moyen facile d'envoyer un message à la collectivité directement sur le site. Le formulaire est sécurisé des robots/spams au moyen d'un <a href='https://nouvelle-techno.fr/articles/un-antispam-sur-votre-site-la-technique-du-pot-de-miel' target='_blank' rel='noreferrer'>honeypot</a> et d'un <a href='https://www.google.com/recaptcha/about/' target='_blank' rel='noreferrer'>recaptcha v2</a> de google. Le message est construit et envoyé à l'aide de <a href='https://symfony.com/doc/current/mailer.html'>Php Mailer</a>.",
                         ]
                     },
+                    {
+                        title: "<span class='section-title'>Les galeries d'images</span> <span class='section-title-link'>( <a href='https://web-solution-mairie.fr/galeries' target='_blank' rel='noreferrer'>Voir sur le site</a> /  liens githubs:  <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/admin/galerie/edit.html.twig' target='_blank' rel='noreferrer'>Vue</a> & <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/assets/js/admin/galerie/edit/admin.galerie.edit.js' target='_blank' rel='noreferrer'>Js</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/AdminGalerieController.php' target='_blank' rel='noreferrer'>Controller</a> )</span>",
+                        paragraphe: [
+                            "Elles peuvent être ajoutées comme contenu annexe à une publication pour illustrer un événement local par exemple. Pour la partie visuelle, je me suis servi de <a href='https://masonry.desandro.com/' target='_blank' rel='noreferrer'>Masonry</a> pour la disposition des images, d'<a href='https://infinite-scroll.com/' target='_blank' rel='noreferrer'>Infinite scroll</a> pour éviter la pagination et avoir une navigation plus agréable ainsi que de <a href='https://web.archive.org/web/20210325170940/https://fancyapps.com/fancybox/3/docs/' target='_blank' rel='noreferrer'>Fancybox</a> pour afficher les images dans une 'lightbox'."
+                        ]
+                    }
                 ],
-                linksGithubs: [
+                /*linksGithubs: [
                     {
                         href: "https://github.com/warz66/Solution-mairie-symfony-5/tree/main/src/Entity",
                         title: "Dossier entité du projet"
@@ -155,22 +138,29 @@ const wsm = [
                         href: "https://web-solution-mairie.fr",
                         text: "Voir la Homepage"
                     }
-                ]
+                ]*/
             },
             {
-                title: "Administration du contenu",
-                image: {
+                title: "Modules et fonctionalités (Partie 3)",
+                /*image: {
                     thumbnail: bddRelationTableTn,
                     large: bddRelationTable,
-                },
+                },*/
                 sections: [
                     {   
+                        title: "<span class='section-title'>La barre de recherche</span> <span class='section-title-link'>( liens githubs: <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/PublicationController.php' target='_blank' rel='noreferrer'>link 1</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Repository/PublicationRepository.php' target='_blank' rel='noreferrer'>link 2</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/EventListener/ElasticsearchCrudListener.php' target='_blank' rel='noreferrer'>link 3</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Service/ElasticsearchCrudService.php' target='_blank' rel='noreferrer'>link 4</a> )</span>",
                         paragraphe: [
-                            "",
+                            "Elle permet de retrouver toutes publications et galeries par requête. Au préalable, j'ai effectué un travail de mise en place avec <a href='https://www.elastic.co/fr/elasticsearch/' target='_blank' rel='noreferrer'>Elasticsearch</a> qui est un moteur de recherche très efficace et optimisé pour ce genre de fonctionnalité. Un processus permet l'enregistrement des données (à l'aide d'écouteurs et d'un service CRUD) sur Elasticsearch lors de modifications, enregistrements sur la bdd Mysql, j'avais donc en parallèle une base de donnée relationnelle et un moteur de recherche. Malheureusement, lors de la mise en production, je me suis aperçu qu'il était techniquement plus compliqué et onéreux à mettre en place. Finalement, j'ai opté pour une solution simple d'utilisé la fonctionnalité <a href='https://dev.mysql.com/doc/refman/8.0/en/fulltext-search.html' target='_blank' rel='noreferrer'>'MATCH AGAINST'</a> de MySQL qui permet la recherche fulltext.",
+                        ]
+                    },
+                    {   
+                        title: "<span class='section-title'>Google Analytics</span> <span class='section-title-link'>( liens githubs: <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/AdminDashboardController.php' target='_blank' rel='noreferrer'>link 1</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Service/GoogleAnalyticsService.php' target='_blank' rel='noreferrer'>link 2</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/admin/dashboard/ga_report.html.twig' target='_blank' rel='noreferrer'>link 3</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/base.html.twig' target='_blank' rel='noreferrer'>link 4</a> )</span>",
+                        paragraphe: [
+                            "<a href='https://marketingplatform.google.com/intl/fr/about/analytics/' target='_blank' rel='noreferrer'>Google Analytics</a> est un service d'analyse et de statistiques d'audience d'un site web présentées sous forme de chiffres, de diagrammes, graphiques (sur le site officiel de google analytics). Il peut être pertinent de comprendre certaines données essentielles sur la navigation des internautes, non pas à but commercial, mais à but d'améliorer la structure, la disposition du contenu, etc. J'ai voulu synthétiser les données qui me paraissaientt les plus importantes directement dans la section dashboard du back-office, il peut être compliqué d'analyser ces données sur le site officiel. Je me suis aidé du bundle <a href='https://github.com/kendrick-k/google-analytics-api-symfony' target='_blank' rel='noreferrer'>google-analytics-api-symfony</a> pour faire cela. Pour que google analytics puisse fonctionner il a besoin de connaître l'adresse ip et d'installer des cookies sur la machine de l'utilisateur, ce qui est une violation sans le consentement de l'internaute, je me suis aidé de <a href='https://github.com/ConnectHolland/cookie-consent-bundle' target='_blank' rel='noreferrer'>cookie-consent-bundle</a> pour faire cela."
                         ]
                     },
                 ],
-                linksGithubs: [
+                /*linksGithubs: [
                     {
                         href: "https://github.com/warz66/Solution-mairie-symfony-5/tree/main/src/Entity",
                         title: "Dossier entité du projet"
@@ -181,7 +171,7 @@ const wsm = [
                         href: "https://web-solution-mairie.fr",
                         text: "Voir la Homepage"
                     }
-                ]
+                ]*/
             },
         ]
     },

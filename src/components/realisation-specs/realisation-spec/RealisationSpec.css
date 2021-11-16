@@ -22,7 +22,7 @@
 @media(max-width: 950px) {
     .realisation-spec {
         flex-direction: column;
-        max-width: 600px;
+        /*max-width: 900px;*/
         margin: 0 auto;
     }
     .realisation-spec:not(:last-of-type) {
