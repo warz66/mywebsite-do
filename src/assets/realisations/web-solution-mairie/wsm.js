@@ -1,6 +1,7 @@
 import mairieRealisation from 'assets/images/wsm/mairie-realisation.jpg'
 import bddRelationTable from 'assets/images/wsm/bdd-relation-table.jpg'
 import bddRelationTableTn from 'assets/images/wsm/bdd-relation-table_tn.jpg'
+import adminPageBackOffice from 'assets/images/wsm/admin-page-back-office.jpg'
 
 const wsm = [
     {   
@@ -29,8 +30,8 @@ const wsm = [
                     {
                         paragraphe: [
                             "La principale fonctionnalité de cette solution est de pouvoir éditer et publier du contenu de manière hiérarchique (arborescence), typé (différentes natures) et catégorisé (à but de regrouper l'information de même thème). Je suis parti du principe que tout contenu est une publication pouvant être de différentes natures : actualité, événement, page, sous-rubrique, rubrique.",
-                            "Pour le contenu fixe, j'ai voulu créer une arborescence en 3 couches maximum (rubriques -> sous-rubriques -> pages) pour une navigation plus ergonomique. La plupart des CMS laissent la possibilité de créer des noeuds d'arborescences illimités, néanmoins, j'ai trouvé cela plus clair et efficace de le limiter. Dans le menu on retrouve les rubriques, les sous-rubriques qui affine la recherche, puis les pages contenant l'information dont l'internaute à besoin.",
-                            "Une actualité et un événement sont deux types de contenu présentés de manière différente de par leur nature temporelle.",
+                            "Pour le contenu statique (intemporel), j'ai voulu créer une arborescence en 3 couches maximum (rubriques -> sous-rubriques -> pages) pour une navigation plus ergonomique. La plupart des CMS laissent la possibilité de créer des noeuds d'arborescences illimités, néanmoins, j'ai trouvé cela plus clair et efficace de le limiter. Dans le menu on retrouve les rubriques, les sous-rubriques qui affine la recherche, puis les pages contenant l'information dont l'internaute à besoin.",
+                            "Une actualité et un événement sont deux types de contenu présentés de manière différente de par leur nature temporelle (date de publication).",
                             "Se greffe aussi, selon la nature de la publication des fonctionnalités qui permettent de rajouter des informations pertinentes à mettre en avant, telle que des liens utiles (lien-hypertexte), des documents (pdf), des infos pratiques, une ou des galeries d'images."
                         ]
                     },
@@ -43,12 +44,23 @@ const wsm = [
                 ]
             },
             {
-                title: "Administration du contenu",
+                title: "Le back-office",
+                image: {
+                    thumbnail: adminPageBackOffice,
+                    large: adminPageBackOffice,
+                },
                 sections: [
-                    {
+                    {   
+                        title: "<span class='section-title'>Administration du contenu</span> <span class='section-title-link'>( lien github: <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/AdminPageController.php' target='_blank' rel='noreferrer'>Controller</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Form/PublicationType.php' target='_blank' rel='noreferrer'>FormType</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/publication/page.html.twig' target='_blank' rel='noreferrer'>Vue</a> )</span>",
                         paragraphe: [
-                            "Pour l'administration du contenu on peut créer, modifier, mettre à la corbeille, supprimer, prévisualiser, publier ou dépublier une publication.",
-                            "Pour la création du contenu principal d'une publication j'ai utilisé l'éditeur de text open source de type WYSIWYG <a href='https://ckeditor.com/ckeditor-4/' target='_blank' rel='noreferrer'>CKEditor 4</a>."
+                            "On peut créer, modifier, mettre à la corbeille, supprimer, prévisualiser, publier ou dépublier une publication. Pour la création du contenu principal, j'ai utilisé l'éditeur de texte open source de type <a href='https://fr.wikipedia.org/wiki/What_you_see_is_what_you_get' target='_blank' rel='noreferrer'>WYSIWYG</a> (What you see is what you get) <a href='https://ckeditor.com/ckeditor-4/' target='_blank' rel='noreferrer'>CKEditor 4</a> couplé au gestionnaire de fichier <a href='https://packagist.org/packages/helios-ag/fm-elfinder-bundle' target='_blank' rel='noreferrer'>elFinder</a> ainsi que le plugin <a href='https://ckeditor.com/cke4/addon/pastefromgdocs' target='_blank' rel='noreferrer'>Pastefromgdocs</a> qui permet de coller du contenu à partir de <a href='https://www.google.fr/intl/fr/docs/about/' target='_blank' rel='noreferrer'>Google Docs</a> et de conserver la mise en forme du contenu d'origine.",
+                            "Pour les rôles, je n'en ai défini que deux pour l'instant, 'administrateur' et 'éditeur'. L'administrateur à tous les droits sur la gestion du site, sans aucune limitation. Les éditeurs ont accès à toute la gestion du contenu du site sauf sur la gestion des utilisateurs et des informations de la collectivité."
+                        ]
+                    },
+                    {   
+                        title: "<span class='section-title'>Sécurité</span> <span class='section-title-link'>( lien github: <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/config/packages/security.yaml' target='_blank' rel='noreferrer'>Security.yaml</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Security/LoginFormAuthenticator.php' target='_blank' rel='noreferrer'>CustomAuthenticator</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/src/Controller/AdminAccountController.php' target='_blank' rel='noreferrer'>Controller</a> / <a href='https://github.com/warz66/Solution-mairie-symfony-5/blob/main/templates/admin/account/login.html.twig' target='_blank' rel='noreferrer'>Login Vue</a> )</span>",
+                        paragraphe: [
+                            "J'ai sécurisé l'accès au back-office par formulaire de connexion à l'aide du security bundle de symfony. J'ai personnalisé la <a href='https://symfony.com/doc/4.4/security.html#1-installation' target='_blank' rel='noreferrer'>'Class d'autentification'</a> qui traite la soumission de connexion, afin de rajouter d'autres protections t-elle qu'un honeypot, un recaptche de google, ainsi qu'une limitation de tentative de connexion (en mémorisant l'adresse 'ip' et en la comparant) afin d'éviter les attaques de force brute."
                         ]
                     },
                 ],
@@ -111,7 +123,7 @@ const wsm = [
                     {   
                         title: "<span class='section-title'>La Newsletter</span> <span class='section-title-link'>( <a href='https://web-solution-mairie.fr/newsletter' target='_blank' rel='noreferrer'>Voir sur le site</a> )</span>",
                         paragraphe: [
-                            "Elle permet de recevoir une lettre d'informations aux internautes s'y étant inscrit. On peut s'y désinscrire à tout moment. Je sécurise l'inscription à la newsletter à l'aide d'un <a href='https://nouvelle-techno.fr/articles/un-antispam-sur-votre-site-la-technique-du-pot-de-miel' target='_blank' rel='noreferrer'>honeypot</a> et d'un <a href='https://www.google.com/recaptcha/about/' target='_blank' rel='noreferrer'>recaptcha v2</a> de google. J'avais la volonté de créer moi même les fonctionaliés de gestion des utlisateurs, d'envoi et d'édition de mail, cependant je me suis aperçu qu'il n'y avait aucun éditeur de texte open source idéale pour la création du contenu d'un email. J'ai donc à contre coeur utilisé le service dédié <a href='https://mailchimp.com/fr/' target='_blank' rel='noreferrer'>Mailchimp</a> en communiquant avec son <a href='https://mailchimp.com/developer/marketing/api/root/' target='_blank' rel='noreferrer'>API</a> à l'aide de la bibliotheque php <a href='https://github.com/drewm/mailchimp-api' target='_blank' rel='noreferrer'>drewm/mailchimp-api</a>.",
+                            "Elle permet de recevoir une lettre d'informations aux internautes s'y étant inscrit. On peut s'y désinscrire à tout moment. Je sécurise l'inscription à la newsletter à l'aide d'un <a href='https://nouvelle-techno.fr/articles/un-antispam-sur-votre-site-la-technique-du-pot-de-miel' target='_blank' rel='noreferrer'>honeypot</a> et d'un <a href='https://www.google.com/recaptcha/about/' target='_blank' rel='noreferrer'>recaptcha v2</a> de google. J'avais la volonté de créer moi-même les fonctionalités de gestion des utilisateurs, d'envoi et d'édition de mail, cependant, je me suis aperçu qu'il n'y avait aucun éditeur de texte open source idéale pour la création du contenu d'un e-mail. J'ai donc à contrecoeur utilisé le service dédié <a href='https://mailchimp.com/fr/' target='_blank' rel='noreferrer'>Mailchimp</a> en communiquant avec son <a href='https://mailchimp.com/developer/marketing/api/root/' target='_blank' rel='noreferrer'>API</a> à l'aide de la bibliothèque php <a href='https://github.com/drewm/mailchimp-api' target='_blank' rel='noreferrer'>drewm/mailchimp-api</a>.",
                         ]
                     },
                     {   

@@ -44,6 +44,8 @@
 
 .realisation-spec-img img {
     width: 325px;
+    max-height: 500px;
+    object-fit: cover;
     /*pointer-events: none !important;*/
 }
 
@@ -52,6 +54,7 @@
         display: block;
         margin: 0 auto;
         max-width: 350px;
+        max-height: 400px;
         width: 100%;
     }    
 }
