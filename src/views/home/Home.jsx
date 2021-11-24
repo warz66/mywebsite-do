@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <ReactFullpage
-      licenseKey='Dg4568-sdfg9879-sdfg78795'
+      licenseKey={process.env.REACT_APP_FULLPAGE_LICENSEKEY}
       navigation
       navigationTooltips={anchors}
       responsiveWidth= "1200"
