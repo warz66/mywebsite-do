@@ -8,6 +8,15 @@ import davidRealisation from 'assets/images/david-oeslick-website.jpg'
 import svenrybinRealisation from 'assets/images/svenrybin/svenrybin-realisation.jpg'
 
 const realisationsMap = [
+    {   
+        slug: "web-solution-mairie",
+        path: "web-solution-mairie/wsm.js",
+        title: "Web Solution Mairie",
+        titleNav: "Web Solution Mairie", 
+        image: mairieRealisation,
+        techs: "Symfony 5, Jquery, Bootstrap 4",
+        sum: "Solution pour sites de partage d'informations pour les collectivités locales, communes.",
+    },
     {
         slug: "svenrybin",
         path: "svenrybin/svenrybin.js", 
@@ -16,6 +25,15 @@ const realisationsMap = [
         image: svenrybinRealisation,
         techs: "React, Next, Symfony, Api-Platform",
         sum: "Site web de l'artiste peintre Sven Rybin.",   
+    },
+    {   
+        slug: "david-oeslick-website",
+        path: "david-oeslick-website/dow.js",
+        title: "David Oeslick",
+        titleNav: "David Oeslick", 
+        image: davidRealisation,
+        techs: "react",
+        sum: "Mon site web",
     },
     {   
         slug: "arch",
@@ -54,15 +72,6 @@ const realisationsMap = [
         sum: "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
     },
     {   
-        slug: "web-solution-mairie",
-        path: "web-solution-mairie/wsm.js",
-        title: "Web Solution Mairie",
-        titleNav: "Web Solution Mairie", 
-        image: mairieRealisation,
-        techs: "Symfony 5, Jquery, Bootstrap 4",
-        sum: "Solution pour sites de partage d'informations pour les collectivités locales, communes.",
-    },
-    {   
         slug: "clipboard-landing-page",
         path: "clipboard-landing-page/clp.js",
         title: "Clipboard landing page",
@@ -79,15 +88,6 @@ const realisationsMap = [
         image: roomRealisation,
         techs: "HTML / CSS / JS",
         sum: "This small homepage challenge packs a big punch to test your layout skills. There's also a slider in there to add a JS layer for extra practice.",
-    },
-    {   
-        slug: "david-oeslick-website",
-        path: "david-oeslick-website/dow.js",
-        title: "David Oeslick",
-        titleNav: "David Oeslick", 
-        image: davidRealisation,
-        techs: "react",
-        sum: "Mon site web",
     },
 ]
 

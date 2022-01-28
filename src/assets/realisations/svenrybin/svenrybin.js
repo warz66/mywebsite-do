@@ -164,15 +164,15 @@ const arch = [
                 ],
                 linksGithubs: [
                     {
-                        href: "https://github.com/warz66/mywebsite-do/blob/main/vercel.json",
+                        href: "https://github.com/warz66/next-sven-rybin/blob/main/vercel.json",
                         title: "Vercel configuration runtime php"
                     },
                     {
-                        href: "https://github.com/warz66/mywebsite-do/blob/main/src/components/contact/form/Form.jsx",
+                        href: "https://github.com/warz66/next-sven-rybin/blob/main/components/home/contact/form/Form.jsx",
                         title: "Formulaire de contact"
                     },
                     {
-                        href: "https://github.com/warz66/mywebsite-do/blob/main/api/index.php",
+                        href: "https://github.com/warz66/next-sven-rybin/blob/main/api/contactMail.php",
                         title: "Script php création et redirection du message"
                     },
                 ],

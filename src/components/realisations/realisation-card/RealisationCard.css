@@ -11,6 +11,10 @@
     border-radius: 5px;*/
 }
 
+.realisation-card a {
+    text-decoration: none;
+}
+
 @media(max-width: 600px) {
     .realisation-card {
         margin: 0 auto;
@@ -81,7 +85,6 @@
 .realisation-card-more {
     font-size: 14px;
     color: var(--secondary);
-    text-decoration: none;
     position: absolute;
     bottom: 15px;
     right: 20px;
@@ -93,7 +96,7 @@
     .realisation-card-more:hover {
         text-shadow: 0 -0.3px 0 var(--secondary), 0.3px 0 var(--secondary);
     }
-    .realisation-card:hover h4 {
+    .realisation-card-text h4:hover {
         color: var(--secondary);
     }
 }
