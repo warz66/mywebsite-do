@@ -42,6 +42,12 @@
     }    
 }
 
+.realisation-spec-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .realisation-spec-img img {
     width: 325px;
     max-height: 500px;
