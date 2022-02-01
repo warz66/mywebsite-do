@@ -2,6 +2,8 @@ import davidRealisation from 'assets/images/david-oeslick-website.jpg'
 import davidCharte from 'assets/images/david/david-charte.jpg'
 import structureRealisationTh from 'assets/images/david/structure-realisation-th.jpg'
 import structureRealisation from 'assets/images/david/structure-realisation.jpg'
+import davidFormulaireContact from 'assets/images/david/david-formulaire-contact.jpg'
+import davidFormulaireContactTh from 'assets/images/david/david-formulaire-contact-th.jpg'
 
 const dow = [
     {   
@@ -56,7 +58,7 @@ const dow = [
                 sections: [
                     {
                         paragraphe: [
-                            "L'un de mes besoins principal est de pouvoir rajouter simplement au fur et à mesure du temps les nouveaux projets réalisés. Pour cela j'ai défini 'une architecture' sous forme de répertoires/fichiers contenant des objets javascript avec une structure clé/valeur (cela ressemble à du json mais ça reste du js) qui va permettre d'être lu par mon application pour en afficher le contenu. Il y a un fichier realisationsMap.js qui contient la liste des projets et dont le contenu est une briève présentation que l'on retrouve explicitement sous forme de 'cartes' dans la section réalisation de la Homepage. Dans ce fichier chaque projet va pointer vers un autre fichier qui lui contiendra le contenu détaillé. Cette 'organisation' me permet simplement de rajouter un projet en mettant à jour le fichier realisationsMap.js et en créant un fichier respectif au nouveau projet en respectant un modéle clé/valeur. Puis grâce à <a href='https://vercel.com/docs/concepts/git/vercel-for-github' target='_blank' rel='noreferrer'>Vercel</a> le site est rapidement mis à jour après avoir poussé (git push) les nouvelles modifications sur le dépôt github."
+                            "L'un de mes besoins principal est de pouvoir rajouter simplement au fur et à mesure du temps les nouveaux projets réalisés. Pour cela j'ai défini 'une architecture' sous forme de répertoires/fichiers contenant des objets javascript avec une structure clé/valeur (cela ressemble à du json mais ça reste du js) qui va permettre d'être lu par mon application pour en afficher le contenu. Il y a un fichier realisationsMap.js qui contient la liste des projets et dont le contenu est une briève présentation que l'on retrouve explicitement sous forme de 'cartes' dans la section réalisation de la Homepage. Dans ce fichier chaque projet va pointer vers un autre fichier qui lui contiendra le contenu détaillé. En respectant cette 'organisation' cela me permet facilement de rajouter un projet au site. Puis grâce à <a href='https://vercel.com/docs/concepts/git/vercel-for-github' target='_blank' rel='noreferrer'>Vercel</a> le site est instantanément mis à jour après avoir poussé (git push) les nouvelles modifications sur le dépôt github."
                         ]
                     },
                 ],
@@ -69,10 +71,34 @@ const dow = [
                         href: "https://github.com/warz66/mywebsite-do/blob/main/src/assets/realisations/web-solution-mairie/wsm.js",
                         text: "Un projet"
                     },
-                    /*{
-                        href: "https://github.com/warz66/mywebsite-do/blob/main/src/components/realisations/Realisations.jsx",
-                        text: "page réalisation"
-                    }*/
+                ]
+            },
+            {
+                title: "Le formulaire de contact",
+                image: {
+                    thumbnail: davidFormulaireContactTh,
+                    large: davidFormulaireContact,
+                },
+                sections: [
+                    {
+                        paragraphe: [
+                            "Pour la validation du formulaire je vérifie simplement que les champs ne soient pas vides lors de la soumission.",
+                            "J'ai mis en place le <a href='https://developers.google.com/recaptcha/docs/v3' target='_blank' rel='noreferrer'>Recaptcha v3</a> de Google pour protéger des attaques de robots/spams.",
+                            "Une des fonctionnalités attrayante de <a href='https://github.com/juicyfx/vercel-php' target='_blank' rel='noreferrer'>Vercel est de pouvoir utiliser Php simplement et avec très peu de configuration grâce à son moteur d'exécution</a>. J'en ai profité pour faire un léger script pour traiter la soumission du formulaire côté back-end :",
+                            "- Tout d'abord on protège l'accès à la ressource en configurant <a href='https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Access-Control-Allow-Origin' target='_blank' rel='noreferrer'>l'Access-Control-Allow-Origin</a> sur https://www.svenrybin.fr.<br>- Je revérifie que les champs ne soit pas vide.<br>- J'interroge le service de Google Recaptcha sur l'intégrité de la soumission par une vraie personne.<br>- Si tout est ok, je construis l'email à l'aide de <a href='https://github.com/PHPMailer/PHPMailer' target='_blank' rel='noreferrer'>PhpMailer</a> (je me sers d'une adresse mail google qui fait la redirection du message aux personnes concerné, avec une clé d'api applicatif.), puis je valide l'envoi du mail.<br>- Enfin je fais part à la partie front-end du succès ou des erreurs éventuelles à ce processus."
+                            
+                        ]
+                    },
+                ],
+                linksWebsites: [
+                    {
+                        href: "https://github.com/warz66/mywebsite-do/blob/main/src/assets/realisations/realisationsMap.js",
+                        text: "Liste des projets"
+                    },
+                    {
+                        href: "https://github.com/warz66/mywebsite-do/blob/main/src/assets/realisations/web-solution-mairie/wsm.js",
+                        text: "Un projet"
+                    },
                 ]
             },
         ]

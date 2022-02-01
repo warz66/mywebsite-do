@@ -33,7 +33,7 @@ const realisationsMap = [
         titleNav: "David Oeslick", 
         image: davidRealisation,
         techs: "react",
-        sum: "Mon site web",
+        sum: "Mon site web.",
     },
     {   
         slug: "arch",
