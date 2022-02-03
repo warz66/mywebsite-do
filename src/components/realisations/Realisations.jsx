@@ -42,4 +42,4 @@ const Realisations = ({sectionActive}) => {
 
 }
     
-export default React.memo(Realisations);
+export default Realisations;
