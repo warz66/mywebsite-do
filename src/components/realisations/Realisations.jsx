@@ -15,7 +15,7 @@ const Realisations = ({sectionActive}) => {
         prevNextButtons: false,
         pageDots: true,
         watchCSS: true,
-        percentPosition: false
+        /*percentPosition: false*/
     }
 
     return (
