@@ -14,7 +14,8 @@ const Realisations = ({sectionActive}) => {
         groupCells: true,
         prevNextButtons: false,
         pageDots: true,
-        watchCSS: true
+        watchCSS: true,
+        percentPosition: false
     }
 
     return (
@@ -42,4 +43,4 @@ const Realisations = ({sectionActive}) => {
 
 }
     
-export default Realisations;
+export default React.memo(Realisations);
