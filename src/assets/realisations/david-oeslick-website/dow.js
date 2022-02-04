@@ -13,7 +13,7 @@ const dow = [
             large: davidRealisation,
         },
         techs: "REACT",
-        sum: "Mon site web",
+        sum: "Site web me présentant en tant que développeur.",
         presentation: [
             "Projet personnel à but de présenter mon profil de développeur web (parcours, services, réalisations) en tant que freelance. À travers ce site j'ai voulu mettre en évidence une certaine affinité pour le design et l'ergonomie, en utilisant des technologies modernes qui permettent une navigation fluide et réactive.",
         ],
@@ -41,16 +41,16 @@ const dow = [
                     },
                     {
                         href: "https://github.com/warz66/mywebsite-do/blob/main/src/views/home/Home.jsx",
-                        text: "Homepage"
+                        text: "Home.jsx"
                     },
                     {
                         href: "https://github.com/warz66/mywebsite-do/blob/main/src/components/realisations/Realisations.jsx",
-                        text: "Réalisations"
+                        text: "Realisation.jsx"
                     }
                 ]
             },
             {
-                title: "L'ajout de projets",
+                title: "L'ajout d'un projet",
                 image: {
                     thumbnail: structureRealisationTh,
                     large: structureRealisation,

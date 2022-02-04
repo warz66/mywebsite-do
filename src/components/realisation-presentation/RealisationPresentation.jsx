@@ -46,10 +46,11 @@ const RealisationPresentation = ({realisation}) => {
                         <h2>{realisation.title}</h2>
                     </div>
                     <div id="realisation-presentation-text">
-                        <span>{realisation.techs}</span>
+                        <span id="realisation-presentation-tech">{realisation.techs}</span>
                         {realisation.presentation.map((paragraphe, index) => {
                             return <p key={index} dangerouslySetInnerHTML={{ __html:paragraphe}}></p>
                         })}
+                        {realisation.linkOther && <a className="realisation-presentation-link" href={realisation.linkOther.link} target="_blank" rel="noreferrer">{realisation.linkOther.title}</a>}
                         <a className="realisation-presentation-link" href={realisation.linkGithub} target="_blank" rel="noreferrer">Dépôt github</a>
                         <a className="realisation-presentation-link" href={realisation.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>
                     </div>

@@ -101,7 +101,7 @@
     margin-bottom: 20px;
 }
 
-.realisation-presentation-link::before, #realisation-presentation-text span::before {
+.realisation-presentation-link::before, #realisation-presentation-tech::before {
     align-self: center;
     content: "";
     display: inline-block;
@@ -167,6 +167,6 @@
         padding: 140px 25px 80px 25px;
     }
     #realisation-presentation-title h2 {
-        font-size: 13vw;
+        font-size: 12vw;
     }
 }

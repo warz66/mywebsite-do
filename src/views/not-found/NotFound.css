@@ -24,9 +24,9 @@
 
 @media(max-width: 600px) {
     #not-found-page > div:first-of-type {
-        font-size: 13vw;
+        font-size: 12vw;
     }
     #not-found-page > div:nth-child(2) {
-        font-size: 7vw;
+        font-size: 6vw;
     }
 }

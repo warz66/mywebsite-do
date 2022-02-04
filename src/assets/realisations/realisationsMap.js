@@ -33,7 +33,7 @@ const realisationsMap = [
         titleNav: "David Oeslick", 
         image: davidRealisation,
         techs: "react",
-        sum: "Mon site web.",
+        sum: "Site web me présentant en tant que développeur."
     },
     {   
         slug: "arch",
@@ -42,7 +42,7 @@ const realisationsMap = [
         titleNav: "Arch Studio", 
         image: archRealisation,
         techs: "React",
-        sum: "In this challenge, you'll be building a 4-page site that will look great in any portfolio.",
+        sum: "Challenge Front-end Mentor qui consiste à créer un site web de 4 pages en étant le plus proche possible de la conception.",
     },
     {   
         slug: "photosnap",
