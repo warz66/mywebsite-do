@@ -1,6 +1,8 @@
 import archRealisation from 'assets/images/arch-realisation.jpg'
 import archPixelPerfect from 'assets/images/arch/arch-pixel-perfect.jpg'
 import archPixelPerfectTh from 'assets/images/arch/arch-pixel-perfect-th.jpg'
+import archFlexGrid from 'assets/images/arch/arch-flex-grid.jpg'
+import archFlexGridTh from 'assets/images/arch/arch-flex-grid-th.jpg'
 
 const arch = [
     {   
@@ -26,7 +28,7 @@ const arch = [
         linkWebsite: "https://fmentor-arch-studio.vercel.app",
         specs: [
             {
-                title: "Le Pixel Perfect",
+                title: "Le Pixel Perfect ?",
                 image: {
                     thumbnail: archPixelPerfectTh,
                     large: archPixelPerfect,
@@ -34,27 +36,34 @@ const arch = [
                 sections: [
                     {
                         paragraphe: [
-                            "En développement front-end on peut définir le 'Pixel Perfect' comme le fait de rendre visuellement indistinguable la maquette du rendu de l'intégration dans le navigateur. L'une des principales problématiques lors du passage de la maquette à l'intégration est cette différence d'approche et de conception entre l'univers graphique et les contraintes des règles HTML/CSS que doit respecter les navigateurs. Le travail de l'intégrateur sera d'adapter au mieux ces différences en étant au plus proche visuellement de la maquette en uniformisant le rendu entre les différents navigateurs qui pour les mêmes règles CSS ne donne parfois pas le même résultat, tout en produisant du code de qualité. L'une des meilleures façons d'avoir un résultat précis est de superposer la maquette au rendu HTML/CSS pour une même largeur d'écran. Il existe des plugins de navigateur tel que PerfectPixel by WellDoneCode qui permettent de le faire simplement. Ensuite, il suffit d'ajuster les valeurs de mesures du code css pour faire correspondre les rendus. Néanmoins, un résultat au pixel prêt peut être très chronophage est peut avoir un coût en clarté/qualité au sein du code si la conception de la maquette n'est pas 'réaliste', surtout que bien souvent l'internaute ne se rendra compte de rien. Être le plus proche possible de la maquette oui, mais à quel prix ?"
+                            "En développement front-end on peut définir le 'Pixel Perfect' comme le fait de rendre visuellement indistinguable la maquette du rendu de l'intégration dans le navigateur. L'une des principales problématiques lors du passage de la maquette à l'intégration est cette différence d'approche et de conception entre l'univers graphique et les contraintes des règles HTML/CSS que doit respecter le navigateur. Le travail de l'intégrateur sera d'adapter au mieux ces différences en étant au plus proche visuellement de la maquette tout en assurant de l'uniformité du rendu entre les navigateurs existant, tout en produisant du code de qualité. L'une des meilleures façons d'avoir un résultat précis est de superposer la maquette au rendu HTML/CSS pour une même largeur d'écran. Il existe des plugins de navigateurs tel que PerfectPixel by WellDoneCode qui permettent de le faire simplement par exemple. Ensuite, il suffit d'ajuster les valeurs de mesures du code css pour faire correspondre les rendus. Néanmoins, un résultat au pixel prêt peut être très chronophage est peut avoir un coût en clarté/qualité au sein du code si la conception de la maquette n'est pas 'réaliste', surtout que bien souvent l'internaute ne se rendra compte de rien. Être le plus proche possible de la maquette oui, mais à quel prix ?"
                         ]
                     },
                 ],
             },
             {
-                title: "Flexbox et Grid layout à la rescousse",
+                title: "Flexbox et Grid layout à la rescousse.",
                 image: {
-                    thumbnail: archRealisation,
-                    large: archRealisation,
+                    thumbnail: archFlexGridTh,
+                    large: archFlexGrid,
                 },
                 sections: [
                     {
-                        title: "dfgsdfgsdfg",
                         paragraphe: [
-                            "Mihi atque consiliis ipsas ita ita homini publicae homini omnium me Quid inimicus depono me meorum tandem mihi iure rei ipsas ex homini amicus depono homini Quid summorum depono meorum.",
-                            "Triumphos aetatem adultam in aerumnas transcendit in fere et circummurana.",
-                            "Militares turbarum sine ad ad traxere haec turbarum corpore atque praefecti et morati adorti proximo adorti militares proximo ullo morbosum.",
+                            "Depuis quelques années, le language CSS s'est vu étoffé de nouvelles spécifications telles que Flexbox et Grid layout. Ils sont une révolution pour tout intégrateurs. Les anciennes déclarations telles que 'float', les 'display inline-block' et 'table-cell' font maintenant figure de bricolage pour ce qui est du positionement d'éléments et création de gabarits. Flexbox lui va plutôt être utile pour gèrer le positionement des éléments interne d'une 'boite', tandis que Grid layout va permettre de construire globalement un gabarit, des grilles de mise en forme avec leurs gouttières etc... d'une page web, tout en étant trés malléable au 'Responsive web design'. La complémentarité entre Flexbox et Grid Layout nous propose un modèle de positionnement qui enfin permet de concevoir des pages web plus ou moins complexes de manière simple, intuitive et sans code parasite ou inutile. Ces spécifications sont considérées comme stables et l'ensemble des navigateurs récents les prennent en charge. On peut voir un exemple de l'utilisation de grid layout pour ce projet sur l'image suivante qui m'a permis de créer une grille 'parfaite'.",
                         ]
                     },
                 ],
+                linksWebsites: [
+                    {
+                        href: "https://github.com/warz66/FMentor-ArchStudio/blob/main/src/components/projectsGallery/ProjectsGallery.css",
+                        text: "ProjectsGallery.css"
+                    },
+                    {
+                        href: "https://github.com/warz66/FMentor-ArchStudio/blob/main/src/components/projectsGallery/ProjectsGallery.jsx",
+                        text: "ProjectsGallery.jsx"
+                    },
+                ]
             },
             {
                 title: "Utilisation de leaflet et de swiper",
