@@ -1,4 +1,6 @@
 import archRealisation from 'assets/images/arch-realisation.jpg'
+import archPixelPerfect from 'assets/images/arch/arch-pixel-perfect.jpg'
+import archPixelPerfectTh from 'assets/images/arch/arch-pixel-perfect-th.jpg'
 
 const arch = [
     {   
@@ -26,13 +28,13 @@ const arch = [
             {
                 title: "Pixel Perfect",
                 image: {
-                    thumbnail: archRealisation,
-                    large: archRealisation,
+                    thumbnail: archPixelPerfectTh,
+                    large: archPixelPerfect,
                 },
                 sections: [
                     {
                         paragraphe: [
-                            "En developpement front-end on peut définir le 'Pixel Perfect' comme le fait de rendre indistingable visuellement le design de la maquette et le rendu de l'intégration en code HTML/CSS. Le problème technique que pose souvent le passage de la maquette fait par un graphiste et le rendu réel dans les différents navigateurs est l'inexactitude des valeurs de mesures des logiciels de création qui ne sont pas parfaitement en adéquation avec les règles HTML/CSS qu'essai de respecter le navigateur ou parfois que la maquette n'est tout simplement pas bien construite. L'une des meilleures façon pour avoir un résultat au plus proche est de superposer la maquette au rendu HTML/CSS pour une même largeur d'écran. Il y'a aussi des plugins tel que PerfectPixel by WellDoneCode dans Chrome qui permet de le faire sans devoir ajouter une image convertit de la maquette directement dans le code pour superposer les rendus. Ensuite il suffit d'ajuster les valeurs de mesures du code css pour faire correspondre les rendus. Par contre je ne pense pas qu'il fasse sacrifier une certaine clarté/qualité dans le code pour atteindre un résultat au pixels prêt, être le plus proche possible de la maquette oui, mais pas a tout prix, cela peut être extrêmenent chronophage, surtout que bien souvent cela vient d'une maquette 'pas trés realiste'.",
+                            "En développement front-end on peut définir le 'Pixel Perfect' comme le fait de rendre visuellement indistinguable la maquette du rendu de l'intégration dans le navigateur. La principale problématique lors du passage de la maquette à l'intégration est cette différence d'approche et de conception entre l'univers graphique et les contraintes des règles HTML/CSS que doit respecter le navigateur. Le travail de l'intégrateur sera d'adapter au mieux ces différences pour avoir un rendu de qualité au niveau du code tout en étant le plus proche visuellement de la maquette. L'une des meilleures façons d'avoir un résultat au plus proche est de superposer la maquette au rendu HTML/CSS pour une même largeur d'écran. Il existe des plugins de navigateur tel que PerfectPixel by WellDoneCode qui permettent de le faire simplement. Ensuite, il suffit d'ajuster les valeurs de mesures du code css pour faire correspondre les rendus. Néanmoins, un résultat au pixel prêt peut-être très chronophage est peut avoir un coût en clarté/qualité au sein du code si la conception de la maquette n'est pas réaliste. Être le plus proche possible de la maquette oui, mais à quel prix ?"
                         ]
                     },
                 ],

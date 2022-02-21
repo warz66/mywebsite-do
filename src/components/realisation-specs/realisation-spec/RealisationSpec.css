@@ -49,7 +49,7 @@
 }
 
 .realisation-spec-img img {
-    width: 325px;
+    max-width: 325px;
     max-height: 500px;
     object-fit: cover;
     /*pointer-events: none !important;*/
