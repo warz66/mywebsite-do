@@ -26,7 +26,7 @@ const arch = [
         linkWebsite: "https://fmentor-arch-studio.vercel.app",
         specs: [
             {
-                title: "Pixel Perfect",
+                title: "Le Pixel Perfect",
                 image: {
                     thumbnail: archPixelPerfectTh,
                     large: archPixelPerfect,
@@ -34,21 +34,10 @@ const arch = [
                 sections: [
                     {
                         paragraphe: [
-                            "En développement front-end on peut définir le 'Pixel Perfect' comme le fait de rendre visuellement indistinguable la maquette du rendu de l'intégration dans le navigateur. La principale problématique lors du passage de la maquette à l'intégration est cette différence d'approche et de conception entre l'univers graphique et les contraintes des règles HTML/CSS que doit respecter le navigateur. Le travail de l'intégrateur sera d'adapter au mieux ces différences pour avoir un rendu de qualité au niveau du code tout en étant le plus proche visuellement de la maquette. L'une des meilleures façons d'avoir un résultat au plus proche est de superposer la maquette au rendu HTML/CSS pour une même largeur d'écran. Il existe des plugins de navigateur tel que PerfectPixel by WellDoneCode qui permettent de le faire simplement. Ensuite, il suffit d'ajuster les valeurs de mesures du code css pour faire correspondre les rendus. Néanmoins, un résultat au pixel prêt peut-être très chronophage est peut avoir un coût en clarté/qualité au sein du code si la conception de la maquette n'est pas réaliste. Être le plus proche possible de la maquette oui, mais à quel prix ?"
+                            "En développement front-end on peut définir le 'Pixel Perfect' comme le fait de rendre visuellement indistinguable la maquette du rendu de l'intégration dans le navigateur. L'une des principales problématiques lors du passage de la maquette à l'intégration est cette différence d'approche et de conception entre l'univers graphique et les contraintes des règles HTML/CSS que doit respecter les navigateurs. Le travail de l'intégrateur sera d'adapter au mieux ces différences en étant au plus proche visuellement de la maquette en uniformisant le rendu entre les différents navigateurs qui pour les mêmes règles CSS ne donne parfois pas le même résultat, tout en produisant du code de qualité. L'une des meilleures façons d'avoir un résultat précis est de superposer la maquette au rendu HTML/CSS pour une même largeur d'écran. Il existe des plugins de navigateur tel que PerfectPixel by WellDoneCode qui permettent de le faire simplement. Ensuite, il suffit d'ajuster les valeurs de mesures du code css pour faire correspondre les rendus. Néanmoins, un résultat au pixel prêt peut être très chronophage est peut avoir un coût en clarté/qualité au sein du code si la conception de la maquette n'est pas 'réaliste', surtout que bien souvent l'internaute ne se rendra compte de rien. Être le plus proche possible de la maquette oui, mais à quel prix ?"
                         ]
                     },
                 ],
-                linksGithubs: [
-                    {
-                        href: "sdfgsdfgsdfg",
-                        title: "sfgsdfgergerg"
-                    },
-                    {
-                        href: "sdfgsdfgsdfg",
-                        title: "sdfgsdfgsdfg"
-                    },
-                ],
-                linkWebsite: "sdfgsdfgsdfg",
             },
             {
                 title: "Flexbox et Grid layout à la rescousse",
