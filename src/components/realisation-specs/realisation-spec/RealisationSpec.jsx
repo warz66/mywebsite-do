@@ -20,7 +20,7 @@ const RealisationSpec = ({spec}) => {
                 })}
             </div>
             {(spec.linksGithubs || spec.linksWebsites || spec.image) && <div className="realisation-spec-img">
-                <div className="realisation-spec-links">
+                {(spec.linksGithubs || spec.linksWebsites) && <div className="realisation-spec-links">
                     {spec.linksGithubs && <span className="realisation-spec-links-git">
                         {spec.linksGithubs.map((link, index) => {
                             return (
@@ -38,7 +38,7 @@ const RealisationSpec = ({spec}) => {
                         )
                     })}
                     {/*spec.linkWebsite && <a href={spec.linkWebsite.href} target="_blank" rel="noreferrer">{spec.linkWebsite.title}</a>*/}
-                </div>
+                </div>}
                 {spec.image && <ImageRealisation image={spec.image} comeFromSpecs={true}/>}
             </div>}
         </div>

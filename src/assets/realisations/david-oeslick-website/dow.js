@@ -15,7 +15,7 @@ const dow = [
         techs: "REACT",
         sum: "Site web me présentant en tant que développeur.",
         presentation: [
-            "Projet personnel à but de présenter mon profil de développeur web (parcours, services, réalisations) en tant que freelance. À travers ce site j'ai voulu mettre en évidence une certaine affinité pour le design et l'ergonomie, en utilisant des technologies modernes qui permettent une navigation fluide et réactive.",
+            "Site Web présentant mon profil de développeur web (parcours, services, réalisations) en tant que freelance. À travers ce site j'ai voulu mettre en évidence une certaine affinité pour le design et l'ergonomie, en utilisant des technologies modernes qui permettent une navigation fluide et réactive.",
         ],
         linkGithub: "https://github.com/warz66/mywebsite-do",
         linkWebsite: "https://www.david-oeslick.fr/",
