@@ -5,6 +5,8 @@ import archFlexGrid from 'assets/images/arch/arch-flex-grid.jpg'
 import archFlexGridTh from 'assets/images/arch/arch-flex-grid-th.jpg'
 import archSwiper from 'assets/images/arch/arch-swiper.jpg'
 import archSwiperTh from 'assets/images/arch/arch-swiper-th.jpg'
+import archLeaflet from 'assets/images/arch/arch-leaflet.jpg'
+import archLeafletTh from 'assets/images/arch/arch-leaflet-th.jpg'
 
 const arch = [
     {   
@@ -44,7 +46,7 @@ const arch = [
                 ],
             },
             {
-                title: "Flexbox et Grid layout à la rescousse.",
+                title: "Flexbox et Grid layout à la rescousse",
                 image: {
                     thumbnail: archFlexGridTh,
                     large: archFlexGrid,
@@ -68,7 +70,7 @@ const arch = [
                 ]
             },
             {
-                title: "Utilisation de Swiper/React pour le slider de la Homepage.",
+                title: "Utilisation de Swiper/React pour le slider de la Homepage",
                 image: {
                     thumbnail: archSwiperTh,
                     large: archSwiper,
@@ -96,21 +98,32 @@ const arch = [
                 ]
             },
             {
-                title: "Utilisation de leaflet",
+                title: "Utilisation de React-Leaflet pour la carte interactive",
                 image: {
-                    thumbnail: archRealisation,
-                    large: archRealisation,
+                    thumbnail: archLeafletTh,
+                    large: archLeaflet,
                 },
                 sections: [
                     {
-                        title: "dfgsdfgsdfg",
                         paragraphe: [
-                            "Mihi atque consiliis ipsas ita ita homini publicae homini omnium me Quid inimicus depono me meorum tandem mihi iure rei ipsas ex homini amicus depono homini Quid summorum depono meorum.",
-                            "Triumphos aetatem adultam in aerumnas transcendit in fere et circummurana.",
-                            "Militares turbarum sine ad ad traxere haec turbarum corpore atque praefecti et morati adorti proximo adorti militares proximo ullo morbosum.",
+                            "<a href='https://leafletjs.com/' target='_blank' rel='noreferrer'>Leaflet</a> est une bibliothèque javascript pour les cartes interactives. Il est conçu dans un souci de simplicité , de performance et de convivialité . Il fonctionne efficacement sur toutes les principales plates-formes de bureau et mobiles, peut être étendu avec de nombreux plugins, possède une belle API facile à utiliser et bien documentée et un code source simple et lisible, il possède toutes les fonctionnalités de cartographie dont la plupart des développeurs ont besoin. <a href='https://react-leaflet.js.org/' target='_blank' rel='noreferrer'>React-Leaflet</a> fournit des liaisons entre React et Leaflet. Le MapContainer composant est chargé de créer l'instance 'Leaflet Map' et de la fournir à ses composants enfants, à l'aide d'un React Context. Lors de la création d'un MapContainer élément, des accessoires sont utilisés comme options pour créer l'instance Map. Les composants enfants de React Leaflet utilisent leurs props comme options lors de la création de l'instance correspondante de Leaflet. Nous avons donc une panoplie d'accessoires paramétrables pour arriver au résultat voulu. Il a été agréable de travailler avec cette bibliothèque. On peut visualiser les emplacements réels sur la carte de chaque office lors d'un click respectif sur celle-ci, la caméra va alors se centrer sur la carte et un effet de zoom va s'effectuer progressivement sur l'office (<a href='https://fmentor-arch-studio.vercel.app/contact#details' target='_blank' rel='noreferrer' style=' font-style: italic;'>tester la fonctionnalité</a>).",
                         ]
                     },
                 ],
+                linksWebsites: [
+                    {
+                        href: "https://github.com/warz66/FMentor-ArchStudio/blob/main/src/components/contact/details/Details.jsx",
+                        text: "Section-details.jsx"
+                    },
+                    {
+                        href: "https://github.com/warz66/FMentor-ArchStudio/blob/main/src/components/contact/details/map/Map.jsx",
+                        text: "Map.jsx"
+                    },
+                    {
+                        href: "https://github.com/warz66/FMentor-ArchStudio/blob/main/src/components/contact/details/office/Office.jsx",
+                        text: "Office.jsx"
+                    },
+                ]
             }
         ]
     },
