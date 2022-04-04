@@ -9,6 +9,7 @@
 
   /* dark mode */
   --dark-blue: #181e28;
+  --dark-blue-rgb: 24,30,40;
   --very-dark-blue: #151922;
   --gold: #ffc979;
   --gold-rgb: 255, 201, 121; 
@@ -21,6 +22,7 @@
 
   /* light mode */
   --selago: #ecf2fc; /* ok */
+  --selago-rgb: 236,242,252;
   --white: #fff; /* ok */
   --bright-grey: #3c4151;
   --bright-grey-rgb: 60, 65, 81; 
@@ -31,6 +33,7 @@
 
 :root .dark-mode {
   --primary: var(--dark-blue);
+  --primary-rgb: var(--dark-blue-rgb);
   --very-primary: var(--very-dark-blue);
   --secondary: var(--gold);
   --secondary-rgb: 255, 201, 121;
@@ -50,6 +53,7 @@
 
 :root .light-mode {
   --primary: var(--selago);
+  --primary-rgb: var(--selago-rgb);
   --very-primary: var(--white);
   --secondary: var(--shark);
   --secondary-rgb: 37, 39, 44;
