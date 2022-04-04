@@ -11,7 +11,7 @@ const RetourHaut = () => {
     useEffect(() => {
         function handleRetourHautVisible ()  {
             window.onscroll = function() {
-                (window.pageYOffset > 1500) ? setRetourHautVisible(true) : setRetourHautVisible(false);
+                (window.pageYOffset > 1100) ? setRetourHautVisible(true) : setRetourHautVisible(false);
             };
         };
         window.addEventListener('DOMContentLoaded', handleRetourHautVisible());
