@@ -56,11 +56,12 @@
 }
 
 @media(max-width: 950px) {
+
     .realisation-spec-img img {
         display: block;
-        margin: 0 auto;
+        margin: 50px auto 0px auto;
         max-width: 350px;
-        /*max-height: 400px;*/
+
         width: 100%;
     }    
 }
@@ -119,12 +120,6 @@
 
 .realisation-spec-text a {
     color: var(--tertiary);
-}
-
-@media(max-width: 950px) {
-    .realisation-spec-text {
-        margin-bottom: 50px;
-    }    
 }
 
 .realisation-spec-links {
@@ -200,7 +195,7 @@
 
 @media(max-width: 950px) {
     .realisation-spec-links {
-        justify-content: center;
-        margin-bottom: 50px;
+        align-items: center;
+        margin: 50px 0 0 0;
     }    
 }

@@ -4,6 +4,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import Header from 'components/header/Header';
 import { useParams, Link } from "react-router-dom";
 import Contact from 'components/contact/Contact';
+import RetourHaut from 'components/retour-haut/RetourHaut';
 import realisationsMap from 'assets/realisations/realisationsMap';
 import RealisationPresentation from 'components/realisation-presentation/RealisationPresentation';
 import RealisationSpecs from 'components/realisation-specs/RealisationSpecs';
@@ -148,6 +149,8 @@ const Realisation = () => {
     return (
         <>
             <RealisationView stateR={state} dispatch={dispatch} slug={slug}/>
+
+            <RetourHaut/>
 
             <div id="lightbox-container"></div>
         </>

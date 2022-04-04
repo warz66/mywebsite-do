@@ -44,15 +44,6 @@
     right: 103px;
 }
 
-@media(max-width: 1400px) {
-    .link-nav-realisation:first-of-type {
-        left: 43px;
-    }
-    .link-nav-realisation:last-of-type {
-        right: 43px;
-    }    
-}
-
 @media (min-width: 1980px) {
     .link-nav-realisation:last-of-type {
         right: calc((100vw - (1980px - 206px)) / 2) !important;
@@ -60,6 +51,15 @@
     .link-nav-realisation:first-of-type {
         left: calc((100vw - (1980px - 206px)) / 2) !important;
     }
+}
+
+@media(max-width: 1400px) {
+    .link-nav-realisation:first-of-type {
+        left: 43px;
+    }
+    .link-nav-realisation:last-of-type {
+        right: 43px;
+    }    
 }
 
 @media (max-width: 600px) {
