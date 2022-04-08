@@ -28,9 +28,9 @@ const Home = () => {
       navigationTooltips={anchors}
       responsiveWidth= "1200"
       responsiveHeight="937"
-      afterLoad= { (destination) => {
+      afterLoad= { (origin, destination, direction) => {
         switch(destination.index) {
-          case 0: 
+          case 0:
             document.title = "Hero | David OESLICK";
             break;
           case 1: 
@@ -42,11 +42,11 @@ const Home = () => {
           case 3: 
             document.title = "Réalisations | David OESLICK";
             break;
-          case 4: 
+          case 4:
             document.title = "Contact | David OESLICK";
             break;
           default:
-            document.title = "David OESLICK website"; 
+            document.title = "David OESLICK website";
             break;
         }
       }}

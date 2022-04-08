@@ -15,7 +15,7 @@ const realisationsMap = [
         titleNav: "Web Solution Mairie", 
         image: mairieRealisation,
         techs: "Symfony 5, Jquery, Bootstrap 4",
-        sum: "Solution pour sites de partage d'informations pour les collectivités locales, communes.",
+        sum: "Solution pour sites de diffusions d'informations pour les communes.",
     },
     {
         slug: "svenrybin",
@@ -33,7 +33,7 @@ const realisationsMap = [
         titleNav: "David Oeslick", 
         image: davidRealisation,
         techs: "react",
-        sum: "Site web me présentant en tant que développeur."
+        sum: "Site web me représentant en tant que développeur Web."
     },
     {   
         slug: "arch",
@@ -51,7 +51,7 @@ const realisationsMap = [
         titleNav: "Photosnap", 
         image: photosnapRealisation,
         techs: "Vue",
-        sum: "In this challenge, you'll be building the marketing site for a photo-sharing app. This will be a perfect opportunity to put your CSS Grid skills to the test!",
+        sum: "Challenge Front-end Mentor qui consiste à créer le site marketing d'une application de partage de photos.",
     },
     {   
         slug: "rest-countries-api-react",
