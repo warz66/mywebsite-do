@@ -1,6 +1,6 @@
 import archRealisation from 'assets/images/arch-realisation.jpg'
 import photosnapRealisation from 'assets/images/photosnap-realisation.jpg'
-import countriesRealisation from 'assets/images/countries-realisation.jpg'
+import countriesRealisation from 'assets/images/countries-react-vue-realisation.jpg'
 import mairieRealisation from 'assets/images/wsm/mairie-realisation.jpg'
 import clipboardRealisation from 'assets/images/clipboard-realisation.jpg'
 import roomRealisation from 'assets/images/room-realisation.jpg'
@@ -54,22 +54,13 @@ const realisationsMap = [
         sum: "Challenge Front-end Mentor qui consiste à créer le site marketing d'une application de partage de photos.",
     },
     {   
-        slug: "rest-countries-api-react",
-        path: "rest-countries-api-react/rcar.js",
+        slug: "rest-countries-api",
+        path: "rest-countries-api/rca.js",
         title: "REST Countries API with color theme switcher",
-        titleNav: "Rest Countries API React", 
+        titleNav: "Rest Countries API", 
         image: countriesRealisation,
-        techs: "React",
-        sum: "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
-    },
-    {   
-        slug: "rest-countries-api-vue",
-        path: "rest-countries-api-vue/rcav.js",
-        title: "REST Countries API with color theme switcher",
-        titleNav: "Rest Countries API Vue", 
-        image: countriesRealisation,
-        techs: "Vue",
-        sum: "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
+        techs: "React & Vue",
+        sum: "Challenge Front-end Mentor décliné en deux versions (Vue & React), représentant les informations des pays distribués par une Api Rest.",
     },
     {   
         slug: "clipboard-landing-page",

@@ -51,8 +51,8 @@ const RealisationPresentation = ({realisation}) => {
                             return <p key={index} dangerouslySetInnerHTML={{ __html:paragraphe}}></p>
                         })}
                         {realisation.linkOther && <a className="realisation-presentation-link" href={realisation.linkOther.link} target="_blank" rel="noreferrer">{realisation.linkOther.title}</a>}
-                        <a className="realisation-presentation-link" href={realisation.linkGithub} target="_blank" rel="noreferrer">Dépôt github</a>
-                        <a className="realisation-presentation-link" href={realisation.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>
+                        {realisation.linkGithub && <a className="realisation-presentation-link" href={realisation.linkGithub} target="_blank" rel="noreferrer">Dépôt github</a>}
+                        {realisation.linkWebsite && <a className="realisation-presentation-link" href={realisation.linkWebsite} target="_blank" rel="noreferrer">Voir le site</a>}
                     </div>
                 </div>}
                 <SwitchMode text={false}/>
