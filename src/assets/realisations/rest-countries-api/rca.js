@@ -1,4 +1,6 @@
 import countriesRealisation from 'assets/images/countries-react-vue-realisation.jpg'
+import rcaApiUx from 'assets/images/rca/rca-api-ux.jpg'
+import rcaApiUxTh from 'assets/images/rca/rca-api-ux-th.jpg'
 
 const rca = [
     {   
@@ -24,18 +26,32 @@ const rca = [
         },
         specs: [
             {
-                title: "Communication avec l'api et les promesses",
+                title: "Communication avec l'Api et Ux",
                 image: {
-                    thumbnail: countriesRealisation,
-                    large: countriesRealisation,
+                    thumbnail: rcaApiUxTh,
+                    large: rcaApiUx,
                 },
                 sections: [
                     {
                         paragraphe: [
-                            "Parler de Fetch, des loadings, de suspense pour vuejs et React.lazy et suspense pour React."
-                        ]
+                            "Le but de ce site web est avant tout de fournir des informations sur des Pays grâce à un service web que l'on va consommer via une <a href='https://www.uptrends.fr/qu-est-ce-que/rest-api' target='_blank' rel='noreferrer'>Api Rest</a>. Une façon moderne de le faire est d'utiliser l'une des particularités les plus importante de JavaScript: <a href='https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous/Introducing' target='_blank' rel='noreferrer'>l'asynchrone</a>. Historiquement pour faire de l'asynchrone en JavaScript ont imbriqué les 'callbacks', mais le code devenait vite illisible, créait des erreurs de conceptions et ne garantissait pas l'ordre des évènements. Depuis 2015 et la version d'ECMAScript ES5, un nouvel <a href='https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Using_promises' target='_blank' rel='noreferrer'>objet 'Promise'</a> permet de simplifier les échanges asynchrones. Je ne vais pas vous lister tous les avantages qu'apportent les promesses, mais elles sont devenues indispensables en ce qui concerne l'exécution de code asynchrone. Bien souvent sur une page web, on se retrouve avec des éléments qui visuellement dépendent d'une réponse distante, il est alors primordial pour une question d'Ux d'optimiser la réponse visuelle pour que le rendu asynchrone s'intègre progressivement sur la page de façon agréable pour l'oeil. Que ce soit dans Vue ou React, on va faire en sorte qu'un composant qui dépend d'une réponse asynchrone change d'état selon celle-ci, ainsi, on va pouvoir simplement grâce à ces technologies donner une réponse visuelle la mieux adapté à notre besoin. Depuis peu en <a href='https://fr.reactjs.org/docs/concurrent-mode-suspense.html' target='_blank' rel='noreferrer'>React</a> et <a href='https://vuejs.org/guide/built-ins/suspense.html' target='_blank' rel='noreferrer'>Vue</a>, il existe un composant <Suspense> du même nom pour ces deux technologies, qui permet d'orchester les dépendances asynchrones dans une arborescence de composants. Il peut rendre un état de chargement en attendant que plusieurs dépendances asynchrones imbriquées dans l'arborescence des composants soient résolues."
+                        ],
                     },
                 ],
+                linksWebsites: [
+                    {
+                        href: "https://github.com/warz66/FMentor-RestCountriesApi-react/blob/main/src/views/home/Home.jsx",
+                        text: "Home.jsx"
+                    },
+                    {
+                        href: "https://github.com/warz66/FMentor-RestCountriesApi/blob/main/src/views/Home.vue",
+                        text: "Home.vue"
+                    },
+                    {
+                        href: "https://github.com/warz66/test-suspense-vuejs/blob/main/src/views/Home.vue",
+                        text: "Home.vue (suspense)"
+                    },
+                ]
             },
             {
                 title: "Le changement de theme",
