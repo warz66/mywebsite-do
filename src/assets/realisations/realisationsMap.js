@@ -23,7 +23,7 @@ const realisationsMap = [
         title: "Svenrybin.fr",
         titleNav: "Svenrybin.fr", 
         image: svenrybinRealisation,
-        techs: "React, Next, Symfony, Api-Platform",
+        techs: "React, Next, Symfony 5, Api-Platform",
         sum: "Site web de l'artiste peintre Sven Rybin.",   
     },
     {   
@@ -32,7 +32,7 @@ const realisationsMap = [
         title: "David Oeslick",
         titleNav: "David Oeslick", 
         image: davidRealisation,
-        techs: "react",
+        techs: "React",
         sum: "Site web me représentant en tant que développeur Web."
     },
     {   
