@@ -69,7 +69,7 @@ const realisationsMap = [
         titleNav: "Clipboard landing page", 
         image: clipboardRealisation,
         techs: "HTML / CSS",
-        sum: "Put your layout skills to the test with this HTML & CSS landing page challenge. This challenge includes a design for hover states.",
+        sum: "Challenge Front-end Mentor qui consiste à créer une landing page et à la rendre aussi proche que possible de la conception.",
     },
     {   
         slug: "room-homepage",
@@ -78,7 +78,7 @@ const realisationsMap = [
         titleNav: "Room homepage", 
         image: roomRealisation,
         techs: "HTML / CSS / JS",
-        sum: "This small homepage challenge packs a big punch to test your layout skills. There's also a slider in there to add a JS layer for extra practice.",
+        sum: "Challenge Front-end Mentor qui consiste à créer une page d'accueil de commerce électronique et à la rendre aussi proche que possible de la conception.",
     },
 ]
 
