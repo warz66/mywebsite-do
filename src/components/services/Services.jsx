@@ -15,22 +15,27 @@ const Services = ({sectionActive}) => {
         <section id="services" className={`section bg-vr ${sectionActive ? " active" : ""}`}>
             <div id="wrapper-services">
                 <h2>Mes services</h2>
-                <p>In viverra sapien quis finibus egestas. Curabitur quis mattis arcu. Suspendisse ac est nibh. Mauris at nibh ut magna convallis viverra. Vestibulum felis erat, lacinia id sodales porttitor, gravida quis nibh.</p>
+                <p>Besoin d'un service de qualité ? Je réalise vos projets web sur mesure avec soin et professionnalisme et m'adapte aux technologies selon vos besoins. Fini les aller-retours interminables parce que l'intégration ne correspond pas à 100% à vos maquettes, votre site sera tel que vous l'avez imaginé, les animations en plus.</p>
                 <div id="box-services">
                     <div className="box-service">
                        <img className="logo-service" src={mode ? vueReactLogoLight : vueReactLogoDark} alt="" />
+                       <h3>Intégration</h3>
+                        <p>Je découpe, j'assemble et j'intègre votre maquette graphique en HTML / CSS tout en respectant les règles et l'architecture technique d'optimisation pour le SEO.</p> 
+                    </div>
+                    <div className="box-service">
+                       <img className="logo-service" src={mode ? vueReactLogoLight : vueReactLogoDark} alt="" />
                        <h3>Frontend VueJS ou React</h3>
-                        <p>Si vous avez besoin de développer une application dynamique et réactive, je maitrise les frameworks VueJS et React.</p> 
+                        <p>Si vous avez besoin de développer une application dynamique et réactive, je travail avec les frameworks VueJS et React.</p> 
                     </div>
                     <div className="box-service">
                        <img className="logo-service" src={mode ? symfonyLogoLight : symfonyLogoDark} alt="" />
-                       <h3>Backend Symfony</h3>
-                       <p>Je développe des applications PHP depuis plus de 11 ans et je maitrise les frameworks Symfony 5 et Laravel 6.</p> 
+                       <h3>Framework Symfony</h3>
+                       <p>Je peux développer la partie back end et front end de votre application en Symfony, framework PHP, basé sur la structure MVC (Model View Controller).</p> 
                     </div>   
                     <div className="box-service">
                        <img className="logo-service" src={mode ? wordpressLogoLight : wordpressLogoDark} alt="" />
                        <h3>Développement Wordpress</h3>
-                       <p>Vous recherchez une personne pour développer un thème ou un plugin sur mesure ? Je maitrise les outils ACF, Bedrock, Timber, Themosis.</p> 
+                       <p>Vous recherchez une personne pour développer un thème ou un plugin sur mesure ? Je maitrise les outils ACF et Divi Builder.</p> 
                     </div>       
                 </div>    
             </div>            

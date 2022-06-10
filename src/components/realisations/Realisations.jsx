@@ -23,7 +23,7 @@ const Realisations = ({sectionActive}) => {
         <section id="realisations" className={`section bg-dark ${sectionActive ? " active" : ""}`}>
             <div id="wrapper-realisations">
                 <h2>Mes réalisations</h2>
-                <p>In viverra sapien quis finibus egestas. Curabitur quis mattis arcu. Suspendisse ac est nibh. Mauris at nibh ut magna convallis viverra. Vestibulum felis erat, lacinia id sodales porttitor, gravida quis nibh.</p>
+                <p>Parcourez quelques-unes de mes réalisations et découvrez mon approche et mon analyse en développement web et intégration au travers de fiches projet et de leurs spécifications.</p>
                 <Flickity
                     className={'carousel'} // default ''
                     elementType={'div'} // default 'div'
