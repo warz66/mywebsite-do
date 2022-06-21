@@ -15,7 +15,7 @@ const Services = ({sectionActive}) => {
         <section id="services" className={`section bg-vr ${sectionActive ? " active" : ""}`}>
             <div id="wrapper-services">
                 <h2>Mes services</h2>
-                <p>Besoin d'un service de qualité ? Je réalise vos projets web sur mesure avec soin et professionnalisme et m'adapte aux technologies selon vos besoins. Fini les aller-retours interminables parce que l'intégration ne correspond pas à 100% à vos maquettes, votre site sera tel que vous l'avez imaginé, les animations en plus.</p>
+                <p>Je réalise vos projets et fonctionnalités web sur mesure avec soin et professionnalisme et m'adapte aux technologies selon vos besoins.</p>
                 <div id="box-services">
                     <div className="box-service">
                        <img className="logo-service" src={mode ? vueReactLogoLight : vueReactLogoDark} alt="" />
