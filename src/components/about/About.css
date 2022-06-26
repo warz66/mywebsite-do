@@ -40,6 +40,7 @@
 
 #presentation-about-text {
     margin-left: 70px;
+    white-space: break-spaces;
 }
 
 @media(max-width: 686px) {

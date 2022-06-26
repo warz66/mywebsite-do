@@ -4,8 +4,8 @@ const Footer = () => {
 
     return(
         <footer className="bg-dark">
-            <p>Copyright © 2021 Freelance_Theme, All rights Reserved.</p>
-            <p>Created by DavidO_Design</p>
+            <p>Copyright © 2022, Tous Droit Réservés.</p>
+            <p>Créer par David OESLICK.</p>
         </footer>
     );
 }

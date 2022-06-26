@@ -5,6 +5,8 @@ import vueReactLogoDark from 'assets/images/vue-react-logo-dark.svg'
 import symfonyLogoLight from 'assets/images/symfony-logo-light.svg'
 import wordpressLogoLight from 'assets/images/wordpress-logo-light.svg'
 import vueReactLogoLight from 'assets/images/vue-react-logo-light.svg'
+import htmlCssJsLogoDark from 'assets/images/html-css-js-logo-dark.svg'
+import htmlCssJsLogoLight from 'assets/images/html-css-js-logo-light.svg'
 import { useSelector } from 'react-redux'
 
 const Services = ({sectionActive}) => {
@@ -18,24 +20,24 @@ const Services = ({sectionActive}) => {
                 <p>Je réalise vos projets et fonctionnalités web sur mesure avec soin et professionnalisme et m'adapte aux technologies selon vos besoins.</p>
                 <div id="box-services">
                     <div className="box-service">
-                       <img className="logo-service" src={mode ? vueReactLogoLight : vueReactLogoDark} alt="" />
+                       <img className="logo-service" src={mode ? htmlCssJsLogoLight : htmlCssJsLogoDark} alt="" />
                        <h3>Intégration</h3>
-                        <p>Je découpe, j'assemble et j'intègre votre maquette graphique en HTML / CSS tout en respectant les règles et l'architecture technique d'optimisation pour le SEO.</p> 
+                        <p>J'intègre votre maquette graphique et animations en HTML/CSS/JS tout en respectant les règles et l'architecture technique d'optimisation pour le SEO.</p> 
                     </div>
                     <div className="box-service">
                        <img className="logo-service" src={mode ? vueReactLogoLight : vueReactLogoDark} alt="" />
                        <h3>Frontend VueJS ou React</h3>
-                        <p>Si vous avez besoin de développer une application dynamique et réactive, je travail avec les frameworks VueJS et React.</p> 
+                        <p>Besoin de développer une application dynamique et réactive ? Je travaille avec les frameworks VueJS et React.</p> 
                     </div>
                     <div className="box-service">
                        <img className="logo-service" src={mode ? symfonyLogoLight : symfonyLogoDark} alt="" />
                        <h3>Framework Symfony</h3>
-                       <p>Je peux développer la partie back end et front end de votre application en Symfony, framework PHP, basé sur la structure MVC (Model View Controller).</p> 
+                       <p>Je développe la partie back end et front end de votre application en Symfony, framework PHP, basé sur la structure MVC (Model View Controller).</p> 
                     </div>   
                     <div className="box-service">
                        <img className="logo-service" src={mode ? wordpressLogoLight : wordpressLogoDark} alt="" />
                        <h3>Développement Wordpress</h3>
-                       <p>Vous recherchez une personne pour développer un thème ou un plugin sur mesure ? Je maitrise les outils ACF et Divi Builder.</p> 
+                       <p>Vous recherchez une personne compétente pour développer un thème ou un plugin sur mesure ? Je maitrise les outils ACF et Divi Builder.</p> 
                     </div>       
                 </div>    
             </div>            

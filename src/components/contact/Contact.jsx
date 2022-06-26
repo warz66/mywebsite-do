@@ -32,7 +32,9 @@ const Contact = ({sectionActive}) => {
                 <div className={bgMode ? "bg-dark" : ""}>
                     <div id="msg-contact">
                         <p>
-                            Let's make something new, different and more meanningful or make thing more visual or Conceptual ? <span>Just Say Hello !</span>
+                            “<strong>Algorithme <i>n.m.</i></strong> : Mot utilisé par les programmeurs quand ils ne veulent pas expliquer ce qu’ils ont fait.”<br></br>
+                            <span><strong>Ne cherchez plus, contactez moi !</strong></span>
+                            {/*Let's make something new, different and more meanningful or make thing more visual or Conceptual ? <span>Just Say Hello !</span>*/}
                         </p>
                     </div>
                 </div>
@@ -41,9 +43,9 @@ const Contact = ({sectionActive}) => {
                 </div>
                 <div className={bgMode ? "bg-vr" : ""}>
                     <div id="info-contact">
-                        <p>0655894578</p>
-                        <p>myMail@mail.com</p>
-                        <p>Cap Luberon</p>
+                        <p>06 71 98 31 54</p>
+                        <p>david.oeslick@gmail.com</p>
+                        <p>Cap Luberon, France, Apt 84400</p>
                         <div id="info-contact-social">
                             <a href="https://github.com/warz66" target="_blank" rel="noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 1000 1000">
