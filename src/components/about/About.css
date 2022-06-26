@@ -2,7 +2,7 @@
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    padding: 80px 40px;
+    padding: 50px 40px;
 }
 
 @media (max-width: 1200px) {
@@ -21,7 +21,7 @@
     display: flex;
 }
 
-@media(max-width: 850px) {
+@media(max-width: 950px) {
     #presentation-about {
         margin-bottom: 50px;
     }
@@ -34,11 +34,11 @@
 }
 
 #presentation-about-img img {
-    height: 390px;
+    height: 380px;
 }
 
 #presentation-about-text {
-    margin-left: 50px;
+    margin-left: 25px;
     white-space: break-spaces;
 }
 
@@ -95,7 +95,7 @@
 }
 
 #skill-about {
-    height: 250px;
+    height: 240px;
     position: relative;
 }
 

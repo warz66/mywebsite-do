@@ -83,7 +83,7 @@
     z-index: 0;
     right: -4%;
     width: 700px;
-    top: 15%;
+    top: 10%;
     filter:brightness(0.9);
     margin-right: 40px;
 }
@@ -109,7 +109,7 @@
 @media(max-width: 730px) {
     #hero-img img {
         right: -210px;
-        top:10%;
+        top:5%;
     }
 }
 
