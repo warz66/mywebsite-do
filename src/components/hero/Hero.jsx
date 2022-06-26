@@ -1,7 +1,7 @@
 import './Hero.css';
 import SwitchMode from 'components/switch-mode/SwitchMode';
 import ScrollDown from 'components/scroll-down/ScrollDown';
-import keanu from 'assets/images/keanu-reeves.png'
+import photoHero from 'assets/images/photo-hero.png'
 import React, { useState } from 'react';
 
 const Hero = ({fullpageApi}) => {
@@ -22,7 +22,7 @@ const Hero = ({fullpageApi}) => {
                         </a>*/}
                     </div>
                     <div id="hero-img" style={imgLoaded ? {opacity: 1} : {opacity: 0}}>
-                        <img src={keanu} alt="" onLoad={() => setImgLoaded(true)}/>
+                        <img src={photoHero} alt="" onLoad={() => setImgLoaded(true)}/>
                     </div>
                 </div>
                 <ScrollDown/>

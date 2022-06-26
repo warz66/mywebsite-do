@@ -19,7 +19,6 @@
 
 #presentation-about {
     display: flex;
-    margin-bottom: 10px;
 }
 
 @media(max-width: 850px) {
@@ -35,11 +34,11 @@
 }
 
 #presentation-about-img img {
-    height: 300px;
+    height: 390px;
 }
 
 #presentation-about-text {
-    margin-left: 70px;
+    margin-left: 50px;
     white-space: break-spaces;
 }
 
@@ -71,11 +70,11 @@
     line-height: 25px;
     color: var(--tertiary);
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #presentation-about-text img {
-    width: 150px;
+    width: 190px;
 }
 
 #presentation-about-text > div {

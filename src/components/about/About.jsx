@@ -1,5 +1,5 @@
 import './About.css'
-import krPortrait from 'assets/images/kr-portrait.png'
+import photoAbout from 'assets/images/photo-about.png'
 import signatureDark from 'assets/images/signature-dark.svg'
 import signatureLight from 'assets/images/signature-light.svg'
 import { useSelector } from 'react-redux';
@@ -17,7 +17,7 @@ const About = ({sectionActive, fullpageApi}) => {
 
                 <div id="presentation-about">
                     <div id="presentation-about-img">
-                        <img src={krPortrait} alt="" />
+                        <img src={photoAbout} alt="" />
                     </div>
                     <div id="presentation-about-text">
                         <h2>A propos de moi</h2>
