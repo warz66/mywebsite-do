@@ -28,7 +28,7 @@ const Home = () => {
       navigationTooltips={anchors}
       responsiveWidth= "1200"
       responsiveHeight="937"
-      afterLoad= { (origin, destination, direction) => {
+      /*afterLoad= { (origin, destination, direction) => {
         switch(destination.index) {
           case 0:
             document.title = "Hero | David OESLICK";
@@ -49,7 +49,7 @@ const Home = () => {
             document.title = "David OESLICK website";
             break;
         }
-      }}
+      }}*/
       afterRender={() =>{
         dispatch(handleStyleFpNav());
       }}
