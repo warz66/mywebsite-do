@@ -31,7 +31,7 @@ const About = ({sectionActive, fullpageApi}) => {
                             {/*<a href="\" className="btn">
                                 CONTACTEZ-MOI
                             </a>*/}
-                            <span><img src={mode ? signatureLight : signatureDark} alt="" /></span>
+                            <span><img src={mode ? signatureLight : signatureDark} alt="symbole light dark" /></span>
                         </div>
                     </div>
                 </div>
