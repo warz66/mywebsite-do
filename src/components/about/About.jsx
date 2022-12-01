@@ -17,7 +17,7 @@ const About = ({sectionActive, fullpageApi}) => {
 
                 <div id="presentation-about">
                     <div id="presentation-about-img">
-                        <img src={photoAbout} alt="" />
+                        <img src={photoAbout} alt="photo mini portrait"/>
                     </div>
                     <div id="presentation-about-text">
                         <h2>A propos de moi</h2>

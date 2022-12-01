@@ -22,7 +22,7 @@ const Hero = ({fullpageApi}) => {
                         </a>*/}
                     </div>
                     <div id="hero-img" style={imgLoaded ? {opacity: 1} : {opacity: 0}}>
-                        <img src={photoHero} alt="" onLoad={() => setImgLoaded(true)}/>
+                        <img src={photoHero} alt="photo portrait" onLoad={() => setImgLoaded(true)}/>
                     </div>
                 </div>
                 <ScrollDown/>

@@ -7,7 +7,7 @@ function Lightbox ({imageLarge, openLightbox, handleLightbox}) {
         <>
             <div className={`lightbox ${openLightbox ? 'is-active': ''}`} onClick={handleLightbox} data-display={openLightbox ? true : false} >
                 <div className="lightbox-wrapper">
-                    {openLightbox && <img src={imageLarge} alt="" />}
+                    {openLightbox && <img src={imageLarge} alt="image large du projet" />}
                 </div>
             </div>
         </>
@@ -32,7 +32,7 @@ const ImageRealisation = ({image, comeFromSpecs = false}) => {
 
     return (
         <>
-            {image.large ? <img className={comeFromSpecs ? "img-with-lightbox-in-specs" : ""} style={{cursor: "pointer" }} src={image.thumbnail} alt="" onClick={handleLightbox}/> : <img src={image} alt="" />}
+            {image.large ? <img className={comeFromSpecs ? "img-with-lightbox-in-specs" : ""} style={{cursor: "pointer" }} src={image.thumbnail} alt="image mini du projet" onClick={handleLightbox}/> : <img src={image} alt="image du projet" />}
         </>
         
     );
